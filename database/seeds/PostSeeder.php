@@ -1,0 +1,64 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class PostSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('posts')->insert(
+            [
+                [
+                    'user_id' => "1",
+                    'method' => "1",
+                    'caption' => "re:zero kara hajimeru isekai seikatsu",
+                    'episodes' => "25",
+                    'season' => "1",
+                    'pg' => "PG-17",
+                    'trailer' => "t6tCDc2er-s",
+                    'status' => "1",
+                    'image' => "uploads/uujKgKhCzr0hpxzYSfEJTKfohEuR9HhquIpSs8iL.jpeg",
+                ],
+                [
+                    'user_id' => "1",
+                    'method' => "1",
+                    'episodes' => "13",
+                    'season' => "1",
+                    'pg' => "PG-17",
+                    'trailer' => "rodadH4CEII",
+                    'status' => "1",
+                    'caption' => "serial experiments lain",
+                    'image' => "uploads/BtVtyQ38nXe1T7lJzQqStg7dknOmcqzjKkbw0TVE.jpeg",
+                ],
+                [
+                    'user_id' => "1",
+                    'method' => "1",
+                    'episodes' => "25",
+                    'season' => "1",
+                    'pg' => "6+",
+                    'trailer' => "ZjUAsMnCB_Y",
+                    'status' => "1",
+                    'caption' => "boku no hero academia",
+                    'image' => "uploads/mVJhAJmbKs4EXlzpMyEOKYu1p9VzU6mcCP9mA9Q4.jpeg",
+                ],
+                [
+                    'user_id' => "1",
+                    'method' => "1",
+                    'episodes' => "25",
+                    'season' => "2",
+                    'pg' => "6+",
+                    'trailer' => "ZjUAsMnCB_Y",
+                    'status' => "1",
+                    'caption' => "boku no hero academia",
+                    'image' => "uploads/mVJhAJmbKs4EXlzpMyEOKYu1p9VzU6mcCP9mA9Q4.jpeg",
+                ],
+
+            ]
+        );
+    }
+}
