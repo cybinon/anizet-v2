@@ -26,7 +26,7 @@
         </div>
         <div class="owl-carousel owl-theme" id="movie">
 
-            @foreach ($manga as $item)
+            @foreach ($movie as $item)
         <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
                 <a href="#" class="uk-text-center">
                     <img style="width:100%" src="storage/{{$item->image}}" alt="">
@@ -63,7 +63,7 @@
             </div>
 
             <div class="uk-heading-medium  text-center">
-                <p class="uk-h2 uk-heading-divider">Манга</p>
+                <p class="uk-h2 uk-heading-divider">Манай бүх сан</p>
             </div>
 
             <div class="owl-carousel owl-theme w-100" id="manga">

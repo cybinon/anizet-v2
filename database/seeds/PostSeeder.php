@@ -16,6 +16,17 @@ class PostSeeder extends Seeder
                 [
                     'user_id' => "1",
                     'method' => "1",
+                    'caption' => "bakuman",
+                    'episodes' => "25",
+                    'season' => "1",
+                    'pg' => "PG-13",
+                    'trailer' => "g7PvEmaz2jI",
+                    'status' => "1",
+                    'image' => "uploads/72indQfH6yiKeZmtGLuwOkmyQQggsgipW6w9U2FN.jpeg",
+                ],
+                [
+                    'user_id' => "1",
+                    'method' => "1",
                     'caption' => "re:zero kara hajimeru isekai seikatsu",
                     'episodes' => "25",
                     'season' => "1",

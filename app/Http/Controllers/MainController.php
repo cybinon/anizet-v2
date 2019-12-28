@@ -19,7 +19,7 @@ class MainController extends Controller
         $anime = $post->all()->where('method', '1');
         $movie = $post->all()->where('method', '2');
         $song = $post->all()->where('method', '3');
-        $manga = $post->all()->where('method', '4');
+        $manga = $post->all();
         return view('main', compact('anime', 'movie', 'song', 'manga'));
     }
 }

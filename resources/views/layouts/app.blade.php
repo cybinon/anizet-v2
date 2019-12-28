@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Anizet') }}</title>
+    <link rel="icon" href="{{ URL::asset('/css/icon-1.png') }}" type="image/x-icon"/>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
@@ -24,7 +25,7 @@
     <div class="" id="loader">
         <div class="uk-position-center">
             <div class="uk-margin-bottom">
-                <img src="https://anime.anizet.net/images/icons/icon.png" alt="">
+                <img src="{{ URL::asset('/css/icon-1.png') }}" alt="">
             </div>
 
             <div uk-spinner></div>
@@ -52,13 +53,13 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Нэвтрэх') }}</a>
                             </li>
-                            @if (Route::has('register'))
+                           <!-- @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            @endif-->
                         @else
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('poster')}}">

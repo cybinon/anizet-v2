@@ -17,18 +17,99 @@ class VideoSeeder extends Seeder
                 [
                     'post_id' => "1",
                     'path_id' => "1",
-                    'file_id' => 16290625154,
+                    'file_id' => 17956979240,
                     'episode' => "1",
-                    'skip_intro' => "118",
+                    'skip_intro' => "205",
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                     'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
                     'post_id' => "1",
                     'path_id' => "1",
-                    'file_id' => 16290625154,
+                    'file_id' => 17957109767,
                     'episode' => "2",
-                    'skip_intro' => "118",
+                    'skip_intro' => "140",
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                ],
+                [
+                    'post_id' => "1",
+                    'path_id' => "1",
+                    'file_id' => 17957289777,
+                    'episode' => "3",
+                    'skip_intro' => "115",
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                ],
+                [
+                    'post_id' => "1",
+                    'path_id' => "1",
+                    'file_id' => 17957446805,
+                    'episode' => "4",
+                    'skip_intro' => "140",
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                ],
+                [
+                    'post_id' => "1",
+                    'path_id' => "1",
+                    'file_id' => 17957587013,
+                    'episode' => "5",
+                    'skip_intro' => "140",
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                ],
+                [
+                    'post_id' => "1",
+                    'path_id' => "1",
+                    'file_id' => 17957907492,
+                    'episode' => "6",
+                    'skip_intro' => "140",
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                ],
+                [
+                    'post_id' => "1",
+                    'path_id' => "1",
+                    'file_id' => 17958062476,
+                    'episode' => "7",
+                    'skip_intro' => "140",
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                ],
+                [
+                    'post_id' => "1",
+                    'path_id' => "1",
+                    'file_id' => 17958205813,
+                    'episode' => "8",
+                    'skip_intro' => "140",
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                ],
+                [
+                    'post_id' => "1",
+                    'path_id' => "1",
+                    'file_id' => 17958350160,
+                    'episode' => "9",
+                    'skip_intro' => "140",
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                ],
+                [
+                    'post_id' => "1",
+                    'path_id' => "1",
+                    'file_id' => 17958486879,
+                    'episode' => "10",
+                    'skip_intro' => "140",
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                ],
+                [
+                    'post_id' => "1",
+                    'path_id' => "1",
+                    'file_id' => 17956806407,
+                    'episode' => "11",
+                    'skip_intro' => "140",
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                     'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
