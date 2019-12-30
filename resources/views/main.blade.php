@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if(count($anime)!=0)
     <div class="uk-heading-medium  text-center">
         <p class="uk-h2 uk-heading-divider">Сүүлд гарсан цуврал</p>
     </div>
@@ -20,7 +20,8 @@
             </div>
             @endforeach
         </div>
-
+        @endif
+@if(count($movie)!=0)
         <div class="uk-heading-medium  text-center">
             <p class="uk-h2 uk-heading-divider">Нэг Ангит болон Кино</p>
         </div>
@@ -41,6 +42,9 @@
             @endforeach
 
         </div>
+@endif
+
+@if(count($song)!=0)
 
         <div class="uk-heading-medium  text-center">
             <p class="uk-h2 uk-heading-divider">Дуу хөгжим</p>
@@ -61,7 +65,8 @@
                 </div>
                 @endforeach
             </div>
-
+@endif
+@if(count($manga)!=0)
             <div class="uk-heading-medium  text-center">
                 <p class="uk-h2 uk-heading-divider">Манай бүх сан</p>
             </div>
@@ -81,5 +86,6 @@
                     </div>
                     @endforeach
                 </div>
+                @endif
 @endsection
 

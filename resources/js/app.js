@@ -4,14 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+// Your web app's Firebase configuration
+
 require("./bootstrap");
 
 window.Vue = require("vue");
-
-Vue.component(
-    "example-component",
-    require("./components/ExampleComponent.vue").default
-);
 
 const app = new Vue({
     el: "#app"

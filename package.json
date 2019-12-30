@@ -28,6 +28,7 @@
         "blueimp-file-upload": "^10.6.0",
         "fa-icons": "^0.1.7",
         "font-awesome-icons": "^1.6.0",
+        "laravel-vue-pagination": "^2.3.1",
         "mix-owl-carousel": "^1.2.1",
         "ngx-plyr": "^3.0.1",
         "owl.carousel": "^2.3.4",

@@ -34,5 +34,6 @@ Route::match(array('GET', 'POST'), '/v', 'PostController@storevid');
 
 
 Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
+Route::get('/firebase', 'FirebaseController@index');
 
 
