@@ -6,7 +6,6 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{$user->name}}</div>
-
                 <a href="#">Анимэ нэмэх</a>
                 <div class="card-body">
                     @if (session('status'))
