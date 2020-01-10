@@ -4,15 +4,15 @@
 
 <div class="row">
     <div class="col-md-8">
-
-        <video data-volume=".5" data-skin="dark" class="afterglow w-100" id="myvideo" width="1280" height="720" label="SD">
-
+<!--Iframe-->
+    <iframe  src="{{$link}}" class="w-100" width="1280" height="720"></iframe>
+<!--LocalVideo-->
+        <video autoplay="autoplay" data-volume=".5" data-skin="dark" class="afterglow w-100" id="myvideo" width="1280" height="720" label="SD">
             <source src="{{$link}}" type="video/mp4" >
              @if ($vid->path_id != null)
                 <track class="bg-dark text-dark" kind="captions" label="English" srclang="en" src="{{$sub}}" default>
              @endif
             <a href="{{$link}}" download>Download</a>
-
         </video>
 
 <!-- Skip intro -->
@@ -55,16 +55,18 @@
 
 
 <script>
-    var video = document.getElementById('myvideo');
-    var button = document.getElementById("skip-intro");
 
-    button.addEventListener("click", function(e) {
+    $(document).ready(function(){
+        $('#myvideo').hide();
+        $('#skip-intro').hide();
+    });
+
+    /*button.addEventListener("click", function(e) {
         console.log(video.duration);
-        video.play();
-        video.pause();
+
         video.currentTime = {{$vid->skip_intro}};
         video.play();
-    });
+    });*/
 
     </script>
 

@@ -34,8 +34,6 @@ class PostController extends Controller
             ]);
 
 
-            //$pcloud = new File;
-            //$file = $pcloud->upload(request('video'), 4429462304, $_FILES["video"]["name"]);
 
            $Video = new \App\Video;
             $Video->insert([

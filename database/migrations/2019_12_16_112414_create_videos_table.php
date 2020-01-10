@@ -17,8 +17,8 @@ class CreateVideosTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('post_id');
             $table->string('path_id')->nullable();
-            $table->BigInteger('file_id')->is_integer;
-            $table->string('episode');
+            $table->BigInteger('file_id');
+            $table->string('episode')->unique();
             $table->integer('skip_intro');
             $table->timestamps();
         });

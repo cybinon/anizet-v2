@@ -10,10 +10,10 @@
     "require": {
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
+        "google/apiclient": "^2.4",
         "intervention/image": "^2.5",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
-        "pcloud/pcloud-php-sdk": "1.*",
         "predis/predis": "^1.1",
         "torrix/laravel-ui-uikit": "^3.2"
     },

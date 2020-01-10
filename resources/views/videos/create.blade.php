@@ -34,7 +34,7 @@
             <div class="form-group row">
                 <label for="path_id" class="col-md-4 col-form-label text-md-right">{{ __('Орчуулга') }}</label>
 
-                    <input id="path_id" type="file" class="form-control @error('path_id') is-invalid @enderror" name="path_id" value="{{ old('path_id') }}" autocomplete="path_id" autofocus>
+                    <input disabled id="path_id" type="file" class="form-control @error('path_id') is-invalid @enderror" name="path_id" value="{{ old('path_id') }}" autocomplete="path_id" autofocus>
 
                     @error('path_id')
                         <span class="invalid-feedback" role="alert">
@@ -44,9 +44,9 @@
 
             </div>
 
-            <div class="form-group row">
-                <label for="video" class="col-md-4 col-form-label text-md-right">{{ __('Анимэ оруулах') }}</label>
-                    <input id="video" type="number" class="form-control @error('video') is-invalid @enderror" name="video" value="{{ old('video') }}" required autocomplete="video" autofocus>
+            <div class="form-group row" uk-tooltip="title: Shared link оруулаарай; pos: left;">
+                <label for="video" class="col-md-4 col-form-label text-md-right">{{ __('Анимэ оруулах /Google Drive/') }}</label>
+                    <input id="video" type="text" class="form-control @error('video') is-invalid @enderror" name="video" value="{{ old('video') }}" required autocomplete="video" autofocus>
 
                     @error('video')
                         <span class="invalid-feedback" role="alert">
@@ -59,7 +59,7 @@
             <div class="form-group row">
                 <label for="skip_intro" class="col-md-4 col-form-label text-md-right">{{ __('Эхлэлийн хэсгийг алгасах цаг') }}</label>
 
-                    <input id="skip_intro" type="number" class="form-control @error('skip_intro') is-invalid @enderror" name="skip_intro" value="{{ old('skip_intro') }}" required autocomplete="skip_intro" autofocus>
+                    <input id="skip_intro" type="number" class="form-control @error('skip_intro') is-invalid @enderror" name="skip_intro" value="{{ old('skip_intro') }}" autocomplete="skip_intro" autofocus>
 
                     @error('skip_intro')
                         <span class="invalid-feedback" role="alert">

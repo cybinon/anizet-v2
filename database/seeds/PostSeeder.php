@@ -16,13 +16,13 @@ class PostSeeder extends Seeder
                 [
                     'user_id' => "1",
                     'method' => "1",
-                    'caption' => "bakuman",
-                    'episodes' => "25",
+                    'caption' => "sachiiro no one room",
+                    'episodes' => "10",
                     'season' => "1",
                     'pg' => "PG-13",
                     'trailer' => "g7PvEmaz2jI",
                     'status' => "1",
-                    'image' => "uploads/72indQfH6yiKeZmtGLuwOkmyQQggsgipW6w9U2FN.jpeg",
+                    'image' => "uploads/F2uPWEyqJnEsV7h3702ABTuhDcjN6ZOERj7wiLDP.jpeg",
                 ],
                 [
                     'user_id' => "1",
@@ -46,28 +46,7 @@ class PostSeeder extends Seeder
                     'caption' => "serial experiments lain",
                     'image' => "uploads/BtVtyQ38nXe1T7lJzQqStg7dknOmcqzjKkbw0TVE.jpeg",
                 ],
-                [
-                    'user_id' => "1",
-                    'method' => "1",
-                    'episodes' => "25",
-                    'season' => "1",
-                    'pg' => "6+",
-                    'trailer' => "ZjUAsMnCB_Y",
-                    'status' => "1",
-                    'caption' => "boku no hero academia",
-                    'image' => "uploads/mVJhAJmbKs4EXlzpMyEOKYu1p9VzU6mcCP9mA9Q4.jpeg",
-                ],
-                [
-                    'user_id' => "1",
-                    'method' => "1",
-                    'episodes' => "25",
-                    'season' => "2",
-                    'pg' => "6+",
-                    'trailer' => "ZjUAsMnCB_Y",
-                    'status' => "1",
-                    'caption' => "boku no hero academia",
-                    'image' => "uploads/mVJhAJmbKs4EXlzpMyEOKYu1p9VzU6mcCP9mA9Q4.jpeg",
-                ],
+
 
             ]
         );

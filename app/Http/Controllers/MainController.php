@@ -11,7 +11,8 @@ class MainController extends Controller
         $videos= new \App\Video;
         $season = $post->all()->where('caption', $post->caption)->sortBy('season');
         $episodes = $videos->all()->where('post_id', $post->id)->sortBy('episode');
-        $all = $post->all()->random(4);
+        if(count($post->all())>4) $all = $post->all()->random(4);
+        else $all = $post->all();
         return view('posts.show', compact('post', 'all', 'season', 'episodes'));
     }
     public function main(\App\Post $post)
