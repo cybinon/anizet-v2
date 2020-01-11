@@ -11891,6 +11891,10 @@ body {
 }
 
 .f-height {
-  min-height: 94vh;
+  min-height: 92.7vh;
+}
+
+.logo {
+  height: 45px;
 }
 

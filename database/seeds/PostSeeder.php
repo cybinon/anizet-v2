@@ -15,7 +15,7 @@ class PostSeeder extends Seeder
             [
                 [
                     'user_id' => "1",
-                    'method' => "1",
+                    'method' => "2",
                     'caption' => "sachiiro no one room",
                     'episodes' => "10",
                     'season' => "1",

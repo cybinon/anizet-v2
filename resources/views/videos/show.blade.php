@@ -5,9 +5,9 @@
 <div class="row">
     <div class="col-md-8">
 <!--Iframe-->
-    <iframe  src="{{$link}}" class="w-100" width="1280" height="720"></iframe>
+    <iframe frameborder="0" allowfullscreen src="{{$link}}" class="w-100 h-100" width="1280"></iframe>
 <!--LocalVideo-->
-        <video autoplay="autoplay" data-volume=".5" data-skin="dark" class="afterglow w-100" id="myvideo" width="1280" height="720" label="SD">
+        <video  data-volume=".5" data-skin="dark" class="afterglow w-100" id="myvideo" width="1280" height="720" label="SD">
             <source src="{{$link}}" type="video/mp4" >
              @if ($vid->path_id != null)
                 <track class="bg-dark text-dark" kind="captions" label="English" srclang="en" src="{{$sub}}" default>
@@ -23,18 +23,16 @@
     </div>
     <div class="col-md-3">
         <div class="accordion" id="accordionExample1">
-
-
-
             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample1">
-                <div class="overflow-auto episode-box p-3" style="height:720px">
-                    @foreach ($animes as $anime)
-                <a href="{{url('p/'.$anime->id)}}"><p class="text-center ep-item"><span class="info-caption">{{$anime->caption}}:</span> {{$anime->season}}</p></a>
-                    @endforeach
-                </div>
                 <button class="btn btn-warning w-100" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             Бусад Ангиуд ({{count($episodes)}})
             </button>
+                <div class="overflow-auto episode-box p-3" style="height:720px">
+                    @foreach ($animes as $anime)
+                    <a href="{{url('p/'.$anime->id)}}"><p class="text-center ep-item uk-text-capitalize"><span class="info-caption">{{$anime->caption}}:</span> {{$anime->season}}</p></a>
+                    @endforeach
+                </div>
+
             </div>
         </div>
         <div class="accordion" id="accordionExample2">
