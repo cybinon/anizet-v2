@@ -105,33 +105,9 @@
     </div>
     <script src="https://kit.fontawesome.com/65a96d544f.js" crossorigin="anonymous"></script>
 
-    <script>
-        var vid = document.getElementById("myVideo");
-vid.ontimeupdate = function() {myFunction()};
-
-function myFunction() {
-     if(vid.currentTime < 20){
-      document.getElementById('skip-intro').style.display = 'block';
-     }else{
-      document.getElementById('skip-intro').style.display = 'none';
-     }
- }
-    </script>
 
     <script>
 
- $(document).ready(function() {
-                    $("#skip-intro").removeClass('uk-animation-reverse');
-                    document.getElementById('myvideo').addEventListener("timeupdate",
-                    function() {
-                        if(this.currentTime > 20) {
-                            $("#skip-intro").addClass('uk-animation-reverse');
-                        }
-                        else {
-                            $("#skip-intro").removeClass('uk-animation-reverse');
-                        }
-                    });
-                });
 
 
         $(document).ready(function(){
@@ -143,10 +119,10 @@ function myFunction() {
                 responsiveClass:true,
                 responsive:{
                 0:{
-                    items:1,
+                    items:2,
                     nav:true
                 },
-                600:{
+                700:{
                     items:4,
                     nav:false,
                 },
@@ -166,10 +142,10 @@ function myFunction() {
                 responsiveClass:true,
                 responsive:{
                     0:{
-                        items:1,
+                        items:2,
                         nav:true
                     },
-                    600:{
+                    700:{
                         items:4,
                         nav:false,
                     },
@@ -188,10 +164,10 @@ function myFunction() {
                 responsiveClass:true,
                 responsive:{
                     0:{
-                        items:1,
+                        items:2,
                         nav:true
                     },
-                    600:{
+                    700:{
                         items:4,
                         nav:false,
                     },
@@ -210,10 +186,10 @@ function myFunction() {
                 responsiveClass:false,
                 responsive:{
                     0:{
-                        items:1,
+                        items:2,
                         nav:true
                     },
-                    600:{
+                    700:{
                         items:4,
                         nav:false,
                     },
@@ -232,10 +208,10 @@ function myFunction() {
                 responsiveClass:false,
                 responsive:{
                     0:{
-                        items:1,
+                        items:2,
                         nav:true
                     },
-                    600:{
+                    700:{
                         items:4,
                         nav:false,
                     },
