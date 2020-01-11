@@ -9,7 +9,7 @@
     </div>
 </div>
 
-<div class="uk-h1 text-center">{{$post->caption}}</div>
+<div class="uk-h1 text-center uk-text-capitalize">{{$post->caption}}</div>
 <hr>
 
 <div class="row">
