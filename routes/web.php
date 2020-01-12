@@ -13,7 +13,7 @@
 
 Route::get('/', 'MainController@main')->name('main');
 
-Route::get('test', 'VideoController@list')->name('cloudlist');
+Route::get('/test', 'VideoController@list')->name('cloudlist');
 
 Auth::routes();
 
@@ -22,6 +22,7 @@ Route::get('/p/create', 'PostController@create')->name('poster');
 Route::get('/p/{post}', 'MainController@show');
 
 Route::get('/v/create', 'PostController@video')->name('vid.post');
+
 Route::get('/v/{vid}', 'VideoController@show')->name('video.show');
 
 Route::match(array('GET', 'POST'),'/register', function(){
@@ -32,13 +33,12 @@ Route::match(array('GET', 'POST'), '/p', 'PostController@store');
 
 Route::match(array('GET', 'POST'), '/v', 'PostController@storevid');
 
-Route::get('auth/{client_id}', 'VideoController@authc');
 
-Route::get('auth/cloud', function () {
-    dd($_GET);
-});
 
 Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
+Route::get('/p/{post}/edit', 'PostController@edit')->name('post.edit');
+Route::patch('/p/{post}', 'PostController@update')->name('post.update');
+
 Route::get('/firebase', 'FirebaseController@index');
 
 

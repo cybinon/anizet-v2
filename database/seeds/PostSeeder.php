@@ -20,7 +20,7 @@ class PostSeeder extends Seeder
                     'episodes' => "10",
                     'season' => "1",
                     'pg' => "PG-13",
-                    'trailer' => "g7PvEmaz2jI",
+                    'trailer' => "Ptcf69jMhiI",
                     'status' => "1",
                     'image' => "uploads/F2uPWEyqJnEsV7h3702ABTuhDcjN6ZOERj7wiLDP.jpeg",
                 ],

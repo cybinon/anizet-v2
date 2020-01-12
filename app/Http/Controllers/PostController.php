@@ -104,4 +104,28 @@ class PostController extends Controller
         } else return redirect('/');
         dd(request()->all());
     }
+    public function edit(\App\Post $post)
+    {
+        return view('posts.edit', compact('post'));
+    }
+    public function update(\App\Post $post)
+    {
+        $data = request()->validate([
+            'caption' => 'required',
+            'method' => 'required',
+            'season' => 'required',
+            'pg' => 'required',
+            'trailer' => 'required',
+            'episodes' => 'required',
+            'status' => 'required',
+            'image' =>  '',
+        ]);
+    
+        
+
+        $post->update($data);
+//
+        return redirect("/p/{$post->id}");
+//
+    }
 }
