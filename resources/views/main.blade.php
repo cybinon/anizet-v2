@@ -24,13 +24,13 @@
 @if(count($ova)!=0)
 
         <div class="uk-heading-medium  text-center">
-            <p class="uk-h2 uk-heading-divider">Бүрэн хэмжээний болон нэг ангит \ Ova</p>
+            <p class="uk-h2 uk-heading-divider">Нэг ангит \ Ova</p>
         </div>
 
         <div class="owl-carousel owl-theme w-100" id="music">
             @foreach ($ova as $item)
             <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
-                    <a href="#" class="uk-text-center">
+                <a href="\p\{{$item->id}}" class="uk-text-center">
                         <img style="width:100%" src="storage/{{$item->image}}" alt="">
                         <div class="uk-position-bottom uk-overlay uk-overlay-primary">
                             <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}</p>
@@ -68,15 +68,15 @@
 @endif
 
 
-@if(count($manga)!=0)
+@if(count($all)!=0)
             <div class="uk-heading-medium  text-center">
                 <p class="uk-h2 uk-heading-divider">Манай бүх сан \ All</p>
             </div>
 
             <div class="owl-carousel owl-theme w-100" id="manga">
-                @foreach ($manga as $item)
+                @foreach ($all as $item)
                 <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
-                        <a href="#" class="uk-text-center">
+                <a href="/p/{{$item->id}}" class="uk-text-center">
                             <img style="width:100%" src="storage/{{$item->image}}" alt="">
                             <div class="uk-position-bottom uk-overlay uk-overlay-primary">
                                 <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}</p>
