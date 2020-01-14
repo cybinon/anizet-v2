@@ -21,10 +21,32 @@
             @endforeach
         </div>
         @endif
+@if(count($ova)!=0)
+
+        <div class="uk-heading-medium  text-center">
+            <p class="uk-h2 uk-heading-divider">Бүрэн хэмжээний болон нэг ангит \ Ova</p>
+        </div>
+
+        <div class="owl-carousel owl-theme w-100" id="music">
+            @foreach ($ova as $item)
+            <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
+                    <a href="#" class="uk-text-center">
+                        <img style="width:100%" src="storage/{{$item->image}}" alt="">
+                        <div class="uk-position-bottom uk-overlay uk-overlay-primary">
+                            <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}</p>
+                        </div>
+                        <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
+                                <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-play fa-2x" aria-hidden="true"></i></p>
+                            </div>
+                    </a>
+                </div>
+                @endforeach
+            </div>
+@endif
 
 @if(count($movie)!=0)
         <div class="uk-heading-medium  text-center">
-            <p class="uk-h2 uk-heading-divider">Нэг Ангит болон Кино</p>
+            <p class="uk-h2 uk-heading-divider">Кино \ Live Action </p>
         </div>
         <div class="owl-carousel owl-theme" id="movie">
 
@@ -45,31 +67,10 @@
         </div>
 @endif
 
-@if(count($song)!=0)
 
-        <div class="uk-heading-medium  text-center">
-            <p class="uk-h2 uk-heading-divider">Дуу хөгжим</p>
-        </div>
-
-        <div class="owl-carousel owl-theme w-100" id="music">
-            @foreach ($song as $item)
-            <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
-                    <a href="#" class="uk-text-center">
-                        <img style="width:100%" src="storage/{{$item->image}}" alt="">
-                        <div class="uk-position-bottom uk-overlay uk-overlay-primary">
-                            <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}</p>
-                        </div>
-                        <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
-                                <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-play fa-2x" aria-hidden="true"></i></p>
-                            </div>
-                    </a>
-                </div>
-                @endforeach
-            </div>
-@endif
 @if(count($manga)!=0)
             <div class="uk-heading-medium  text-center">
-                <p class="uk-h2 uk-heading-divider">Манай бүх сан</p>
+                <p class="uk-h2 uk-heading-divider">Манай бүх сан \ All</p>
             </div>
 
             <div class="owl-carousel owl-theme w-100" id="manga">

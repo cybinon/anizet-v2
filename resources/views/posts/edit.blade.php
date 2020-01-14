@@ -115,10 +115,10 @@
                         <span class="btn btn-warning">Цуврал Анимэ</span>
                         @break
                     @case(2)
-                        <span class="btn btn-success">Кино</span>
+                        <span class="btn btn-success">Live Action</span>
                         @break
                     @case(3)
-                       <span class="btn btn-danger">Дуу, Контент</span>
+                       <span class="btn btn-danger">Нэг ангит \ Ova</span>
                         @break
 
                     @default
@@ -126,8 +126,8 @@
                 @endswitch
                     </option>
                     <option value="1">Цуврал анимэ</option>
-                    <option value="2">Кино</option>
-                    <option value="3">Дуу хөгжим</option>
+                    <option value="2">Live Action</option>
+                    <option value="3">Нэг ангит \ Ova</option>
                     <option value="4">Манга</option>
                     </select>
                     @error('method')
