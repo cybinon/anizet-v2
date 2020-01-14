@@ -26,13 +26,13 @@ class PostSeeder extends Seeder
                 ],
                 [
                     'user_id' => "1",
-                    'method' => "1",
+                    'method' => "3",
                     'caption' => "re:zero kara hajimeru isekai seikatsu",
-                    'episodes' => "25",
-                    'season' => "1",
+                    'episodes' => "1",
+                    'season' => "Memory Snow",
                     'pg' => "PG-17",
                     'trailer' => "t6tCDc2er-s",
-                    'status' => "1",
+                    'status' => "2",
                     'image' => "uploads/uujKgKhCzr0hpxzYSfEJTKfohEuR9HhquIpSs8iL.jpeg",
                 ],
                 [
