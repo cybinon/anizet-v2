@@ -77,6 +77,22 @@
                 <label for="status" class="col-md-4 col-form-label text-md-right">{{ __('status') }}</label>
 
                     <select id="status" class="form-control @error('status') is-invalid @enderror" name="status" value="{{ old('status') ?? $post->status }}" required autocomplete="status" autofocus>
+                    <option value="{{ old('status') ?? $post->status }}">
+                    @switch($post->status)
+                    @case(1)
+                        <span class="btn btn-warning">Гарч байгаа</span>
+                        @break
+                    @case(2)
+                        <span class="btn btn-success">Дууссан</span>
+                        @break
+                    @case(3)
+                       <span class="btn btn-danger">Хаягдсан</span>
+                        @break
+
+                    @default
+                        <span class="btn btn-warning">Гарч байгаа</span>
+                @endswitch
+                    </option>
                     <option value="1">Гарч байгаа</option>
                     <option value="2">Дууссан</option>
                     <option value="3">Хаягдсан</option>
@@ -93,8 +109,24 @@
                 <label for="method" class="col-md-4 col-form-label text-md-right">{{ __('method') }}</label>
 
                     <select id="method" class="form-control @error('method') is-invalid @enderror" name="method" value="{{ old('method') ?? $post->method }}" required autocomplete="method" autofocus>
+                    <option value="{{ old('method') ?? $post->method }}">
+                    @switch($post->method)
+                    @case(1)
+                        <span class="btn btn-warning">Цуврал Анимэ</span>
+                        @break
+                    @case(2)
+                        <span class="btn btn-success">Кино</span>
+                        @break
+                    @case(3)
+                       <span class="btn btn-danger">Дуу, Контент</span>
+                        @break
+
+                    @default
+                        <span class="btn btn-warning">Манга</span>
+                @endswitch
+                    </option>
                     <option value="1">Цуврал анимэ</option>
-                    <option value="2">Нэг ангит, Кино</option>
+                    <option value="2">Кино</option>
                     <option value="3">Дуу хөгжим</option>
                     <option value="4">Манга</option>
                     </select>
