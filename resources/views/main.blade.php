@@ -8,7 +8,7 @@
     <div class="owl-carousel owl-theme w-100" id="series">
         @foreach ($anime as $item)
         <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
-            <a href="/v/{{$item->id}}" class="uk-text-center">
+            <a href="/p/{{$item->id}}" class="uk-text-center">
                     <img style="width:100%" src="storage/{{$item->image}}" alt="">
                     <div class="uk-position-bottom uk-overlay uk-overlay-primary">
                         <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}} </p>
