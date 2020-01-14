@@ -21,6 +21,7 @@
             @endforeach
         </div>
         @endif
+
 @if(count($movie)!=0)
         <div class="uk-heading-medium  text-center">
             <p class="uk-h2 uk-heading-divider">Нэг Ангит болон Кино</p>

@@ -19,13 +19,11 @@ class MainController extends Controller
     {
         $episodes = new \App\Video;
 
-
         $anime = $post->all()->where('method', '1');
-
-
         $movie = $post->all()->where('method', '2');
         $song = $post->all()->where('method', '3');
         $manga = $post->all();
+
         return view('main', compact('anime', 'movie', 'song', 'manga','episodes'));
     }
 }
