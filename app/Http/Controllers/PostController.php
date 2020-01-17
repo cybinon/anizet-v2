@@ -145,12 +145,13 @@ class PostController extends Controller
             'skip_intro' => '',
             'file_id' => ['required'],
         ]);
-
-
-
         $video->update($data);
-//
+
         return redirect("/v/{$video->id}");
-//
+    }
+    public function deletevid(\App\Video $video)
+    {
+        $video->delete();
+        return redirect("/");
     }
 }

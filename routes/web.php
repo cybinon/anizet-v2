@@ -39,6 +39,8 @@ Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
 Route::get('/p/{post}/edit', 'PostController@edit')->name('post.edit');
 Route::get('/v/{video}/edit', 'PostController@editvid')->name('post.editvid');
 
+Route::get('/v/{video}/delete', 'PostController@deletevid')->name('post.deletevid');
+
 Route::patch('/p/{post}', 'PostController@update')->name('post.update');
 Route::patch('/v/{video}', 'PostController@updatevid')->name('post.updatevid');
 
