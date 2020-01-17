@@ -33,12 +33,16 @@ Route::match(array('GET', 'POST'), '/p', 'PostController@store');
 
 Route::match(array('GET', 'POST'), '/v', 'PostController@storevid');
 
-
-
 Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
-Route::get('/p/{post}/edit', 'PostController@edit')->name('post.edit');
-Route::patch('/p/{post}', 'PostController@update')->name('post.update');
 
+//Edit Routes
+Route::get('/p/{post}/edit', 'PostController@edit')->name('post.edit');
+Route::get('/v/{video}/edit', 'PostController@editvid')->name('post.editvid');
+
+Route::patch('/p/{post}', 'PostController@update')->name('post.update');
+Route::patch('/v/{video}', 'PostController@updatevid')->name('post.updatevid');
+
+//Firebase Route
 Route::get('/firebase', 'FirebaseController@index');
 
 

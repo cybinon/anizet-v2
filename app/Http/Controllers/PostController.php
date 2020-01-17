@@ -108,6 +108,13 @@ class PostController extends Controller
     {
         return view('posts.edit', compact('post'));
     }
+
+    public function editvid(\App\Video $video)
+    {
+        $animes = new \App\Post;
+        $animes = $animes->all()->where('id', $video->post_id);
+        return view('videos.edit', compact('video','animes'));
+    }
     public function update(\App\Post $post)
     {
         $data = request()->validate([
@@ -120,12 +127,30 @@ class PostController extends Controller
             'status' => 'required',
             'image' =>  '',
         ]);
-    
-        
+
+
 
         $post->update($data);
 //
         return redirect("/p/{$post->id}");
+//
+    }
+
+    public function updatevid(\App\Video $video)
+    {
+        $data = request()->validate([
+            'path_id' => 'nullable',
+            'post_id' => 'required',
+            'episode' => 'required',
+            'skip_intro' => '',
+            'file_id' => ['required'],
+        ]);
+
+
+
+        $video->update($data);
+//
+        return redirect("/v/{$video->id}");
 //
     }
 }
