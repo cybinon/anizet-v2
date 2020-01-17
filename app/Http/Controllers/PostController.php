@@ -44,9 +44,7 @@ class PostController extends Controller
             ]);
 
 
-
-            echo "success";
-            //return redirect('/');
+            return redirect('/');
         } else return redirect('/');
         dd(request()->all());
     }
