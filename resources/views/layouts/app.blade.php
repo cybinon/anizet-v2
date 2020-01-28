@@ -31,8 +31,8 @@
         </div>
     </div>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" uk-sticky>
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" uk-sticky>
+            <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- config('app.name', 'Laravel') --}}
                 <img class="logo" src="{{URL::asset('css/logo.png')}}" alt="zet-logo">

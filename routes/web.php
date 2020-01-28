@@ -34,6 +34,9 @@ Route::match(array('GET', 'POST'), '/p', 'PostController@store');
 Route::match(array('GET', 'POST'), '/v', 'PostController@storevid');
 
 Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
+Route::get('/weight', function(){
+    return view('weight');
+})->name('profile.show');
 
 //Edit Routes
 Route::get('/p/{post}/edit', 'PostController@edit')->name('post.edit');
