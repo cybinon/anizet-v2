@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Video;
 
 class MainController extends Controller
 {
@@ -17,7 +18,7 @@ class MainController extends Controller
     }
     public function main(\App\Post $post)
     {
-        $episodes = new \App\Video;
+        $episodes = new Video;
 
         $anime = $post->all()->where('method', '1');
         $movie = $post->all()->where('method', '2');

@@ -15,6 +15,7 @@ class PostSeeder extends Seeder
             [
                 [
                     'user_id' => "1",
+                    //'video_id' => "1",
                     'method' => "2",
                     'caption' => "sachiiro no one room",
                     'episodes' => "10",
@@ -26,6 +27,7 @@ class PostSeeder extends Seeder
                 ],
                 [
                     'user_id' => "1",
+                    //'video_id' => "1",
                     'method' => "3",
                     'caption' => "re:zero kara hajimeru isekai seikatsu",
                     'episodes' => "1",
@@ -37,6 +39,7 @@ class PostSeeder extends Seeder
                 ],
                 [
                     'user_id' => "1",
+                    //'video_id' => "1",
                     'method' => "1",
                     'episodes' => "13",
                     'season' => "1",

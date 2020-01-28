@@ -11898,3 +11898,7 @@ body {
   height: 45px;
 }
 
+.uk-overlay-blue {
+  background-color: rgba(52, 144, 220, 0.8);
+}
+

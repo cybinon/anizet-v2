@@ -17,14 +17,15 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->text('caption');
-            $table->string('season')->nullable();;
-            $table->string('pg')->nullable();;
-            $table->text('info')->nullable();;
-            $table->string('episodes')->nullable();;
-            $table->integer('method')->nullable();;
+            //$table->unsignedBigInteger('video_id')->nullable();
+            $table->string('season')->nullable();
+            $table->string('pg')->nullable();
+            $table->text('info')->nullable();
+            $table->string('episodes')->nullable();
+            $table->integer('method')->nullable();
             $table->integer('status')->nullable();
-            $table->string('trailer')->nullable();;
-            $table->string('image')->nullable();;
+            $table->string('trailer')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
 
             $table->index('user_id');
