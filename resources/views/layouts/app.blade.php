@@ -22,12 +22,12 @@
 </head>
 <body>
     <div class="" id="loader">
-        <div class="uk-position-center">
+        <div class="uk-position-center text-center">
             <div class="uk-margin-bottom">
-                <img src="{{ URL::asset('/css/icon-1.png') }}" alt="">
+                <img src="{{ URL::asset('/css/logo.png') }}" style="width:100px;" alt="">
             </div>
-
             <div uk-spinner></div>
+
         </div>
     </div>
     <div id="app">
