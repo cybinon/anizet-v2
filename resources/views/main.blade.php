@@ -8,7 +8,7 @@
     <div class="owl-carousel owl-theme w-100" id="series">
         @foreach ($anime as $item)
 
-        <?php $ep = $episodes->all()->where('post_id',$item->id)->sortByDesc('id')->first(); ?> {{--Сүүлд Гарсан анги олох үйлдэл--}}
+        <?php $ep = $episodes->all()->where('post_id',$item->id)->sortByDesc('episode')->first(); ?> {{--Сүүлд Гарсан анги олох үйлдэл--}}
         @if(isset($ep))
         <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
             <a href="/v/{{$ep['id']}}" class="uk-text-center">

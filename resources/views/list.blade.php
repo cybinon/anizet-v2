@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="uk-heading-medium  text-center">
-        <p class="uk-h2 uk-heading-divider">Сүүлд гарсан цуврал</p>
+        <p class="uk-h2 uk-heading-divider">Манай бүх сан</p>
     </div>
 <div class="row">
         @foreach ($anime as $item)
