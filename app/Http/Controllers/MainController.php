@@ -27,4 +27,10 @@ class MainController extends Controller
 
         return view('main', compact('anime', 'movie', 'ova', 'all','episodes'));
     }
+    public function list(\App\Post $post)
+    {
+        $anime = $post->all();
+
+        return view('list', compact('anime'));
+    }
 }

@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'MainController@main')->name('main');
+Route::get('/list', 'MainController@list')->name('list');
 
 Route::get('/test', 'VideoController@list')->name('cloudlist');
 
