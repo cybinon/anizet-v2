@@ -17,7 +17,6 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->text('caption');
-            //$table->unsignedBigInteger('video_id')->nullable();
             $table->string('season')->nullable();
             $table->string('pg')->nullable();
             $table->text('info')->nullable();

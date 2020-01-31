@@ -59,7 +59,7 @@
             <div class="form-group row">
                 <label for="skip_intro" class="col-md-4 col-form-label text-md-right">{{ __('Эхлэлийн хэсгийг алгасах цаг') }}</label>
 
-                    <input id="skip_intro" type="number" class="form-control @error('skip_intro') is-invalid @enderror" name="skip_intro" value="{{ old('skip_intro') }}" autocomplete="skip_intro" autofocus>
+                    <input id="skip_intro" type="number" class="form-control @error('skip_intro') is-invalid @enderror" name="skip_intro" value="{{ old('skip_intro') }}0" autocomplete="skip_intro" autofocus>
 
                     @error('skip_intro')
                         <span class="invalid-feedback" role="alert">
