@@ -34,8 +34,11 @@
     </div>
     <div id="app">
 
-        <div class="uk-overlay uk-overlay-primary f-height container">
-            @yield('content')
+
+        <div class="uk-overlay uk-overlay-primary f-height" style="width:70%; margin:auto">
+
+                @yield('content')
+
         </div>
 
     </div>
