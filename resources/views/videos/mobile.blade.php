@@ -30,7 +30,7 @@
             </button>
                 <div class="overflow-auto episode-box p-3" style="height:720px">
                     @foreach ($episodes as $episode)
-                        <a href="{{url('v/'.$episode->id)}}"><p class="@if($vid->episode == $episode->episode) bg-light text-dark @elseif($vid->id != $episode->id) bg-dark text-light @endif  text-center ep-item"><span class="info-caption">Анги:</span> {{$episode->episode}}</p></a>
+                        <a href="{{url('v/'.$episode->id)}}/m"><p class="@if($vid->episode == $episode->episode) bg-light text-dark @elseif($vid->id != $episode->id) bg-dark text-light @endif  text-center ep-item"><span class="info-caption">Анги:</span> {{$episode->episode}}</p></a>
                     @endforeach
                 </div>
             </div>
