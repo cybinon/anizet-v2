@@ -2,9 +2,11 @@
 
 @section('content')
 @if(count($anime)!=0)
+
     <div class="uk-heading-medium  text-center">
         <p class="uk-h2 uk-heading-divider">Сүүлд гарсан цуврал</p>
     </div>
+
     <div class="owl-carousel owl-theme w-100" id="series">
         @foreach ($anime as $item)
 
@@ -14,10 +16,11 @@
             <a href="/v/{{$ep['id']}}" class="uk-text-center">
                 <img style="width:100%" src="storage/{{$item->image}}" alt="" class="rounded">
                 <div class="uk-position-top uk-position-small uk-overlay-blue uk-text-bold text-white uk-width-1-4 rounded-circle">
-                    {{$ep['episode']}}
+                    Анги: {{$ep['episode']}}
                 </div>
+
                 <div class="uk-position-bottom uk-overlay uk-overlay-primary">
-                    <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}} </p>
+                <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}<br>Бүлэг: {{$item->season}}</p>
                 </div>
                 <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
                     <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-play fa-2x" aria-hidden="true"></i></p>
@@ -33,7 +36,7 @@
 @if(count($ova)!=0)
 
         <div class="uk-heading-medium  text-center">
-            <p class="uk-h2 uk-heading-divider">Нэг ангит \ Ova</p>
+            <p class="uk-h2 uk-heading-divider">Бүрэн хэмжээний болон Нэг ангит \ Film, Ova</p>
         </div>
 
         <div class="owl-carousel owl-theme w-100" id="music">
@@ -44,10 +47,10 @@
                     <a href="/v/{{$ep['id']}}" class="uk-text-center">
                         <img style="width:100%" src="storage/{{$item->image}}" alt="" class="rounded">
                         <div class="uk-position-top uk-position-small uk-overlay-blue uk-text-bold text-white uk-width-1-4 rounded-circle">
-                            {{$ep['episode']}}
+                            Анги: {{$ep['episode']}}
                         </div>
                         <div class="uk-position-bottom uk-overlay uk-overlay-primary">
-                            <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}} </p>
+                            <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}<br>Бүлэг: {{$item->season}}</p>
                         </div>
                         <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
                             <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-play fa-2x" aria-hidden="true"></i></p>
@@ -72,10 +75,10 @@
             <a href="/v/{{$ep['id']}}" class="uk-text-center">
                 <img style="width:100%" src="storage/{{$item->image}}" alt="" class="rounded">
                 <div class="uk-position-top uk-position-small uk-overlay-blue uk-text-bold text-white uk-width-1-4 rounded-circle">
-                    {{$ep['episode']}}
+                    Анги: {{$ep['episode']}}
                 </div>
                 <div class="uk-position-bottom uk-overlay uk-overlay-primary">
-                    <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}} </p>
+                    <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}<br>Бүлэг: {{$item->season}}</p>
                 </div>
                 <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
                     <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-play fa-2x" aria-hidden="true"></i></p>
@@ -103,10 +106,10 @@
             <a href="/v/{{$ep['id']}}" class="uk-text-center">
                 <img style="width:100%" src="storage/{{$item->image}}" alt="" class="rounded">
                 <div class="uk-position-top uk-position-small uk-overlay-blue uk-text-bold text-white uk-width-1-4 rounded-circle">
-                    {{$ep['episode']}}
+                    Анги: {{$ep['episode']}}
                 </div>
                 <div class="uk-position-bottom uk-overlay uk-overlay-primary">
-                    <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}} </p>
+                    <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}<br>Бүлэг: {{$item->season}}</p>
                 </div>
                 <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
                     <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-play fa-2x" aria-hidden="true"></i></p>
