@@ -21,10 +21,10 @@ class MainController extends Controller
     {
         $episodes = new Video;
 
-        $anime = $post->all()->where('method', '1');
-        $movie = $post->all()->where('method', '2');
-        $ova = $post->all()->where('method', '3');
-        $all = $post->all();
+        $anime = $post->all()->where('method', '1')->sortBy("id");
+        $movie = $post->all()->where('method', '2')->sortBy("id");;
+        $ova = $post->all()->where('method', '3')->sortBy("id");;
+        $all = $post->all()->sortBy("id");;
 
         return view('main', compact('anime', 'movie', 'ova', 'all','episodes'));
     }
