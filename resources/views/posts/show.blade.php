@@ -13,11 +13,11 @@
 <hr>
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-6 col-xs-6 col-lg-3">
         <img class="w-100" src="/storage/{{$post->image}}" alt="">
         <hr>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6 col-xs-6 col-lg-3">
         <div class="accordion" id="accordionExample">
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -66,7 +66,7 @@
 
         </div>
 
-        <div class="col-md-6">
+        <div class="col-lg-6">
             <div class="overflow-auto episode-box p-3">
                 @if(count($season)> 1)
                 <h2 class="text-center">Бусад бүлэг</h2>
