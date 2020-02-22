@@ -141,7 +141,7 @@
             <div class="form-group row">
                 <label for="info" class="col-md-4 col-form-label text-md-right">{{ __('info') }}</label>
 
-                    <textarea row="50" id="info" type="text" class="form-control @error('info') is-invalid @enderror" name="info" value="{{ old('info') ?? $post->info }}" required autocomplete="info"  autofocus>Тун удахгүй...</textarea>
+                    <textarea row="50" id="info" type="text" class="form-control @error('info') is-invalid @enderror" name="info" value="{{ old('info') ?? $post->info }}" required autocomplete="info"  autofocus>{{ old('info') ?? $post->info }}</textarea>
                     @error('info')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

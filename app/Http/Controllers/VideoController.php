@@ -13,12 +13,17 @@ class VideoController extends Controller
 
         $animes = new \App\Post;
         $animes = $animes->all();
+
+        $anime = \App\Post::findOrFail($vid->post_id);
+
         $episodes = $vid->all()->where('post_id', $vid->post_id)->sortBy('episode');
+
+
         $link = str_replace("/view","/preview",$vid->file_id);
         $link = str_replace("/video/","/videoembed/",$link);
         $sub = null;
 
-        return view('videos.show', compact('vid', 'link','episodes','sub','animes'));
+        return view('videos.show', compact('vid', 'link','episodes','sub','animes','anime'));
     }
     public function showm(\App\video $vid)
     {
@@ -26,6 +31,7 @@ class VideoController extends Controller
         $animes = new \App\Post;
         $animes = $animes->all();
         $episodes = $vid->all()->where('post_id', $vid->post_id)->sortBy('episode');
+
         $link = str_replace("/view","/preview",$vid->file_id);
         $link = str_replace("/video/","/videoembed/",$link);
         $sub = null;

@@ -63,14 +63,14 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('list') }}">Жагсаалт</a>
+                            <a class="nav-link" href="{{ route('list') }}"><i class="fa fa-list"></i> Жагсаалт</a>
                         </li>
 
 
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Нэвтрэх') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-user"></i> {{ __('Нэвтрэх') }}</a>
                             </li>
                            <!-- @if (Route::has('register'))
                                 <li class="nav-item">

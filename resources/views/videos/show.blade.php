@@ -1,9 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row">
+    <div class="alert alert-warning">Тоглуулагч туршилтын хувилбар</div>
+</div>
+<div class="text-center text-capitalize">
+    <a href="/p/{{$anime->id}}">
+        <span class="h1 text-white">{{$anime->caption}}</span><br>
+        <span class="h3">Бүлэг: {{$anime->season}}</span>
+    </a>
+</div>
+
+<hr>
 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-7 mb-3">
+
 <!--Iframe-->
     <iframe frameborder="0" allowfullscreen src="{{$link}}" class="w-100 h-100" width="1280"></iframe>
 <!--LocalVideo-->
@@ -16,12 +28,12 @@
         </video>
 
 <!-- Skip intro -->
-        <div class="w-100 bg-dark p-3" id="btns">
-            <button class="btn btn-warning uk-animation uk-animation-slide-top-small w-100" id="skip-intro">Эхлэл алгасах</button>
-
+    <div class="w-100 bg-dark p-3" id="btns">
+            <a href="#" class="btn btn-primary font-weight-bold w-100"><i class="fa fa-bell"></i> Анимэ гарахгүй байна!</a>
         </div>
+
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 mt-3">
         <div class="accordion" id="accordionExample1">
             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample1">
                 <button class="btn btn-warning w-100" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
