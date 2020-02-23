@@ -14,6 +14,8 @@
 Route::get('/', 'MainController@main')->name('main');
 Route::get('/list', 'MainController@list')->name('list');
 
+
+
 Route::get('/test', 'VideoController@list')->name('cloudlist');
 
 Auth::routes();
@@ -30,6 +32,8 @@ Route::get('/v/{vid}/m', 'VideoController@showm')->name('video.showm');
 Route::match(array('GET', 'POST'),'/register', function(){
   abort('404');
 })->name('register');
+
+Route::match(array('GET', 'POST'), '/report', 'MainController@report');
 
 Route::match(array('GET', 'POST'), '/p', 'PostController@store');
 

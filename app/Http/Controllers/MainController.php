@@ -3,10 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Mail\SendMail;
 use \App\Video;
 
 class MainController extends Controller
 {
+    public function report(){
+        $request = request();
+        if ($request->isMethod('post')) {
+
+        $details = request()->validate( [
+            'content_id' => 'required',
+            'explain' => 'required'
+        ]);
+
+        \Mail::to('nikorunikk@gmail.com')->send(new SendMail($details));
+        return redirect('/v/'.$details['content_id'].'/');
+    }else
+    return redirect('/');
+
+    }
+
     public function show(\App\Post $post)
     {
         $videos= new \App\Video;
