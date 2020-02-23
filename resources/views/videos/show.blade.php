@@ -133,11 +133,17 @@
         $('#skip-intro').hide();
         $('#thanks').hide();
 
-        var id = window.location.pathname;
-        id = id.replace("/v/", "");
-        if(isNaN(id)){
+        $('#success').on(function(e) {
+            $('thanks').show();
+        });
+
+
+        var url=window.location.href;
+        var arr=url.split('#')[1];
+
+        if(arr == "success"){
         $('#thanks').show();
-        $('#thanks').delay(5000).fadeOut( 300 );;
+        $('#thanks').delay(4000).fadeOut( 300 );;
         };
 
 

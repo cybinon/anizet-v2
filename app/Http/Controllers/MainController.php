@@ -18,7 +18,7 @@ class MainController extends Controller
         ]);
 
         \Mail::to('nikorunikk@gmail.com')->send(new SendMail($details));
-        return redirect('/v/'.$details['content_id'].'/');
+        return redirect('/v/'.$details['content_id'].'#success');
     }else
     return redirect('/');
 
