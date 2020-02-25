@@ -34,10 +34,12 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li> --}}
                             @endif
-                            @else
-                                <a href="/p/{{$post->id}}/edit" class="badge badge-primary"><i class="fa fa-pencil"></i></a>
-                                <a href="/p/{{$post->id}}" class="badge badge-primary"><i class="fa fa-eye"></i></a>
-                                <a id="myLink" value="{{$post->id}}" class="badge badge-danger" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-trash"></i></a>
+                            @else @if (Auth::user()->status == 1)
+
+                            <a href="/p/{{$post->id}}/edit" class="badge badge-primary"><i class="fa fa-pencil"></i></a>
+                            <a href="/p/{{$post->id}}" class="badge badge-primary"><i class="fa fa-eye"></i></a>
+                            <a id="myLink" value="{{$post->id}}" class="badge badge-danger" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-trash"></i></a>
+                            @endif
 
                             @endguest
 
