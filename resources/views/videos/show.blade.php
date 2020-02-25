@@ -1,52 +1,46 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Button trigger modal -->
+
 
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content uk-background-image@m uk-background-cover uk-background-muted" style="background-image:url('https://static-cdn.jtvnw.net/jtv_user_pictures/a83a6386-15fc-479e-83b2-4cf90dbba7b4-profile_banner-480.jpeg');">
       <div class="modal-header">
-        <h5 class="modal-title text-dark" id="exampleModalLabel">Асуудал илгээх</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Асуудал илгээх</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-<form action="/report" enctype="multipart/form-data" method="post" class="text-dark">
+<form action="/report" enctype="multipart/form-data" method="post" class="">
         @csrf
-    <div class="row">
-        <div class="col-md-8 offset-2">
+    <div class="container">
             <div class="form-group row">
-                <label for="content_id" class="col-md-4 col-form-label text-md-right">Видео Дугаар</label>
+                <label for="content_id" class="col-md-4 col-form-label font-weight-bold">Видео Дугаар</label>
                     <input id="content_id" type="text" class="form-control @error('content_id') is-invalid @enderror" name="content_id" value="{{ old('content_id') ?? $vid->id }}" required autocomplete="content_id" autofocus>
                     @error('content_id')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-
             </div>
+
              <div class="form-group row">
-                <label for="explain" class="col-md-4 col-form-label text-md-right">Тайлбар</label>
+                <label for="explain" class="col-md-4 col-form-label font-weight-bold">Тайлбар</label>
                     <input id="explain" type="text" class="form-control @error('explain') is-invalid @enderror" name="explain" value="Гарахгүй байна!" required autocomplete="explain" autofocus>
                     @error('explain')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-
             </div>
-
-
-
 
             <div class="row pt-4">
                 <button type="submit" class="btn btn-primary">Мэдээлэл илгээх</button>
             </div>
-        </div>
     </div>
     </form>
 
@@ -57,24 +51,25 @@
     </div>
   </div>
 </div>
+{{-- Modal End --}}
 
-<div class="row">
+<div class="row justify-content-center">
     <div class="alert alert-warning">Тоглуулагч туршилтын хувилбар </div>
 </div>
 <div class="row">
     <div class="alert alert-success" id="thanks">Таны мэдэгдлийг хүлээж авлаа</div>
 </div>
-<div class="text-center text-capitalize">
+<div class="row text-capitalize justify-content-right">
     <a href="/p/{{$anime->id}}">
-        <span class="h1 text-white">{{$anime->caption}}</span><br>
-        <span class="h3">Бүлэг: {{$anime->season}}</span>
+        <span class="uk-label">{{$anime->caption}}</span>
+        <span class="uk-label">Бүлэг: {{$anime->season}}</span>
     </a>
 </div>
 
 <hr>
 
-<div class="row">
-    <div class="col-md-7">
+<div class="row justify-content-center">
+    <div class="col-md-6">
 
 <!--Iframe-->
     <iframe frameborder="0" allowfullscreen src="{{$link}}" class="w-100 h-75" width="1280"></iframe>
