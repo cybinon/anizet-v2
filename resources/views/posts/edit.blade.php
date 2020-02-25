@@ -112,23 +112,23 @@
                     <option value="{{ old('method') ?? $post->method }}">
                     @switch($post->method)
                     @case(1)
-                        <span class="btn btn-warning">Цуврал Анимэ</span>
+                        <span class="btn btn-warning">Хамгийн эхэнд</span>
                         @break
                     @case(2)
-                        <span class="btn btn-success">Live Action</span>
+                        <span class="btn btn-success">Дунд</span>
                         @break
                     @case(3)
-                       <span class="btn btn-danger">Нэг ангит \ Ova</span>
+                       <span class="btn btn-danger">Сүүлээр</span>
                         @break
 
                     @default
-                        <span class="btn btn-warning">Манга</span>
+                        <span class="btn btn-warning">Нүүрэнд гарч ирхээргүй</span>
                 @endswitch
                     </option>
-                    <option value="1">Цуврал анимэ</option>
-                    <option value="2">Live Action</option>
-                    <option value="3">Нэг ангит \ Ova</option>
-                    <option value="4">Манга</option>
+                    <option value="1">Хамгийн эхэнд</option>
+                    <option value="2">Дунд</option>
+                    <option value="3">Сүүлээр</option>
+                    <option value="4">Нүүрэнд гарч ирхээргүй</option>
                     </select>
                     @error('method')
                         <span class="invalid-feedback" role="alert">

@@ -36,12 +36,12 @@
 @if(count($ova)!=0)
 
         <div class="uk-heading-medium  text-center">
-            <p class="uk-h2 uk-heading-divider">Гарч дууссан</p>
+            <p class="uk-h2 uk-heading-divider">Онцлох</p>
         </div>
 
         <div class="owl-carousel owl-theme w-100" id="music">
             @foreach ($ova as $item)
-            <?php $ep = $episodes->all()->where('post_id',$item->id)->sortByDesc('id')->first(); ?> {{--Сүүлд Гарсан анги олох үйлдэл--}}
+            <?php $ep = $episodes->all()->where('post_id',$item->id)->sortByDesc('episode')->first(); ?> {{--Сүүлд Гарсан анги олох үйлдэл--}}
                 @if(isset($ep))
                 <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
                     <a href="/v/{{$ep['id']}}" class="uk-text-center">

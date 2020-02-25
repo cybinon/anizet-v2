@@ -92,17 +92,19 @@
                 <label for="method" class="col-md-4 col-form-label text-md-right">{{ __('method') }}</label>
 
                     <select id="method" class="form-control @error('method') is-invalid @enderror" name="method" value="{{ old('method') }}" required autocomplete="method" autofocus>
-                    <option value="1">Цуврал анимэ</option>
-                    <option value="2">Нэг ангит, Кино</option>
-                    <option value="3">Дуу хөгжим</option>
-                    <option value="4">Манга</option>
+                    <option value="{{ old('method') }}">
+
+                    </option>
+                    <option value="1">Хамгийн эхэнд</option>
+                    <option value="2">Дунд</option>
+                    <option value="3">Сүүлээр</option>
+                    <option value="4">Нүүрэнд гарч ирхээргүй</option>
                     </select>
                     @error('method')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-
             </div>
 
             <div class="form-group row">

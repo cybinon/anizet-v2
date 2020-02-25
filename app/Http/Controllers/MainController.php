@@ -30,7 +30,7 @@ class MainController extends Controller
         $season = $post->all()->where('caption', $post->caption)->sortBy('season');
         $episodes = $videos->all()->where('post_id', $post->id)->sortBy('episode');
 
-        if(count($post->all())>4) $all = $post->all()->random(4);
+        if(count($post->all())>12) $all = $post->all()->random(12);
         else $all = $post->all();
         return view('posts.show', compact('post', 'all', 'season', 'episodes'));
     }
@@ -39,11 +39,10 @@ class MainController extends Controller
         $episodes = new Video;
 
         $anime = $post->all()->where('status', '1')->sortByDesc("id");
-        $movie = $post->all()->where('status', '2')->sortByDesc("id");;
-        $ova = $post->all()->where('status', '2')->sortByDesc("id");;
-        $all = $post->all()->sortBy("id");;
+        $ova = $post->all()->where('status', '2')->sortByDesc("method")->skip(0)->take(8);
 
-        return view('main', compact('anime', 'movie', 'ova', 'all','episodes'));
+
+        return view('main', compact('anime','ova','episodes'));
     }
     public function list(\App\Post $post)
     {
