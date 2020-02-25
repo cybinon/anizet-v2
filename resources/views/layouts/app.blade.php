@@ -72,11 +72,12 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-user"></i> {{ __('Нэвтрэх') }}</a>
                             </li>
-                           <!-- @if (Route::has('register'))
-                                <li class="nav-item">
+
+                          @if (Route::has('register'))
+                                {{-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif-->
+                                </li> --}}
+                            @endif
                         @else
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('poster')}}">
