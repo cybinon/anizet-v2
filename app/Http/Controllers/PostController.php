@@ -2,17 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use \App\Http\Middleware\CheckStatus;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use pCloud\File;
 use PhpParser\Node\Expr\FuncCall;
 
+
+
 class PostController extends Controller
 {
+
+
     public function __construct()
     {
         $this->middleware('auth');
+
     }
+
+
     public function video()
     {
         $animes = new \App\Post;
@@ -102,7 +110,7 @@ class PostController extends Controller
 
             return redirect('/profile/1');
         } else return redirect('/');
-        dd(request()->all());
+
     }
     public function edit(\App\Post $post)
     {

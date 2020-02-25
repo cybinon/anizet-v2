@@ -32,27 +32,27 @@ Route::get('/v/{vid}/m', 'VideoController@showm')->name('video.showm');
 
 Route::match(array('GET', 'POST'), '/report', 'MainController@report');
 
-Route::match(array('GET', 'POST'), '/p', 'PostController@store')->middleware('verified');;
-
-Route::match(array('GET', 'POST'), '/v', 'PostController@storevid')->middleware('verified');;
 
 Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
 Route::get('/weight', function(){
     return view('weight');
 })->name('profile.show');
 
-
+use \App\Http\Middleware\CheckStatus;
 //Only Admin Routes
-Route::get('/p/create', 'PostController@create')->name('poster')->middleware('verified');
-Route::get('/p/{post}', 'MainController@show')->middleware('verified');
+Route::match(array('GET', 'POST'), '/p', 'PostController@store')->middleware(CheckStatus::class);
+Route::match(array('GET', 'POST'), '/v', 'PostController@storevid')->middleware(CheckStatus::class);
 
-Route::get('/v/create', 'PostController@video')->middleware('verified');
+Route::get('/p/create', 'PostController@create')->name('poster')->middleware(CheckStatus::class);
+Route::get('/p/{post}', 'MainController@show')->middleware(CheckStatus::class);
 
-Route::get('/p/{post}/edit', 'PostController@edit')->middleware('verified');;
-Route::get('/v/{video}/edit', 'PostController@editvid')->name('post.editvid')->middleware('verified');;
-Route::get('/v/{video}/delete', 'PostController@deletevid')->name('post.deletevid')->middleware('verified');;
-Route::patch('/p/{post}', 'PostController@update')->name('post.update')->middleware('verified');;
-Route::patch('/v/{video}', 'PostController@updatevid')->name('post.updatevid')->middleware('verified');;
+Route::get('/v/create', 'PostController@video')->name('vid.post')->middleware(CheckStatus::class);
+
+Route::get('/p/{post}/edit', 'PostController@edit')->middleware(CheckStatus::class);
+Route::get('/v/{video}/edit', 'PostController@editvid')->name('post.editvid')->middleware(CheckStatus::class);
+Route::get('/v/{video}/delete', 'PostController@deletevid')->name('post.deletevid')->middleware(CheckStatus::class);
+Route::patch('/p/{post}', 'PostController@update')->name('post.update')->middleware(CheckStatus::class);
+Route::patch('/v/{video}', 'PostController@updatevid')->name('post.updatevid')->middleware(CheckStatus::class);
 
 //Firebase Route
 Route::get('/firebase', 'FirebaseController@index');
