@@ -44,15 +44,15 @@ Route::match(array('GET', 'POST'), '/p', 'PostController@store')->middleware(Che
 Route::match(array('GET', 'POST'), '/v', 'PostController@storevid')->middleware(CheckStatus::class);
 
 Route::get('/p/create', 'PostController@create')->name('poster')->middleware(CheckStatus::class);
-Route::get('/p/{post}', 'MainController@show')->middleware(CheckStatus::class);
+Route::get('/p/{post}', 'MainController@show');
 
 Route::get('/v/create', 'PostController@video')->name('vid.post')->middleware(CheckStatus::class);
 
 Route::get('/p/{post}/edit', 'PostController@edit')->middleware(CheckStatus::class);
 Route::get('/v/{video}/edit', 'PostController@editvid')->name('post.editvid')->middleware(CheckStatus::class);
 Route::get('/v/{video}/delete', 'PostController@deletevid')->name('post.deletevid')->middleware(CheckStatus::class);
-Route::patch('/p/{post}', 'PostController@update')->name('post.update');
-Route::patch('/v/{video}', 'PostController@updatevid')->name('post.updatevid');
+Route::patch('/p/{post}', 'PostController@update')->name('post.update')->middleware(CheckStatus::class);
+Route::patch('/v/{video}', 'PostController@updatevid')->name('post.updatevid')->middleware(CheckStatus::class);
 
 //Firebase Route
 Route::get('/firebase', 'FirebaseController@index');
