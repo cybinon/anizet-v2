@@ -47,7 +47,7 @@ class MainController extends Controller
     }
     public function list(\App\Post $post)
     {
-        $anime = $post->all();
+        $anime = $post->all()->sortBy('caption');
 
         return view('list', compact('anime'));
     }
