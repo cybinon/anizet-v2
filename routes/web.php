@@ -12,6 +12,7 @@ use \App\Http\Middleware\CheckStatus;
 |
 */
 
+Route::match(array('GET', 'POST'), '/v', 'PostController@storevid')->middleware(CheckStatus::class);
 
 Route::get('/', 'MainController@main')->name('main');
 Route::get('/list', 'MainController@list')->name('list');
@@ -43,7 +44,6 @@ Route::get('/v/{vid}/m', 'VideoController@showm')->name('video.showm');
     //Only Admin Routes
 
     Route::match(array('GET', 'POST'), '/p', 'PostController@store')->middleware(CheckStatus::class);
-    Route::match(array('GET', 'POST'), '/v', 'PostController@storevid')->middleware(CheckStatus::class);
 
     Route::get('/v/create', 'PostController@video')->name('vidpost')->middleware(CheckStatus::class);
     Route::get('/p/create', 'PostController@create')->name('poster')->middleware(CheckStatus::class);
