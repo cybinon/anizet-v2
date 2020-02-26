@@ -62,9 +62,7 @@
 </div>
 {{-- Modal End --}}
 
-<div class="row justify-content-center">
-    <div class="alert alert-warning">Тоглуулагч туршилтын хувилбар </div>
-</div>
+
 <div class="row">
     <div class="alert alert-success" id="thanks">Таны мэдэгдлийг хүлээж авлаа</div>
 </div>
@@ -83,7 +81,7 @@
 <!--Iframe-->
 <div class="w-100 bg-dark p-3" id="btns">
      @if (filter_var($linkv, FILTER_VALIDATE_URL) )
-<button type="button" id="changer" class="btn btn-warning w-100"><i class="fa fa-video"></i> Тоглуулагч солих</button>
+<button type="button" id="changer" class="btn btn-warning w-100"><i class="fa fa-video"></i> AniZET тоглуулагч /Туршилтын хувилбар/</button>
 
 @endif
 </div>
