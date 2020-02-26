@@ -7,6 +7,6 @@
 <body>
     <h3>Видео дугаар:{{ url('/v/'.$details['content_id']) }}<a href="{{ url('/v/'.$details['content_id']) }}"> ---- Анги шалгах</a></h3>
     <p><span class="font-weight-bold">Тайлбар:</span> {{ $details['explain'] }}</p>
-    <p><span class="font-weight-bold">Мэдээлэл хүргэсэн:</span> {{ $details['email'] }}</p>
+    <p><span class="font-weight-bold">Мэдээлэл хүргэсэн:</span> {{ $details['mail'] }}</p>
 </body>
 </html>
