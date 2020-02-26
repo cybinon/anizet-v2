@@ -72,18 +72,22 @@
     <div class="col-md-6 mb-3">
 
 <!--Iframe-->
-    <iframe frameborder="0" allowfullscreen src="{{$link}}" class="w-100 h-100 mx-auto" width="1280"></iframe>
+<div class="w-100 bg-dark p-3" id="btns">
+     @if (filter_var($linkv, FILTER_VALIDATE_URL) )
+<button type="button" id="changer" class="btn btn-warning w-100"><i class="fa fa-video"></i> Тоглуулагч солих</button>
+
+@endif
+</div>
+    <iframe id="embed" frameborder="0" allowfullscreen src="{{$link}}" class="w-100 h-100 mx-auto" width="1280"></iframe>
 <!--LocalVideo-->
         <video  data-volume=".5" data-skin="dark" class="afterglow w-100" id="myvideo" width="1280" height="720" label="SD">
-            <source src="{{$link}}" type="video/mp4" >
-             @if ($vid->path_id != null)
-                <track class="bg-dark text-dark" kind="captions" label="English" srclang="en" src="{{$sub}}" default>
-             @endif
+            <source src="{{$linkv}}" type="video/mp4" >
             <a href="{{$link}}" download>Download</a>
         </video>
 
 <!-- Skip intro -->
     <div class="w-100 bg-dark p-3" id="btns">
+
             <button type="button" class="btn btn-primary font-weight-bold w-100" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-bell"></i> Анимэ гарахгүй байна!</button>
         </div>
 
@@ -127,6 +131,14 @@
         $('#myvideo').hide();
         $('#skip-intro').hide();
         $('#thanks').hide();
+
+        $( "#changer" ).click(function() {
+        $( "#embed" ).remove();
+        $( "#myvideo" ).show();
+        });
+
+
+
 
         $('#success').on(function(e) {
             $('thanks').show();

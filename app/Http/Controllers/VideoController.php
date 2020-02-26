@@ -18,12 +18,13 @@ class VideoController extends Controller
 
         $episodes = $vid->all()->where('post_id', $vid->post_id)->sortBy('episode');
 
+        $linkv = $vid->path_id;
 
-        $link = str_replace("/view","/preview",$vid->file_id);
+        $link = str_replace("/view","/preview", $vid->file_id);
         $link = str_replace("/video/","/videoembed/",$link);
         $sub = null;
 
-        return view('videos.show', compact('vid', 'link','episodes','sub','animes','anime'));
+        return view('videos.show', compact('vid', 'link','episodes','sub','animes','anime','linkv'));
     }
     public function showm(\App\video $vid)
     {
