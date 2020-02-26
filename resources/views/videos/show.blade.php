@@ -37,6 +37,15 @@
                         </span>
                     @enderror
             </div>
+            <div class="form-group row">
+                <label for="mail" class="col-md-4 col-form-label font-weight-bold">Тайлбар</label>
+                    <input id="mail" type="email" class="form-control @error('mail') is-invalid @enderror" name="mail" value="Гарахгүй байна!" required autocomplete="mail" autofocus>
+                    @error('mail')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+            </div>
 
             <div class="row pt-4">
                 <button type="submit" class="btn btn-primary">Мэдээлэл илгээх</button>
