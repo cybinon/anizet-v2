@@ -85,7 +85,7 @@
                               </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('vid.post')}}">
+                                <a class="nav-link" href="{{route('vidpost')}}">
                                 {{__('Анги нэмэх')}}
                               </a>
                             </li>
