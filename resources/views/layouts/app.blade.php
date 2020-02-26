@@ -130,7 +130,62 @@
 
 
         $(document).ready(function(){
-            $("#movie").owlCarousel({
+
+
+            $("#series").owlCarousel({
+                dots: true,
+                autoplay:true,
+                autoplayTimeout:5000,
+                autoplayHoverPause:true,
+
+                loop:false,
+                margin:10,
+                autoWidth:false,
+                autoHeight:false,
+                responsiveClass:true,
+                responsive:{
+                    0:{
+                        items:2,
+                        nav:false
+                    },
+                    700:{
+                        items:4,
+                        nav:false,
+                    },
+                    1000:{
+                        items:7,
+                        nav:false,
+                    }
+                }
+            });
+
+            $("#music").owlCarousel({
+                dots: true,
+                autoplay:true,
+                autoplayTimeout:5000,
+                autoplayHoverPause:true,
+
+                loop:true,
+                margin:10,
+                autoWidth:false,
+                autoHeight:false,
+                responsiveClass:false,
+                responsive:{
+                    0:{
+                        items:2,
+                        nav:false,
+                    },
+                    700:{
+                        items:4,
+                        nav:false,
+                    },
+                    1000:{
+                        items:7,
+                        nav:false,
+                    }
+                }
+            });
+             $("#other").owlCarousel({
                 dots: true,
                 autoplay:true,
                 autoplayTimeout:5000,
@@ -151,90 +206,9 @@
                     nav:false,
                 },
                 1000:{
-                items: 7,
-                nav:true,
+                    items: 4,
+                    nav:false,
 
-                    }
-                }
-            })
-
-            $("#series").owlCarousel({
-                dots: true,
-                autoplay:true,
-                autoplayTimeout:5000,
-                autoplayHoverPause:true,
-
-                loop:false,
-                margin:10,
-                autoWidth:false,
-                autoHeight:false,
-                responsiveClass:true,
-                responsive:{
-                    0:{
-                        items:2,
-                        nav:true
-                    },
-                    700:{
-                        items:4,
-                        nav:false,
-                    },
-                    1000:{
-                        items:7,
-                        nav:true,
-                    }
-                }
-            });
-
-            $("#manga").owlCarousel({
-                dots: true,
-                autoplay:true,
-                autoplayTimeout:5000,
-                autoplayHoverPause:true,
-
-                loop:false,
-                margin:10,
-                autoWidth:false,
-                autoHeight:false,
-                responsiveClass:true,
-                responsive:{
-                    0:{
-                        items:2,
-                        nav:true
-                    },
-                    700:{
-                        items:4,
-                        nav:false,
-                    },
-                    1000:{
-                        items:7,
-                        nav:true,
-                    }
-                }
-            });
-
-            $("#music").owlCarousel({
-                dots: true,
-                autoplay:true,
-                autoplayTimeout:5000,
-                autoplayHoverPause:true,
-
-                loop:false,
-                margin:10,
-                autoWidth:false,
-                autoHeight:false,
-                responsiveClass:false,
-                responsive:{
-                    0:{
-                        items:2,
-                        nav:true
-                    },
-                    700:{
-                        items:4,
-                        nav:false,
-                    },
-                    1000:{
-                        items:7,
-                        nav:true,
                     }
                 }
             });
@@ -248,15 +222,15 @@
                 responsive:{
                     0:{
                         items:2,
-                        nav:true
+                        nav:false
                     },
                     700:{
                         items:4,
                         nav:false,
                     },
                     1000:{
-                        items:7,
-                        nav:true,
+                        items:3,
+                        nav:false,
                     }
                 }
             });

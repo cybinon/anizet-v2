@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="container">
 <div id="my-id" uk-modal>
     <div class="uk-modal-dialog uk-modal-body">
         <h2 class="uk-modal-title">Танилцуулга бичлэг</h2>
@@ -92,7 +92,7 @@
                 @endif
                 <h2 class="text-center">Бусад Анимэ</h2>
                 <hr>
-               <div class="owl-carousel owl-theme w-100" id="series">
+               <div class="owl-carousel owl-theme w-100" id="other">
         @foreach ($all as $item)
         <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
                 <a href="{{url('p/'.$item->id)}}" class="uk-text-center">
@@ -110,6 +110,8 @@
             </div>
         </div>
     </div>
+
+</div>
 
 </div>
 @endsection

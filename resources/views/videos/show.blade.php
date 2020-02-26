@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+<div class="container">
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -66,13 +66,13 @@
     </a>
 </div>
 
+</div>
 <hr>
-
 <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-6 mb-3">
 
 <!--Iframe-->
-    <iframe frameborder="0" allowfullscreen src="{{$link}}" class="w-100 h-75" width="1280"></iframe>
+    <iframe frameborder="0" allowfullscreen src="{{$link}}" class="w-100 h-100 mx-auto" width="1280"></iframe>
 <!--LocalVideo-->
         <video  data-volume=".5" data-skin="dark" class="afterglow w-100" id="myvideo" width="1280" height="720" label="SD">
             <source src="{{$link}}" type="video/mp4" >
@@ -94,7 +94,7 @@
                 <button class="btn btn-warning w-100" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             Бусад Ангиуд ({{count($episodes)}})
             </button>
-                <div class="overflow-auto episode-box p-3" style="height:720px">
+                <div class="overflow-auto episode-box p-3" style="height:520px">
                     @foreach ($animes as $anime)
                     <a href="{{url('p/'.$anime->id)}}"><p class="text-center ep-item uk-text-capitalize"><span class="info-caption">{{$anime->caption}}:</span> {{$anime->season}}</p></a>
                     @endforeach
@@ -108,7 +108,7 @@
                 <button class="btn btn-warning w-100" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             Бусад Анимэ жагсаалт ({{count($animes)}})
             </button>
-                <div class="overflow-auto episode-box p-3" style="height:720px">
+                <div class="overflow-auto episode-box p-3" style="height:420px">
                     @foreach ($episodes as $episode)
                         <a href="{{url('v/'.$episode->id)}}"><p class="@if($vid->episode == $episode->episode) bg-light text-dark @elseif($vid->id != $episode->id) bg-dark text-light @endif  text-center ep-item"><span class="info-caption">Анги:</span> {{$episode->episode}}</p></a>
                     @endforeach

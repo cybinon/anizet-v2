@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div class="container-fluid"></div>
 @if(count($anime)!=0)
 
     <div class="uk-heading-medium  text-center">
@@ -63,6 +65,6 @@
 @endif
 
 
-
+</div>
 @endsection
 
