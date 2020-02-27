@@ -45,6 +45,7 @@ class PostController extends Controller
 
            $Video = new \App\Video;
             $Video->insert([
+                'path_id' => $data['path_id'],
                 'post_id' => $data['post_id'],
                 'episode' => $data['episode'],
                 'skip_intro' => $data['skip_intro'],

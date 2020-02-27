@@ -36,9 +36,9 @@
 
             </div>
             <div class="form-group row">
-                <label for="path_id" class="col-md-4 col-form-label text-md-right">{{ __('Орчуулга') }}</label>
+                <label for="path_id" class="col-md-4 col-form-label text-md-right">{{ __('Анимэ оруулах /MP4 Линк/') }}</label>
 
-                    <input disabled id="path_id" type="file" class="form-control @error('path_id') is-invalid @enderror" name="path_id" value="{{ old('path_id') ?? $video->path_id}}" autocomplete="path_id" autofocus>
+                    <input id="path_id" type="text" class="form-control @error('path_id') is-invalid @enderror" name="path_id" value="{{ old('path_id') ?? $video->path_id}}" autocomplete="path_id" autofocus>
 
                     @error('path_id')
                         <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
             </div>
 
             <div class="form-group row" uk-tooltip="title: Shared link оруулаарай; pos: left;">
-                <label for="file_id" class="col-md-4 col-form-label text-md-right">{{ __('Анимэ оруулах /Google Drive/') }}</label>
+                <label for="file_id" class="col-md-4 col-form-label text-md-right">{{ __('Анимэ оруулах /Embed линк/') }}</label>
                     <input id="file_id" type="text" class="form-control @error('file_id') is-invalid @enderror" name="file_id" value="{{ old('file_id') ?? $video->file_id}}" required autocomplete="file_id" autofocus>
 
                     @error('file_id')
