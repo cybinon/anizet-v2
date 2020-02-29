@@ -22,7 +22,8 @@
                 </div>
 
                 <div class="uk-position-bottom uk-overlay uk-overlay-primary">
-                <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}<br>Бүлэг: {{$item->season}}</p>
+                    <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}</p>
+                    <h5><span class="badge badge-primary">Бүлэг: {{$item->season}}</span></h5>
                 </div>
                 <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
                     <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-play fa-2x" aria-hidden="true"></i></p>
@@ -52,7 +53,9 @@
                             Анги: {{$ep['episode']}}
                         </div>
                         <div class="uk-position-bottom uk-overlay uk-overlay-primary">
-                            <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}<br>Бүлэг: {{$item->season}}</p>
+                            <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}</p>
+                            <h5><span class="badge badge-primary">Бүлэг: {{$item->season}}</span></h5>
+
                         </div>
                         <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
                             <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-play fa-2x" aria-hidden="true"></i></p>
