@@ -14,7 +14,8 @@ class MainController extends Controller
 
         $details = request()->validate( [
             'content_id' => 'required',
-            'explain' => 'required'
+            'explain' => 'required',
+            'mail' => 'required'
         ]);
 
         \Mail::to('nikorunikk@gmail.com')->send(new SendMail($details));
