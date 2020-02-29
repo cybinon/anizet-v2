@@ -39,7 +39,7 @@ class MainController extends Controller
         $episodes = new Video;
 
         $anime = $post->all()->where('status', '1')->sortByDesc("id");
-        $ova = $post->all()->where('status', '2')->sortBy("method")->skip(0)->take(8);
+        $ova = $post->where('status', '2')->orderBy("method")->orderBy("season")->skip(0)->take(8)->get();
 
 
         return view('main', compact('anime','ova','episodes'));
