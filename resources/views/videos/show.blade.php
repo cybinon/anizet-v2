@@ -135,7 +135,16 @@
         $('#embed').hide();
     })
      </script>
+     @else
+<script>
+    $(document).ready(function(){
+        $('#myvideo').hide();
+        $('#embed').show();
+    })
+     </script>
  @endif
+
+
 
 <script>
     $(document).ready(function(){
@@ -147,9 +156,13 @@
             if($("#myvideo").is(":hidden")){
                 $( "#embed" ).hide();
                 $( "#myvideo" ).show();
+
+
+
             }else{
                 $( "#embed" ).show();
                 $( "#myvideo" ).hide();
+                afterglow.getPlayer('myvideo').pause();
             }
         });
 
