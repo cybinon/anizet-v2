@@ -156,18 +156,12 @@
             if($("#myvideo").is(":hidden")){
                 $( "#embed" ).hide();
                 $( "#myvideo" ).show();
-
-
-
             }else{
                 $( "#embed" ).show();
                 $( "#myvideo" ).hide();
                 afterglow.getPlayer('myvideo').pause();
             }
         });
-
-
-
 
         $('#success').on(function(e) {
             $('thanks').show();
