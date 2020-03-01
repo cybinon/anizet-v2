@@ -66,7 +66,7 @@
 <div class="row">
     <div class="alert alert-success" id="thanks">Таны мэдэгдлийг хүлээж авлаа</div>
 </div>
-<div class="row text-capitalize justify-content-right">
+<div class="row text-capitalize justify-content-right mt-3">
     <a href="/p/{{$anime->id}}">
         <span class="uk-label">{{$anime->caption}}</span>
         <span class="uk-label">Бүлэг: {{$anime->season}}</span>
@@ -81,11 +81,11 @@
 <!--Iframe-->
 <div class="w-100 bg-dark p-3" id="btns">
      @if (filter_var($linkv, FILTER_VALIDATE_URL) )
-<button type="button" id="changer" class="btn btn-warning w-100"><i class="fa fa-video"></i> AniZET тоглуулагч /Туршилтын хувилбар/</button>
+<button type="button" id="changer" class="btn btn-warning w-100"><i class="fa fa-sync"></i> Тоглуулагч солих</button>
 
 @endif
 </div>
-    <iframe id="embed" frameborder="0" allowfullscreen src="{{$link}}" class="w-100 h-100 mx-auto" width="1280"></iframe>
+    <iframe id="embed" frameborder="0" allowfullscreen src="{{$link}}" class="w-100 h-75 mx-auto" width="1280"></iframe>
 <!--LocalVideo-->
         <video  data-volume=".5" data-skin="dark" class="afterglow w-100" id="myvideo" width="1280" height="720" label="SD">
             <source src="{{$linkv}}" type="video/mp4" >
@@ -128,20 +128,29 @@
         </div>
     </div>
 </div>
-
+ @if (filter_var($linkv, FILTER_VALIDATE_URL))
+     <script>
+    $(document).ready(function(){
+        $('#myvideo').show();
+        $('#embed').hide();
+    })
+     </script>
+ @endif
 
 <script>
-
-
     $(document).ready(function(){
 
-        $('#myvideo').hide();
-        $('#skip-intro').hide();
+
         $('#thanks').hide();
 
         $( "#changer" ).click(function() {
-        $( "#embed" ).remove();
-        $( "#myvideo" ).show();
+            if($("#myvideo").is(":hidden")){
+                $( "#embed" ).hide();
+                $( "#myvideo" ).show();
+            }else{
+                $( "#embed" ).show();
+                $( "#myvideo" ).hide();
+            }
         });
 
 
