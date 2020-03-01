@@ -4,7 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    {{-- SEO Optimize --}}
+    <meta name="description" content="Хязгааргүй төсөөлөлд хөгжих орчуулагчдын бүлгэм.">
+    <meta name="keywords" content="anizet, gintama, анимэ, манга, тоглоом, zetteam, anime, manga, анимэ үзэх, anime uzeh">
+    {{-- Facebook Meta tag --}}
+    <meta property="og:url"           content="https://www.anizet.net" />
+    <meta property="og:type"          content="article" />
+    <meta property="og:title"         content="AniZet" />
+    <meta property="og:description"   content="Хязгааргүй Төсөөлөл" />
+    <meta property="og:image"         content="{{ URL::asset('/css/logo.png') }}" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -74,9 +82,9 @@
                             </li>
 
                           @if (Route::has('register'))
-                                {{-- <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li> --}}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">Бүртгүүлэх</a>
+                                </li>
                             @endif
                         @else @if (Auth::user()->status == 1)
                             <li class="nav-item">
