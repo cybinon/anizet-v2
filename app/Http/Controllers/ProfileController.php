@@ -13,11 +13,14 @@ class ProfileController extends Controller
 
     }
 
-    public function index($user)
+    public function index(\App\User $user)
     {
-        $user = User::findOrFail($user);
-
         return view('profile.index', compact('user'));
+    }
+    public function CheckProfile()
+    {
+        $user = auth()->user()->id;
+        return redirect('/profile/'.$user);
     }
 
 }

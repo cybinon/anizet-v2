@@ -37,6 +37,7 @@ Route::get('/v/{vid}/m', 'VideoController@showm')->name('video.showm');
 
 
     Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
+    Route::get('/profile', 'ProfileController@CheckProfile')->middleware('verified');
 
 
 

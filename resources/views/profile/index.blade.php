@@ -5,13 +5,19 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content text-dark">
       <div class="modal-header">
-        <h5 class="modal-title text-dark" id="exampleModalLabel">Худалдаж авах дараалал</h5>
+        <h5 class="modal-title text-dark" id="exampleModalLabel">Хөгжүүлэлтийн шатанд явагдаж байна</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p class="alert alert-warning">Бид хөгжүүлэлтийн шатанд явж байгаа. Бэлэн болох үед хэрэглэгч хэсгээр дахин сонирхоорой! Танд баярлалаа!</p>
+        <p class="alert alert-warning">Хэрэглэгчийн хэсэг хөгжүүлэлтийн шатанд явагдаж байгаа тул зарим хэсэг ажиллахгүй байгаа! Танд баярлалаа!</p>
+      <p class="alert alert-success">Хэрэв та манай багт хандив өгөх гэж байгаа бол <span class="text-primary">гүйлгээний утга дээр өөрийн хэрэглэгчийн дугаар болох <span class="font-weight-bold text-dark">{{Auth::user()->id}}</span> дугаарыг оруулаарай!</span>
+            <br><span class="font-weight-bold text-dark"> Голомт банк: 1105268265 - AniZet</span>
+            <br><span class="font-weight-bold text-dark"> Хаан банк: 5005748909 - Тэмүүжин</span>
+
+        </p>
+        <span class="font-italic"><u>AniZet - Хязгаар үгүй төсөөлөл</u></span>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success" data-dismiss="modal">Ойлголоо</button>
@@ -20,12 +26,13 @@
   </div>
 </div>
 
+@if(Auth::user()->status < 1)
 <!-- Modal -->
-<div class="modal fade bd-example-modal-sm" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-sm" id="delete" tabindex="-1" role="dialog" aria-labelledby="deleteLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-danger" id="exampleModalLabel">Уучлаарай, Тухайн үйлдэл идэвхигүй байна. Та хөгжүүлэгчтэй холбогдоно уу.</h5>
+        <h5 class="modal-title text-danger" id="deleteLabel">Уучлаарай, Тухайн үйлдэл идэвхигүй байна. Та хөгжүүлэгчтэй холбогдоно уу.</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -38,6 +45,7 @@
     </div>
   </div>
 </div>
+@endif
 <div class="container">
 
     <div class="row justify-content-center">
@@ -45,28 +53,29 @@
             <div>
                 <img class="border rounded-circle" src="https://pbs.twimg.com/profile_images/731462042662494208/lhxjirl-_400x400.jpg" alt="user-gintoki"><br>
                 <h2 class="text-center">{{$user->username}}</h2>
+                <p class="text-center h5 bg-primary border rounded"><span class="font-weight-bold">ID:</span> #{{$user->id}}</p>
+                <hr>
             </div>
         </div>
         <div class="col uk-overlay uk-overlay-default text-dark border rounded">
             <div class="row">
-                <div class="col-md-3">
-                    <img class="w-100 border rounded" src="https://images.g2a.com/newlayout/323x433/1x1x0/f0d156492637/5d1ca6a47e696c05dd4f1e92" alt="user-gintoki"><br>
-                </div>
+
+                <hr>
                 <div class="col text-center">
-                    <hr>
                     @if ($user->id == Auth::user()->id)
-                    <p><span class="font-weight-bold">Данс:</span> --₮</p>
+                    <p><span class="font-weight-bold">Z-Coin:</span> --</p>
                     <hr>
                     @endif
-                    <p><span class="font-weight-bold">Тоглоомны үнэ:</span> --₮</p>
-                    <hr>
                     <p><span class="font-weight-bold">Үзүүлэлт:</span> --</p>
                     <hr>
                     <p><span class="font-weight-bold">Зэрэглэл:</span> --</p>
                     <hr>
+                    <p><span class="font-weight-bold">Авсан тоглоом:</span> --</p>
+
                 </div>
             </div>
             @if ($user->id == Auth::user()->id)
+
             <div class="row justify-content-end">
                     <div class="col-md-3">
                         <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-success"><i class="fa fa-shopping-basket"></i> Худалдаж авах</button>
@@ -77,6 +86,42 @@
         </div>
     </div>
 <hr>
+
+<div class="row">{{-- Game Row Start --}}
+    <div class="col-md-3 mt-3">
+        <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
+            <a href="#" class="uk-text-center">
+                <img style="width:100%" src="https://images.g2a.com/newlayout/323x433/1x1x0/f0d156492637/5d1ca6a47e696c05dd4f1e92" alt="" class="rounded">
+                <div class="uk-position-bottom uk-overlay uk-overlay-primary">
+                    <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">MineCraft</p>
+                    <p class="h4 bg-primary border rounded">20,000₮</p>
+                </div>
+                <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
+                    <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-3 mt-3">
+        <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
+            <a href="#" class="uk-text-center">
+                <img style="width:100%" src="https://images.g2a.com/newlayout/323x433/1x1x0/a5a7804c85ac/5911f3265bafe3df19784931" alt="" class="rounded">
+                <div class="uk-position-bottom uk-overlay uk-overlay-primary">
+                    <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">Nier:Automata</p>
+                    <p class="h4 bg-primary border rounded">50,000₮</p>
+                </div>
+                <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
+                    <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>{{-- Game Row Ending --}}
+
+
+
 @if ($user->status == 1)
 
 <h2 class="text-center">Орчуулсан анимэ</h2>
@@ -98,7 +143,7 @@
 
                                 <a href="/p/{{$post->id}}/edit" class="badge badge-primary"><i class="fa fa-pencil"></i></a>
                                 <a href="/p/{{$post->id}}" class="badge badge-primary"><i class="fa fa-eye"></i></a>
-                                <a id="myLink" value="{{$post->id}}" class="badge badge-danger" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-trash"></i></a>
+                                <a id="myLink" value="{{$post->id}}" class="badge badge-danger" data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></a>
                             @endif
 
                             @endguest
@@ -120,5 +165,10 @@
     </div>
     @endif
 </div>
+<script>
+    $(document).ready(function(){
+        $('#exampleModal').modal('show');
+    });
+</script>
 
 @endsection
