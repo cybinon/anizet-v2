@@ -117,6 +117,35 @@
             </a>
         </div>
     </div>
+    <div class="col-md-3 mt-3">
+        <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
+            <a href="#" class="uk-text-center">
+                <img style="width:100%" src="https://images.g2a.com/newlayout/323x433/1x1x0/67931797ac41/591294d7ae653a0e382e24a5" alt="" class="rounded">
+                <div class="uk-position-bottom uk-overlay uk-overlay-primary">
+                    <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">Melty Blood Actress Again Current</p>
+                    <p class="h4 bg-primary border rounded">21,000₮</p>
+                </div>
+                <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
+                    <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-3 mt-3">
+        <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
+            <a href="#" class="uk-text-center">
+                <img style="width:100%" src="https://images.g2a.com/newlayout/323x433/1x1x0/df5e06327e8e/591235aa5bafe3682f067017" alt="" class="rounded">
+                <div class="uk-position-bottom uk-overlay uk-overlay-primary">
+                    <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">Distance</p>
+                    <p class="h4 bg-primary border rounded">8,000₮</p>
+                </div>
+                <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
+                    <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+    </div>
+
 
 </div>{{-- Game Row Ending --}}
 
