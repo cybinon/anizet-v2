@@ -2,7 +2,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <!-- Bidvertiser2022339 -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +21,7 @@
     <link rel="icon" href="{{ URL::asset('/css/icon-1.png') }}" type="image/x-icon"/>
 
     <!-- Scripts -->
-    <script type="text/javascript"> var infolinks_pid = 3239751; var infolinks_wsid = 0; </script> <script type="text/javascript" src="https://resources.infolinks.com/js/infolinks_main.js"></script>
+
     <script src="{{ asset('js/app.js') }}"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126866397-3"></script>
