@@ -8,16 +8,13 @@
 
 require("./bootstrap");
 
-/*
 window.Vue = require("vue");
 
-Vue.component("example", {
-    template: "<h1>Hello</h1>"
-});
+Vue.component("example", require("./components/ExampleComponent.vue").default);
 const app = new Vue({
     el: "#app"
 });
-*/
+
 import carousel from "owl.carousel";
 import kit from "uikit";
 import jquery from "jquery";

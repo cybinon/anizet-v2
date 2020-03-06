@@ -7,7 +7,7 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content uk-background-image@m uk-background-cover uk-background-muted" style="background-image:url('https://static-cdn.jtvnw.net/jtv_user_pictures/a83a6386-15fc-479e-83b2-4cf90dbba7b4-profile_banner-480.jpeg');">
+    <div class="modal-content uk-background-image uk-background-cover uk-background-muted" style="background-image:url('https://firebasestorage.googleapis.com/v0/b/snake-240713.appspot.com/o/a83a6386-15fc-479e-83b2-4cf90dbba7b4-profile_banner-480.jpeg?alt=media&token=86c61292-8b08-42a4-b0ac-b6a47cbd887e');">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Асуудал илгээх</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -191,4 +191,5 @@
     </script>
 
 
+<script src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
 @endsection
