@@ -17,6 +17,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
     <title>{{ config('app.name', 'Anizet') }}</title>
     <link rel="icon" href="{{ URL::asset('/css/icon-1.png') }}" type="image/x-icon"/>
 
@@ -39,9 +40,47 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+    <script type="text/javascript">//<![CDATA[
+(function() {
+    var configuration = {
+    "token": "14fb6d0fe18bb393ae40385ad66de396",
+    "excludeDomains": [
+        "anizet.net\n"
+    ],
+    "capping": {
+        "limit": 5,
+        "timeout": 24
+    },
+    "entryScript": {
+        "type": "click",
+        "capping": {
+            "limit": 5,
+            "timeout": 24
+        }
+    },
+    "exitScript": {
+        "enabled": true
+    },
+    "popUnder": {
+        "enabled": true
+    }
+};
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = '//cdn.shorte.st/link-converter.min.js';
+    script.onload = script.onreadystatechange = function () {var rs = this.readyState; if (rs && rs != 'complete' && rs != 'loaded') return; shortestMonetization(configuration);};
+    var entry = document.getElementsByTagName('script')[0];
+    entry.parentNode.insertBefore(script, entry);
+})();
+//]]></script>
+
+
 </head>
 
 <body>
+
     <div class="" id="loader">
         <div class="uk-position-center text-center">
             <div class="uk-margin-bottom">
@@ -66,6 +105,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                      <li class="nav-item">
+                            <a class="nav-link" href="https://shurikenteam.com"><i class="fa fa-book"></i> Манга</a>
+                        </li>
 
                     </ul>
 
