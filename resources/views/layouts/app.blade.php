@@ -16,7 +16,7 @@
     <meta property="og:image"         content="{{ URL::asset('/css/logo.png') }}" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta name="propeller" content="0bf167543ec8154358aa18408801c19a">
 
     <title>{{ config('app.name', 'Anizet') }}</title>
     <link rel="icon" href="{{ URL::asset('/css/icon-1.png') }}" type="image/x-icon"/>
