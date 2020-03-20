@@ -17,7 +17,7 @@ class FirebaseController extends Controller
         $database = $firebase->getDatabase();
 
 
-        $ref = $database->getReference('Anizet');
+        $ref = $database->getReference('novels');
 
         $key = $ref->push()->getKey();
 

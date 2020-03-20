@@ -25,6 +25,29 @@
   </div>
 </div>
 
+<div class="modal fade" id="ads" tabindex="-1" role="dialog" aria-labelledby="adsLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark" id="adsLabel">Хөгжүүлэлтийн шатанд явагдаж байна</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="alert alert-warning">Манай багт дэмжилэг үзүүлэх гэсэн таньд баярлалаа. Гэвч бид энэ хэсэгт засвар хийж байгаа учир ажиллахгүй.</p>
+
+
+        </p>
+        <span class="font-italic"><u>AniZet - Хязгаар үгүй төсөөлөл</u></span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Ойлголоо</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 @if(Auth::user()->status < 1)
 <!-- Modal -->
 <div class="modal fade bd-example-modal-sm" id="delete" tabindex="-1" role="dialog" aria-labelledby="deleteLabel" aria-hidden="true">
@@ -74,11 +97,15 @@
                 </div>
             </div>
             @if ($user->id == Auth::user()->id)
-
+<hr>
             <div class="row justify-content-end">
-                    <div class="col-md-3">
-                        <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-success"><i class="fa fa-heart"></i> Хандив өгөх</button>
+                    <div class="col">
+                        <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-success w-100"><i class="fa fa-heart"></i> Хандив өгөх</button>
                     </div>
+                    <div class="col">
+                        <a href="/ads" class="btn btn-warning w-100"><i class="fa fa-heart"></i> ADS Хандив</a>
+                    </div>
+
                 </div>
             @endif
 
@@ -87,20 +114,24 @@
 <hr>
 
 
-@if ($user->status == 1)
 
+@if ($user->status == 1)
+<h2 class="text-center">Зохиол оруулах</h2>
+<form action="#">
+    <input type="text" class="w-100 border rounded bg-light mb-3" name="" placeholder="Гарчиг">
+    <textarea name="" class="w-100 border rounded bg-light" rows="20" placeholder="Хязгааргүй төсөөл..."></textarea>
+
+    <button class="btn btn-primary"><i class="fa fa-arrow-right"></i> Нийтлэх</button>
+</form>
 <h2 class="text-center">Орчуулсан анимэ</h2>
 <div class="row">
     @foreach ($user->posts as $post)
-        <div class="col-3 mt-3">
+        <div class="col-md-3 mt-3">
             <div class="card">
                 <div class="card-header">
                     <h2>{{$post->caption}}</h2>
                     @guest
                     @if (Route::has('register'))
-                    {{-- <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li> --}}
                                 @endif
                                 @else
 
@@ -124,7 +155,6 @@
                 </div>
             </div>
         </div>
-
         @endforeach
 
     </div>
@@ -132,7 +162,7 @@
 </div>
 <script>
     $(document).ready(function(){
-        $('#exampleModal').modal('show');
+       // $('#exampleModal').modal('show');
     });
 </script>
 

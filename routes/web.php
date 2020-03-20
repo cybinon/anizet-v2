@@ -26,6 +26,10 @@ Auth::routes(['verify' => true]);
 
 
 
+Route::get('/ads', function(){
+    return view("profile.ads");
+})->name('ads');
+
 Route::get('/v/{vid}', 'VideoController@show')->name('video.show');
 Route::get('/v/{vid}/m', 'VideoController@showm')->name('video.showm');
 

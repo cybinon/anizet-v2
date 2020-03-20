@@ -164,4 +164,8 @@ class PostController extends Controller
         $video->delete();
         return redirect("/");
     }
+    public function storeNov()
+    {
+
+    }
 }

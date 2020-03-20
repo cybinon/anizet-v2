@@ -2,7 +2,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- SEO Optimize --}}
@@ -71,7 +70,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
-                            <a class="nav-link" href="https://shurikenteam.com"><i class="fa fa-book"></i> Манга</a>
+                            {{-- <a class="nav-link" href="https://shurikenteam.com"><i class="fa fa-book"></i> Манга</a> --}}
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('ads') }}"><i class="fa fa-heart"></i> ADS Zone</a>
                         </li>
 
                     </ul>
@@ -82,6 +84,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('list') }}"><i class="fa fa-list"></i> Жагсаалт</a>
                         </li>
+
 
 
                         <!-- Authentication Links -->
@@ -272,7 +275,6 @@
 
     </script>
 
-    <script type="text/javascript" src="//onemboaran.com/apu.php?zoneid=3136734" async data-cfasync="false"></script>
 
     <script src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
 </body>

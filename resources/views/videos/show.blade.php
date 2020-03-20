@@ -128,39 +128,6 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">//<![CDATA[
-(function() {
-    var configuration = {
-    "token": "14fb6d0fe18bb393ae40385ad66de396",
-    "domains": [
-        "yourowndomain.com"
-    ],
-    "capping": {
-        "limit": 5,
-        "timeout": 24
-    },
-    "entryScript": {
-        "type": "click",
-        "capping": {
-            "limit": 5,
-            "timeout": 24
-        }
-    },
-    "exitScript": {
-        "enabled": true
-    },
-    "popUnder": {
-        "enabled": true
-    }
-};
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = '//cdn.shorte.st/link-converter.min.js';
-    script.onload = script.onreadystatechange = function () {var rs = this.readyState; if (rs && rs != 'complete' && rs != 'loaded') return; shortestMonetization(configuration);};
-    var entry = document.getElementsByTagName('script')[0];
-    entry.parentNode.insertBefore(script, entry);
-})();
-//]]></script>
 
  @if (filter_var($linkv, FILTER_VALIDATE_URL))
      <script>
