@@ -15,7 +15,7 @@
 @section('content')
 <div class="container">
 
-    <h3 align="center">AniZET - Анимэ контент оруулах</h3>
+    <h3 class="text-center">AniZET - Анимэ контент оруулах</h3>
 
     <div class="panel panel-default">
                 <div class="panel-heading">
@@ -26,7 +26,7 @@
                     <form method="post" action="{{ route('upload') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <div class="col-md-3" align="right"><h4>Видео оруулах</h4></div>
+                            <div class="col-md-3" class="text-right"><h4>Видео оруулах</h4></div>
                             <div class="col-md-6">
                                 <input type="file" name="file" id="file" />
                             </div>

@@ -22,7 +22,7 @@
     @if(View::hasSection('title'))
         @yield('title')
     @else
-    <title>{{ config('app.name', 'Anizet') }}</title>
+    <title>{{ config('app.name', 'Anizet') }} | Хязгааргүй төсөөлөл</title>
     @endif
 
 
@@ -58,13 +58,14 @@
 
 
     <div id="app">
+
  @if(View::hasSection('nav'))
         @yield('nav')
     @else
     <div class="" id="loader">
         <div class="uk-position-center text-center">
             <div class="uk-margin-bottom">
-                <img src="{{ URL::asset('/css/logo.png') }}" style="width:100px;" alt="">
+                <img src="{{ URL::asset('/css/logo.png') }}" style="width:100px;" alt="Anizet-logo">
             </div>
             <div uk-spinner></div>
 
@@ -91,42 +92,39 @@
                             <a class="nav-link" href="{{ route('ads') }}"><i class="fa fa-heart"></i> ADS Zone</a>
                         </li>
 
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('list') }}"><i class="fa fa-list"></i> Жагсаалт</a>
                         </li>
 
+                    </ul>
 
-
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-user"></i> {{ __('Нэвтрэх') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-sign-in"></i> {{ __('Нэвтрэх') }}</a>
                             </li>
 
                           @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Бүртгүүлэх</a>
+                                    <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-plus"></i> Бүртгүүлэх</a>
                                 </li>
                             @endif
                         @else @if (Auth::user()->status == 1)
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('poster')}}">
-                                {{__('Төсөл нэмэх')}}
+                               Төсөл нэмэх
                               </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('vidpost')}}">
-                                {{__('Анги нэмэх')}}
+                               Анги нэмэх
                               </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{url('file-upload')}}">
-                                {{__('Видео оруулах')}}
+                               Видео оруулах
                               </a>
                             </li>
                             @endif
@@ -168,16 +166,7 @@
     @if(View::hasSection('end-script'))
         @yield('end-script')
     @else
-
-    @endif
-
-    <script src="https://kit.fontawesome.com/65a96d544f.js" crossorigin="anonymous"></script>
-
-
     <script>
-
-
-
         $(document).ready(function(){
 
 
@@ -207,7 +196,6 @@
                     }
                 }
             });
-
             $("#music").owlCarousel({
                 dots: true,
                 autoplay:true,
@@ -287,6 +275,9 @@
             });
 
             </script>
+             <script src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
+             <script src="https://kit.fontawesome.com/65a96d544f.js" crossorigin="anonymous"></script>
+    @endif
 
 
 
@@ -302,10 +293,10 @@
         setInterval(doUpdate1, 1000);
     });
 
-    </script>
+</script>
 
 
-    <script src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
+
 </body>
 </html>
 

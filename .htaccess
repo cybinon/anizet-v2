@@ -1,6 +1,14 @@
 Header set X-XSS-Protection "1; mode=block"
 Header set X-Content-Type-Options nosniff
+
+
 <IfModule mod_rewrite.c>
    RewriteEngine On
    RewriteRule ^(.*)$ public/$1 [L]
+
+
+   RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
 </IfModule>
+
+
