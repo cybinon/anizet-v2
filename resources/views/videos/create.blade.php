@@ -1,6 +1,15 @@
+
+<?php
+if (isset($_GET['mp4'])){
+    $mp4 = $_GET['mp4'];
+}
+?>
+
+
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <form action="/v" enctype="multipart/form-data" method="post">
         @csrf
@@ -34,7 +43,7 @@
             <div class="form-group row">
                 <label for="path_id" class="col-md-4 col-form-label text-md-right">{{ __('Анимэ оруулах /MP4 линк/') }}</label>
 
-                    <input id="path_id" type="text" class="form-control @error('path_id') is-invalid @enderror" name="path_id" value="{{ old('path_id') }}" autocomplete="path_id" autofocus>
+                    <input id="path_id" type="text" class="form-control @error('path_id') is-invalid @enderror" name="path_id" value="{{$mp4 ?? old('path_id')}}" autocomplete="path_id" autofocus>
 
                     @error('path_id')
                         <span class="invalid-feedback" role="alert">

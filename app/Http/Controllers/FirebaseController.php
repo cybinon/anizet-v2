@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Validator;
+
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 
@@ -28,5 +30,37 @@ class FirebaseController extends Controller
 
         return $ref;
 
+    }
+    function wupload()
+    {
+     return view('file_upload');
+    }
+
+    function upload(Request $request)
+    {
+     $rules = array(
+      'file'  => 'required|mimes:mp4,mov,ogg,mkv|max:2400000'
+     );
+
+     $error = Validator::make($request->all(), $rules);
+
+     if($error->fails())
+     {
+      return response()->json(['errors' => $error->errors()->all()]);
+     }
+
+     $image = $request->file('file');
+
+     $new_name = rand() . '.' . $image->getClientOriginalExtension();
+     $image->move(storage_path('app/public/video'), $new_name);
+
+    $vid_link =  url("storage/video/".$new_name);
+     $output = array(
+         'success' => "Видео амжилттай хуулагдлаа, Видео линк: ".$vid_link,
+         'direct' => "Анги оруулах хэсэгт очих: <a href='".url("v/create?mp4=$vid_link")."'>$new_name</a>",
+         'video'  => '<video controls src="'.$vid_link.'" class="img-thumbnail"></video>'
+        );
+
+        return response()->json($output);
     }
 }

@@ -17,34 +17,50 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="propeller" content="0bf167543ec8154358aa18408801c19a">
 
-    <title>{{ config('app.name', 'Anizet') }}</title>
     <link rel="icon" href="{{ URL::asset('/css/icon-1.png') }}" type="image/x-icon"/>
 
-    <!-- Scripts -->
+    @if(View::hasSection('title'))
+        @yield('title')
+    @else
+    <title>{{ config('app.name', 'Anizet') }}</title>
+    @endif
 
+
+    @if(View::hasSection('head-script'))
+        @yield('head-script')
+    @else
+    <!-- Default Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126866397-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-  gtag('config', 'UA-126866397-3');
-</script>
+    @endif
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126866397-3"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-126866397-3');
+    </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 
 
 </head>
 
 <body>
 
+
+    <div id="app">
+ @if(View::hasSection('nav'))
+        @yield('nav')
+    @else
     <div class="" id="loader">
         <div class="uk-position-center text-center">
             <div class="uk-margin-bottom">
@@ -54,8 +70,7 @@
 
         </div>
     </div>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" uk-sticky>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" uk-sticky>
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- config('app.name', 'Laravel') --}}
@@ -109,6 +124,11 @@
                                 {{__('Анги нэмэх')}}
                               </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url('file-upload')}}">
+                                {{__('Видео оруулах')}}
+                              </a>
+                            </li>
                             @endif
 
                             <li class="nav-item dropdown">
@@ -136,12 +156,21 @@
                 </div>
             </div>
         </nav>
+    @endif
+
 
         <div class="uk-overlay uk-overlay-primary f-height">
             @yield('content')
         </div>
 
     </div>
+
+    @if(View::hasSection('end-script'))
+        @yield('end-script')
+    @else
+
+    @endif
+
     <script src="https://kit.fontawesome.com/65a96d544f.js" crossorigin="anonymous"></script>
 
 
@@ -279,3 +308,4 @@
     <script src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
 </body>
 </html>
+
