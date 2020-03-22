@@ -12,9 +12,9 @@ use \App\Http\Middleware\CheckStatus;
 |
 */
 
-Route::get('file-upload', 'FirebaseController@wupload');
+Route::get('file-upload', 'FirebaseController@wupload')->middleware(CheckStatus::class);;
 
-Route::post('file-upload/upload', 'FirebaseController@upload')->name('upload');
+Route::post('file-upload/upload', 'FirebaseController@upload')->name('upload')->middleware(CheckStatus::class);
 
 
 Route::get('/v/create', 'PostController@video')->name('vidpost')->middleware(CheckStatus::class);
