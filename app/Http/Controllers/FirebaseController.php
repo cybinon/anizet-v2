@@ -39,7 +39,7 @@ class FirebaseController extends Controller
 
     function upload(Request $request)
     {
-    ini_set('max_execution_time', '2000');
+    ini_set('max_execution_time', '0');
 
      $rules = array(
       'file'  => 'required|mimes:mp4,mov,ogg,mkv|max:2400000'
