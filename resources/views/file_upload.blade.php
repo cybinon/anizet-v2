@@ -26,7 +26,7 @@
                     <form method="post" action="{{ route('upload') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <div class="col-md-3" class="text-right"><h4>Видео оруулах</h4></div>
+                        <div class="col-md-3" class="text-right"><h4>Видео оруулах | </h4></div>
                             <div class="col-md-6">
                                 <input type="file" name="file" id="file" />
                             </div>
@@ -42,7 +42,13 @@
                         0%
                     </div>
                 </div>
-
+                <div class="alert alert-warning">
+                    Upload:{{$max['upload']}}
+                    <br>Post:{{$max['post']}}
+                    <br>ExeTime:{{$max['exetime']}}
+                    <br>Input:{{$max['input']}}
+                    <br>Input time:{{$max['inputtime']}}
+                </div>
                 <div id="success">
 
                 </div>

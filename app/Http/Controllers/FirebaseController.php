@@ -34,7 +34,14 @@ class FirebaseController extends Controller
     }
     function wupload()
     {
-     return view('file_upload');
+       $max = [
+           'upload' => ini_get('upload_max_filesize'),
+           'post' => ini_get('post_max_size'),
+           'input' => ini_get('max_input_vars'),
+           'exetime' => ini_get('max_execution_time'),
+           'inputtime' => ini_get('max_input_time')
+       ];
+     return view('file_upload', compact('max'));
     }
 
     function upload(Request $request)
