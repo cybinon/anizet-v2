@@ -96,7 +96,16 @@
                             <a class="nav-link" href="{{ route('list') }}"><i class="fa fa-list"></i> Жагсаалт</a>
                         </li>
 
+
+
                     </ul>
+
+                    <ul class="navbar-nav mr-auto">
+                         <li class="nav-item">
+                            <a href="#" class="nav-link">Нээлттэй данс: <span class="p-1 border rounded">0.0</span></a>
+                        </li>
+                    </ul>
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

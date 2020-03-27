@@ -85,7 +85,7 @@
                 <hr>
                 <div class="col text-center">
                     @if ($user->id == Auth::user()->id)
-                    <p><span class="font-weight-bold">Z-Coin:</span> --</p>
+                    <p><span class="font-weight-bold">PHT Phoneum:</span> --</p>
                     <hr>
                     @endif
                     <p><span class="font-weight-bold">Үзүүлэлт:</span> --</p>
