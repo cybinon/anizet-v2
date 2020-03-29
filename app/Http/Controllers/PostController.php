@@ -135,10 +135,24 @@ class PostController extends Controller
             'trailer' => 'required',
             'episodes' => 'required',
             'status' => 'required',
-            'image' =>  '',
+            'image' =>  'image',
         ]);
 
+        if(request()->has('image')) {
 
+        $imagePath = request('image')->store('uploads', 'public');
+
+
+        $image = Image::make(public_path("storage/{$imagePath}"))->resize(225, 319);
+        $image->save();
+
+        $data['image'] = $imagePath;
+
+
+    };
+
+
+        $data['caption'] = strtolower($data['caption']);
 
         $post->update($data);
 //
