@@ -22,7 +22,7 @@
     @if(View::hasSection('title'))
         @yield('title')
     @else
-    <title>{{ config('app.name', 'ANIZET') }} | Хязгааргүй төсөөлөл</title>
+    <title>ANIZET | Хязгааргүй төсөөлөл</title>
     @endif
 
 
