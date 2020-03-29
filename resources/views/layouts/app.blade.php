@@ -176,6 +176,7 @@
 
   <!-- Copyright -->
   <div class="container-fluid">
+
     <div class="row">
         <div class="col text-center">
                 <div class="footer-copyright py-2 font-weight-bold text-dark">
@@ -189,12 +190,16 @@
         </div>
     </div>
   </div>
-
-
-
   <!-- Copyright -->
-
 </footer>
+
+<ul class="ct-socials">
+  <li>
+    <a href="https://www.facebook.com/AniZetOfficial/" target="_blank"><i class="fa fa-facebook"></i></a>
+  </li>
+
+
+  <li>
 <!-- Footer -->
 
     @if(View::hasSection('end-script'))
