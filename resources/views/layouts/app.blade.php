@@ -72,7 +72,7 @@
         </div>
     </div>
     <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm" uk-sticky>
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- config('app.name', 'Laravel') --}}
                 <img class="logo" src="{{ URL::asset('/images/logo.png') }}" alt="zet-logo">
@@ -171,6 +171,31 @@
         </div>
 
     </div>
+<!-- Footer -->
+<footer class="page-footer font-small bg-light">
+
+  <!-- Copyright -->
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col text-center">
+                <div class="footer-copyright py-2 font-weight-bold text-dark">
+                    <img style="height:25px" src="{{ URL::asset('/images/logo.png') }}" alt="zet-logo"> v1.4
+                </div>
+            </div>
+        <div class="col text-center">
+            <div class="footer-copyright py-2 font-weight-bold text-white">
+                ...
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
     @if(View::hasSection('end-script'))
         @yield('end-script')
