@@ -2,3 +2,8 @@
    RewriteEngine On
    RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
+
+<Directory storage>
+Order allow,deny
+Allow from all
+</Directory>
