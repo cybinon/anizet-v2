@@ -5,8 +5,8 @@
 <div class="container-fluid"></div>
 @if(count($anime)!=0)
 
-    <div class="uk-heading-medium  text-center">
-        <h1 class="uk-h2 uk-heading-divider">Гарч байгаа</h1>
+    <div class="uk-heading-small text-center">
+        <h1 class="uk-h1 uk-heading-divider">Гарч байгаа</h1>
     </div>
 
     <div class="owl-carousel owl-theme w-100" id="series">
@@ -39,7 +39,7 @@
 @if(count($ova)!=0)
 
         <div class="uk-heading-medium  text-center">
-            <h1 class="uk-h2 uk-heading-divider">Онцлох</h1>
+            <h1 class="uk-h1 uk-heading-divider">Онцлох</h1>
         </div>
 
         <div class="owl-carousel owl-theme w-100" id="music">

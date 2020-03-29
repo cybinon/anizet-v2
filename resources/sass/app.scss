@@ -18,7 +18,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    background-image: url(https://cdn.wallpapersafari.com/98/96/q6RYxL.jpg);
+    background-image: url(/images/bg.jpg);
     min-height: 100vh;
 }
 .card {
@@ -73,7 +73,8 @@ body {
     min-height: 92.7vh;
 }
 .logo {
-    height: 45px;
+    opacity: 0.8;
+    max-height: 35px;
 }
 .uk-overlay-blue {
     background-color: rgba($blue, 0.8);

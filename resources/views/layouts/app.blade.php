@@ -10,19 +10,19 @@
     {{-- Facebook Meta tag --}}
     <meta property="og:url"           content="https://www.anizet.net" />
     <meta property="og:type"          content="article" />
-    <meta property="og:title"         content="AniZet" />
+    <meta property="og:title"         content="ANIZET" />
     <meta property="og:description"   content="Хязгааргүй Төсөөлөл" />
     <meta property="og:image"         content="{{ URL::asset('/css/logo.png') }}" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="propeller" content="0bf167543ec8154358aa18408801c19a">
 
-    <link rel="icon" href="{{ URL::asset('/css/icon-1.png') }}" type="image/x-icon"/>
+    <link rel="icon" href="{{ URL::asset('/images/shortcut.png') }}" type="image/x-icon"/>
 
     @if(View::hasSection('title'))
         @yield('title')
     @else
-    <title>{{ config('app.name', 'Anizet') }} | Хязгааргүй төсөөлөл</title>
+    <title>{{ config('app.name', 'ANIZET') }} | Хязгааргүй төсөөлөл</title>
     @endif
 
 
@@ -65,17 +65,17 @@
     <div class="" id="loader">
         <div class="uk-position-center text-center">
             <div class="uk-margin-bottom">
-                <img src="{{ URL::asset('/css/logo.png') }}" style="width:100px;" alt="Anizet-logo">
+                <img src="{{ URL::asset('/images/loading.png') }}" style="max-width:200px;" alt="Anizet-loading">
             </div>
             <div uk-spinner></div>
 
         </div>
     </div>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" uk-sticky>
+    <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm" uk-sticky>
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- config('app.name', 'Laravel') --}}
-                <img class="logo" src="{{URL::asset('css/logo.png')}}" alt="zet-logo">
+                <img class="logo" src="{{ URL::asset('/images/logo.png') }}" alt="zet-logo">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
