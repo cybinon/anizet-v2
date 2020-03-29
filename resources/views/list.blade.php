@@ -10,7 +10,7 @@
             <div class="col-md-3 mt-3">
                     <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
                         <a href="/p/{{$item->id}}" class="uk-text-center">
-                            <img style="width:100%" src="storage/{{$item->image}}" alt="" class="rounded">
+                            <img style="width:100%" src="{{$item->image}}" alt="" class="rounded">
                             <div class="uk-position-bottom uk-overlay uk-overlay-primary">
                                 <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}} </p>
                                 <h4 class="uk-text-capitalize "><span class="badge badge-secondary">Бүлэг: {{$item->season}}</span></h4>

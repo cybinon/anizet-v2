@@ -14,7 +14,7 @@
 
 <div class="row">
     <div class="col-md-6 col-xs-6 col-lg-3">
-        <img class="w-100" src="/storage/{{$post->image}}" alt="">
+        <img class="w-100" src="{{url($post->image)}}" alt="">
         <hr>
     </div>
     <div class="col-md-6 col-xs-6 col-lg-3">
@@ -76,7 +76,7 @@
                     @if($item->id != $post->id)
                     <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
                             <a href="{{url('p/'.$item->id)}}" class="uk-text-center">
-                                <img style="width:100%" src="{{url('storage/'.$item->image)}}" alt="">
+                                <img style="width:100%" src="{{url($item->image)}}" alt="">
                                 <div class="uk-position-bottom uk-overlay uk-overlay-primary">
                                     <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">Бүлэг: {{$item->season}}</p>
                                 </div>
@@ -96,7 +96,7 @@
         @foreach ($all as $item)
         <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
                 <a href="{{url('p/'.$item->id)}}" class="uk-text-center">
-                    <img style="width:100%" src="{{url('storage/'.$item->image)}}" alt="">
+                    <img style="width:100%" src="{{url($item->image)}}" alt="">
                     <div class="uk-position-bottom uk-overlay uk-overlay-primary">
                         <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}</p>
                     </div>

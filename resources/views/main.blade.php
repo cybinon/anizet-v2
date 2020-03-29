@@ -16,7 +16,7 @@
         @if(isset($ep))
         <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
             <a href="/v/{{$ep['id']}}" class="uk-text-center">
-                <img style="width:100%" src="storage/{{$item->image}}" alt="{{$item->caption}}" class="rounded">
+                <img style="width:100%" src="{{$item->image}}" alt="{{$item->caption}}" class="rounded">
                 <div class="uk-position-top uk-position-small uk-overlay-blue uk-text-bold text-white uk-width-1-4 rounded-circle">
                     Анги: {{$ep['episode']}}
                 </div>
@@ -48,7 +48,7 @@
                 @if(isset($ep))
                 <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
                     <a href="/v/{{$ep['id']}}" class="uk-text-center">
-                        <img style="width:100%" src="storage/{{$item->image}}" alt="{{$item->caption}}" class="rounded">
+                        <img style="width:100%" src="{{$item->image}}" alt="{{$item->caption}}" class="rounded">
                         <div class="uk-position-top uk-position-small uk-overlay-blue uk-text-bold text-white uk-width-1-4 rounded-circle">
                             Анги: {{$ep['episode']}}
                         </div>

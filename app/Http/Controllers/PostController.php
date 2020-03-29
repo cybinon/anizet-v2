@@ -84,11 +84,19 @@ class PostController extends Controller
             ]);
 
 
-            $imagePath = request('image')->store('uploads', 'public');
+
+            $image = request('image');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads');
+            $image->move($destinationPath, $name);
+
+            $imagePath = "uploads/".$name;
 
 
-            $image = Image::make(public_path("storage/{$imagePath}"))->resize(225, 319);
+            $image = Image::make(public_path($imagePath))->resize(225, 319);
             $image->save();
+
+
 
             //$pcloud = new File;
             $data['caption'] = strtolower($data['caption']);
@@ -140,11 +148,15 @@ class PostController extends Controller
 
         if(request()->has('image')) {
 
-            $imagePath = request('image')->store('uploads', 'public');
+            $image = request('image');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads');
+            $image->move($destinationPath, $name);
 
-            $image=public_path("storage/$imagePath");
-            dd($image);
-            $image = Image::make(public_path("storage/$imagePath"))->resize(225, 319);
+            $imagePath = "uploads/".$name;
+
+
+            $image = Image::make(public_path($imagePath))->resize(225, 319);
             $image->save();
 
             $data['image'] = $imagePath;
