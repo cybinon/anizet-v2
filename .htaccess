@@ -1,11 +1,6 @@
 <IfModule mod_rewrite.c>
    RewriteEngine On
    RewriteRule ^(.*)$ public/$1 [L]
-
-   <Directory storage>
-Order allow,deny
-Allow from all
-</Directory>
-</IfModule>
+   </IfModule>
 
 
