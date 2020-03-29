@@ -140,16 +140,17 @@ class PostController extends Controller
 
         if(request()->has('image')) {
 
-        $imagePath = request('image')->store('uploads', 'public');
+            $imagePath = request('image')->store('uploads', 'public');
 
+            $image=public_path("storage/$imagePath");
+            dd($image);
+            $image = Image::make(public_path("storage/$imagePath"))->resize(225, 319);
+            $image->save();
 
-        $image = Image::make(public_path("storage/{$imagePath}"))->resize(225, 319);
-        $image->save();
+            $data['image'] = $imagePath;
 
-        $data['image'] = $imagePath;
+        };
 
-
-    };
 
 
         $data['caption'] = strtolower($data['caption']);
