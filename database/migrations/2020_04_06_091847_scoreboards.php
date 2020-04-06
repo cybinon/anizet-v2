@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfilesTable extends Migration
+class Scoreboards extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreateProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('novels', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->string('nickname')->nullable();
-            $table->text('description')->nullable();
-            $table->string('pic_url')->nullable();
-            $table->string('scored')->nullable();
-            $table->timestamps();
-
-            $table->index('user_id');
+            $table->unsignedBigInteger('novel_id')->nullable();
+            $table->Biginteger('score')->nullable();
         });
     }
 
@@ -33,6 +28,6 @@ class CreateProfilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profiles');
+        //
     }
 }

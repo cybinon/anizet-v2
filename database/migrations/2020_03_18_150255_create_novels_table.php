@@ -15,6 +15,12 @@ class CreateNovelsTable extends Migration
     {
         Schema::create('novels', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('title');
+            $table->longText('content')->nullable();
+            $table->string('short_content')->nullable();
+            $table->longText('catalog')->nullable();
+            $table->integer('status_novel');
             $table->timestamps();
         });
     }

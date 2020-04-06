@@ -49,8 +49,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-
-
+    @trixassets
 
 </head>
 
@@ -94,6 +93,24 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('list') }}"><i class="fa fa-list"></i> Жагсаалт</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <i class="fa fa-book"></i> Зохиол <span class="caret"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <?php $novels = new \App\Novel;
+                                $novels = $novels->orderBy('created_at')->limit(3)->get();
+                                ?>
+                                @foreach ($novels as $item)
+                                    <a class="dropdown-item font-weight-bold" href="{{ url('n/'.$item->id) }}">
+                                    <i class="fa fa-star"></i> {{$item->title}}
+                                </a>
+                                <hr>
+                                @endforeach
+
+                            </div>
                         </li>
 
 
@@ -149,7 +166,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Гарах') }}
                                     </a>
 
 
@@ -180,7 +197,7 @@
     <div class="row">
         <div class="col text-center">
                 <div class="footer-copyright py-2 font-weight-bold text-dark">
-                    <img style="height:25px" src="{{ URL::asset('/images/logo.png') }}" alt="zet-logo"> v1.4
+                    <img style="height:25px" src="{{ URL::asset('/images/logo.png') }}" alt="zet-logo"> v1.6.9 (beta)
                 </div>
             </div>
         <div class="col text-center">

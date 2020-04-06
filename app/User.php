@@ -41,8 +41,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
     }
 
+    public function novels()
+    {
+        return $this->hasMany(Novel::class)->orderBy('created_at', 'DESC')->limit(3);
+    }
+
     public function profile()
     {
         return $this->hasOne(\App\Profile::class);
     }
+
 }

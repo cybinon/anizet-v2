@@ -37,6 +37,7 @@ class MainController extends Controller
     }
     public function main(\App\Post $post)
     {
+        $novel = new \App\Novel;
         $episodes = new Video;
 
         $anime = $post->all()->where('status', '1')->sortByDesc("id");

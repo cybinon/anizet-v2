@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class users extends Seeder
 {
@@ -11,6 +12,8 @@ class users extends Seeder
      */
     public function run()
     {
+
+
         DB::table('users')->insert(
         [
             [
@@ -38,5 +41,6 @@ class users extends Seeder
             'password' => '$2y$10$3Z6CAVRkf8eOgGkTEyf/IOSKwDONwp1vRBVVHmmj4h7H7zY/zjJhq',
             ],
         ]);
+
     }
 }

@@ -92,7 +92,7 @@
                     <hr>
                     <p><span class="font-weight-bold">Зэрэглэл:</span> --</p>
                     <hr>
-                    <p><span class="font-weight-bold">Авсан тоглоом:</span> --</p>
+                    <p><span class="font-weight-bold">Нийтэлсэн зохиол:</span> --</p>
 
                 </div>
             </div>
@@ -103,7 +103,7 @@
                         <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-success w-100"><i class="fa fa-heart"></i> Хандив өгөх</button>
                     </div>
                     <div class="col">
-                        <a href="/ads" class="btn btn-warning w-100"><i class="fa fa-heart"></i> ADS Хандив</a>
+                        <a href="/n/create" class="btn btn-secondary w-100"><i class="fa fa-pencil"></i> Зохиол нийтлэх</a>
                     </div>
 
                 </div>
@@ -113,16 +113,28 @@
     </div>
 <hr>
 
+<h2 class="text-center">Зохиол</h2>
+@foreach ($user->novels as $novel)
+<a class="" href="/n/{{$novel->id}}">
+    <div class="card bg-secondary text-white">
+    <div class="card-header">
+        <h2>{{$novel->title}}</h2>
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+        <p>{{$novel->short_content}}</p>
+        <footer class="blockquote-footer">Бичсэн: <cite title="{{$user->username}}">{{$user->username}}</cite> {{$novel->created_at}}</footer>
+        </blockquote>
+    </div>
+    </div>
+</a>
+
+
+<hr>
+@endforeach
 
 
 @if ($user->status == 1)
-<h2 class="text-center">Зохиол оруулах</h2>
-<form action="#">
-    <input type="text" class="w-100 border rounded bg-light mb-3" name="" placeholder="Гарчиг">
-    <textarea name="" class="w-100 border rounded bg-light" rows="20" placeholder="Хязгааргүй төсөөл..."></textarea>
-
-    <button class="btn btn-primary"><i class="fa fa-arrow-right"></i> Нийтлэх</button>
-</form>
 <h2 class="text-center">Орчуулсан анимэ</h2>
 <div class="row">
     @foreach ($user->posts as $post)
@@ -151,7 +163,7 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    <img src="/storage/{{$post->image}}" class="w-100">
+                    <img src="/{{$post->image}}" class="w-100">
                 </div>
             </div>
         </div>
