@@ -40,8 +40,8 @@ class MainController extends Controller
         $novel = new \App\Novel;
         $episodes = new Video;
 
-        $anime = $post->all()->where('status', '1')->sortByDesc("id");
-        $ova = $post->where('status', '2')->orderBy("method")->orderBy("season")->skip(0)->take(8)->get();
+        $anime = $post->where('status', '1')->orderBy("method")->limit(8)->get();
+        $ova = $post->where('status', '2')->orderBy("method")->orderBy("season")->limit(8)->get();
 
 
         return view('main', compact('anime','ova','episodes'));

@@ -45,4 +45,10 @@ class NovelController extends Controller
     {
         return view('novels.show', compact('novel'));
     }
+    public function delete(\App\Novel $novel)
+    {
+        $user = \Auth::user();
+        if($user->id == $novel->user_id || $user->status > 0) $novel->delete();
+        return redirect("/");
+    }
 }

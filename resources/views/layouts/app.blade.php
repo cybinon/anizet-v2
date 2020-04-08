@@ -198,7 +198,7 @@
     <div class="row">
         <div class="col text-center">
                 <div class="footer-copyright py-2 font-weight-bold text-dark">
-                    <img style="height:25px" src="{{ URL::asset('/images/logo.png') }}" alt="zet-logo"> v1.6.9 (beta)
+                    <img style="height:25px" src="{{ URL::asset('/images/logo.png') }}" alt="zet-logo"> v1.7.0 (beta)
                 </div>
             </div>
         <div class="col text-center">

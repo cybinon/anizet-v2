@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1 class="h1 text-center mb-3 w-100">{{$novel->title}}</h1>
-    <div class="bg-light p-2 rounded text-dark novel-content">
+    <div class="border rounded text-light">
         <?=$novel->content?>
         <div class="row">
             <div class="col-md-6">

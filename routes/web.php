@@ -57,7 +57,7 @@ Route::get('/v/{vid}/m', 'VideoController@showm')->name('video.showm');
 
 
 Route::get('/n/{novel}', 'NovelController@show');
-
+Route::get('/n/{novel}/delete', 'NovelController@delete');
 
 
 

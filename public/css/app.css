@@ -12007,11 +12007,21 @@ strong {
   .novel-content {
     font-size: 15px;
   }
+
+  .novel-content blockquote {
+    font-size: 15px;
+    color: #000;
+  }
 }
 
 @media (min-width: 320px) {
   .novel-content {
     font-size: 25px;
+  }
+
+  .novel-content blockquote {
+    font-size: 25px;
+    color: #000;
   }
 }
 
@@ -12019,11 +12029,21 @@ strong {
   .novel-content {
     font-size: 25px;
   }
+
+  .novel-content blockquote {
+    font-size: 25px;
+    color: #000;
+  }
 }
 
 @media (min-width: 992px) {
   .novel-content {
     font-size: 2rem;
+  }
+
+  .novel-content blockquote {
+    font-size: 2rem;
+    color: #000;
   }
 }
 
