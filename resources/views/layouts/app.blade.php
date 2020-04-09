@@ -183,8 +183,8 @@
         </nav>
     @endif
 
-
         <div class="uk-overlay uk-overlay-primary f-height">
+            <marquee class="bg-warning text-dark rounded">Корона вирус хэзээд ч тархах болзошгүй учир гэрээсээ битгий гараарай. Зайлшгүй гарах шаардлага байвал маск хэрэглээрэй. Гараа тогтмол угааж байгаарай! Stay Home With AniZET</marquee>
             @yield('content')
         </div>
 
