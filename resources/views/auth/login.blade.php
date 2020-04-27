@@ -3,9 +3,6 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="alert alert-warning">Хэрэглэгчийн хэсэг засвартай байна!</div>
-    </div>
-    <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Нэвтрэх хэсэг') }}</div>

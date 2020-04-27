@@ -16,11 +16,8 @@
     <div class="col-md-6 col-xs-6 col-lg-3">
         <img class="w-100" src="{{url($post->image)}}" alt="">
         <hr>
-    </div>
+    </div>{{--Anime pic col ended  --}}
     <div class="col-md-6 col-xs-6 col-lg-3">
-        <div class="accordion" id="accordionExample">
-
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
             <p><span class="info-caption">Бүлэг:</span> {{$post->season}}</p>
             <p><span class="info-caption">Нийт анги:</span> {{$post->episodes}}</p>
             <p><span class="info-caption">Насны ангилал:</span> {{$post->pg}}</p>
@@ -42,76 +39,90 @@
             </p>
 
             <p><span class="info-caption">Товч агуулга:</span> {{$post->info}}</p>
-            <p class="text-center"><button class="btn btn-primary w-100" uk-toggle="target: #my-id" type="button" ><i class="fas fa-play-circle fa-2x"></i></button></p>
+            <p class="text-center">
+                <button class="btn btn-primary w-100" uk-toggle="target: #my-id" type="button" ><i class="fas fa-play-circle fa-2x"></i></button>
+            </p>
             <hr>
-    </div>
-  </div>
-  <div class="accordion" id="accordionExample1">
-
-        <button class="btn btn-warning w-100" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Анимэ үзэх / Товч мэдээлэл
-        </button>
-
-    <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample1">
-    <div class="overflow-auto episode-box p-3">
-            @foreach ($episodes as $episode)
-                <a href="{{url('v/'.$episode->id)}}"><p class="bg-light text-dark text-center ep-item"><span class="info-caption">Анги:</span> {{$episode->episode}}</p></a>
-            @endforeach
-    </div>
-
-    </div>
-    <hr>
-  </div>
-
-
-        </div>
-
+        </div>{{-- Anime info col ended --}}
         <div class="col-lg-6">
+            <button class="btn btn-warning w-100" type="button">
+            Анимэ үзэх / Товч мэдээлэл
+            </button>
+
             <div class="overflow-auto episode-box p-3">
-                @if(count($season)> 1)
-                <h2 class="text-center">Бусад бүлэг</h2>
-                <hr>
-                <div class="owl-carousel owl-theme w-100" id="season">
-                    @foreach ($season as $item)
-                    @if($item->id != $post->id)
-                    <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
-                            <a href="{{url('p/'.$item->id)}}" class="uk-text-center">
-                                <img style="width:100%" src="{{url($item->image)}}" alt="">
-                                <div class="uk-position-bottom uk-overlay uk-overlay-primary">
-                                    <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">Бүлэг: {{$item->season}}</p>
-                                </div>
-                                <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
-                                        <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-play fa-2x" aria-hidden="true"></i></p>
-                                    </div>
-                            </a>
-                        </div>
-                        @endif
-                        @endforeach
-                </div>
-                <hr>
-                @endif
-                <h2 class="text-center">Бусад Анимэ</h2>
-                <hr>
-               <div class="owl-carousel owl-theme w-100" id="other">
-        @foreach ($all as $item)
-        <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
-                <a href="{{url('p/'.$item->id)}}" class="uk-text-center">
-                    <img style="width:100%" src="{{url($item->image)}}" alt="">
-                    <div class="uk-position-bottom uk-overlay uk-overlay-primary">
-                        <p style="height:60px" class="uk-h5 uk-margin-remove uk-text-capitalize">{{$item->caption}}</p>
-                    </div>
-                    <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
-                            <p class="uk-h4 text-dark uk-margin-remove"><i class="fa fa-play fa-2x" aria-hidden="true"></i></p>
-                        </div>
+            @foreach ($episodes as $episode)
+                <a href="{{url('v/'.$episode->id)}}">
+                    <p class="bg-light text-dark text-center ep-item">
+                        <span class="info-caption">Анги:</span> {{$episode->episode}}
+                    </p>
                 </a>
-            </div>
             @endforeach
-        </div>
             </div>
-        </div>
-    </div>
+        </div>{{-- Anime episodes col ended --}}
+    </div>{{-- Row Ending --}}
+</div>{{-- container ending --}}
 
-</div>
+@endsection
 
-</div>
+@section('end-script')
+ <script>
+        $(document).ready(function(){
+
+            $("#slide1").owlCarousel({
+                dots: true,
+                autoplay:true,
+                autoplayTimeout:5000,
+                autoplayHoverPause:true,
+                loop:false,
+                margin:10,
+                autoWidth:false,
+                autoHeight:false,
+                responsiveClass:true,
+                responsive:{
+                    0:{
+                        items:2,
+                        nav:false
+                    },
+                    700:{
+                        items:4,
+                        nav:false,
+                    },
+                    1000:{
+                        items:7,
+                        nav:false,
+                    }
+                }
+            });
+
+            $("#slide2").owlCarousel({
+                dots: true,
+                autoplay:true,
+                autoplayTimeout:5000,
+                autoplayHoverPause:true,
+
+                loop:true,
+                margin:10,
+                autoWidth:false,
+                autoHeight:false,
+                responsiveClass:false,
+                responsive:{
+                    0:{
+                        items:2,
+                        nav:false,
+                    },
+                    700:{
+                        items:4,
+                        nav:false,
+                    },
+                    1000:{
+                        items:7,
+                        nav:false,
+                    }
+                }
+            });
+
+
+            });
+
+            </script>
 @endsection

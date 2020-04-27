@@ -83,7 +83,16 @@ class PostController extends Controller
                 'image' => ['required', 'image'], //soliotoi
             ]);
 
+            if(filter_var($data['trailer'], FILTER_VALIDATE_URL) === FALSE){
+                $link = $data['trailer'];
+                $video_id = explode("?v=", $link); // For videos like http://www.youtube.com/watch?v=...
+                if (empty($video_id[1]))
+                    $video_id = explode("/v/", $link); // For videos like http://www.youtube.com/watch/v/..
 
+                $video_id = explode("&", $video_id[1]); // Deleting any other params
+                $data['trailer'] = $video_id[0];
+
+            }
 
             $image = request('image');
             $name = time().'.'.$image->getClientOriginalExtension();

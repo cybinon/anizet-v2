@@ -119,9 +119,7 @@
                     </ul>
 
                     <ul class="navbar-nav mr-auto">
-                         <li class="nav-item">
-                            <a href="#" class="nav-link">Нээлттэй данс: <span class="p-1 border rounded">0.0</span></a>
-                        </li>
+
                     </ul>
 
 
@@ -149,11 +147,8 @@
                                Анги нэмэх
                               </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{url('file-upload')}}">
-                               Видео оруулах
-                              </a>
-                            </li>
+
+
                             @endif
 
                             <li class="nav-item dropdown">
@@ -198,7 +193,7 @@
     <div class="row">
         <div class="col text-center">
                 <div class="footer-copyright py-2 font-weight-bold text-dark">
-                    <img style="height:25px" src="{{ URL::asset('/images/logo.png') }}" alt="zet-logo"> v1.7.0 (beta)
+                    <img style="height:25px" src="{{ URL::asset('/images/logo.png') }}" alt="zet-logo"> v1.7.40 (beta)
                 </div>
             </div>
         <div class="col text-center">
@@ -223,135 +218,22 @@
     @if(View::hasSection('end-script'))
         @yield('end-script')
     @else
-    <script>
-        $(document).ready(function(){
 
 
-            $("#series").owlCarousel({
-                dots: true,
-                autoplay:true,
-                autoplayTimeout:5000,
-                autoplayHoverPause:true,
-
-                loop:false,
-                margin:10,
-                autoWidth:false,
-                autoHeight:false,
-                responsiveClass:true,
-                responsive:{
-                    0:{
-                        items:2,
-                        nav:false
-                    },
-                    700:{
-                        items:4,
-                        nav:false,
-                    },
-                    1000:{
-                        items:7,
-                        nav:false,
-                    }
-                }
-            });
-            $("#music").owlCarousel({
-                dots: true,
-                autoplay:true,
-                autoplayTimeout:5000,
-                autoplayHoverPause:true,
-
-                loop:true,
-                margin:10,
-                autoWidth:false,
-                autoHeight:false,
-                responsiveClass:false,
-                responsive:{
-                    0:{
-                        items:2,
-                        nav:false,
-                    },
-                    700:{
-                        items:4,
-                        nav:false,
-                    },
-                    1000:{
-                        items:7,
-                        nav:false,
-                    }
-                }
-            });
-             $("#other").owlCarousel({
-                dots: true,
-                autoplay:true,
-                autoplayTimeout:5000,
-                autoplayHoverPause:true,
-
-                loop:false,
-                margin:10,
-                autoWidth:false,
-                autoHeight:false,
-                responsiveClass:true,
-                responsive:{
-                0:{
-                    items:2,
-                    nav:true
-                },
-                700:{
-                    items:4,
-                    nav:false,
-                },
-                1000:{
-                    items: 4,
-                    nav:false,
-
-                    }
-                }
-            });
-
-            $("#season").owlCarousel({
-                loop:false,
-                margin:10,
-                autoWidth:false,
-                autoHeight:false,
-                responsiveClass:false,
-                responsive:{
-                    0:{
-                        items:2,
-                        nav:false
-                    },
-                    700:{
-                        items:4,
-                        nav:false,
-                    },
-                    1000:{
-                        items:3,
-                        nav:false,
-                    }
-                }
-            });
-
-            });
-
-            </script>
-             <script src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
-             <script src="https://kit.fontawesome.com/65a96d544f.js" crossorigin="anonymous"></script>
     @endif
 
 
 
 <script>
-    $(document).ready(function() {
-        var doUpdate = function() {
-            $('#loader').addClass("uk-animation-slide-top-small uk-animation-reverse");
-        };
-        var doUpdate1 = function() {
-            $('#loader').css("display", "none");
-        };
-        setInterval(doUpdate, 600);
-        setInterval(doUpdate1, 1000);
-    });
-
+        $(document).ready(function() {
+            $('#loader')
+            .delay(200)
+            .on(500)
+            .fadeOut("slow");
+        });
 </script>
 
+             <script src="https://kit.fontawesome.com/65a96d544f.js" crossorigin="anonymous"></script>
 
 
 </body>

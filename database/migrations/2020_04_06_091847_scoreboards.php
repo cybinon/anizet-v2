@@ -13,7 +13,7 @@ class Scoreboards extends Migration
      */
     public function up()
     {
-        Schema::create('novels', function (Blueprint $table) {
+        Schema::create('scoreboards', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('novel_id')->nullable();

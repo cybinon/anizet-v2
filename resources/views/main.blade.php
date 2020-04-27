@@ -9,7 +9,7 @@
         <h1 class="uk-h1 uk-heading-divider">Гарч байгаа</h1>
     </div>
 
-    <div class="owl-carousel owl-theme w-100" id="series">
+    <div class="owl-carousel owl-theme w-100" id="slide1">
         @foreach ($anime as $item)
 
         <?php $ep = $episodes->all()->where('post_id',$item->id)->sortByDesc('episode')->first(); ?> {{--Сүүлд Гарсан анги олох үйлдэл--}}
@@ -42,7 +42,7 @@
             <h1 class="uk-h1 uk-heading-divider">Гарч дууссан</h1>
         </div>
 
-        <div class="owl-carousel owl-theme w-100" id="music">
+        <div class="owl-carousel owl-theme w-100" id="slide2">
             @foreach ($ova as $item)
                 <div class="uk-card uk-card-hover uk-transition-toggle" tabindex="0">
                     <a href="/p/{{$item->id}}" class="uk-text-center">
@@ -66,3 +66,65 @@
 </div>
 @endsection
 
+@section('end-script')
+ <script>
+        $(document).ready(function(){
+
+            $("#slide1").owlCarousel({
+                dots: true,
+                autoplay:true,
+                autoplayTimeout:5000,
+                autoplayHoverPause:true,
+                loop:false,
+                margin:10,
+                autoWidth:false,
+                autoHeight:false,
+                responsiveClass:true,
+                responsive:{
+                    0:{
+                        items:2,
+                        nav:false
+                    },
+                    700:{
+                        items:4,
+                        nav:false,
+                    },
+                    1000:{
+                        items:7,
+                        nav:false,
+                    }
+                }
+            });
+
+            $("#slide2").owlCarousel({
+                dots: true,
+                autoplay:true,
+                autoplayTimeout:5000,
+                autoplayHoverPause:true,
+
+                loop:true,
+                margin:10,
+                autoWidth:false,
+                autoHeight:false,
+                responsiveClass:false,
+                responsive:{
+                    0:{
+                        items:2,
+                        nav:false,
+                    },
+                    700:{
+                        items:4,
+                        nav:false,
+                    },
+                    1000:{
+                        items:7,
+                        nav:false,
+                    }
+                }
+            });
+
+
+            });
+
+            </script>
+@endsection
