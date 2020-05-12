@@ -10,17 +10,22 @@ require("./bootstrap");
 
 window.Vue = require("vue");
 
-Vue.component("example", require("./components/ExampleComponent.vue").default);
+import Vuetify from "../plugins/vuetify";
+import store from "./store";
+import router from "./router";
+
+import kit from "uikit";
+
+Vue.component(
+    "app-container",
+    require("./components/appComponent.vue").default
+);
+Vue.component("login-form", require("./components/loginForm.vue").default);
+
 const app = new Vue({
+    vuetify: Vuetify,
+    store,
+    router,
+    kit,
     el: "#app"
 });
-
-import carousel from "owl.carousel";
-import kit from "uikit";
-import jquery from "jquery";
-
-export default {
-    components: { jquery },
-    components: { carousel },
-    components: { kit }
-};

@@ -17,7 +17,7 @@ class CheckStatus
     {
          $response = $next($request);
         //If the status is not approved redirect to login
-        if(\Auth::user()->status != 1){
+        if(\Auth::user()->admin_status < 1){
             return redirect('/');
         }
         return $response;

@@ -4,10 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Mail\SendMail;
-use \App\Video;
+use Illuminate\Support\Facades\Auth;
+
+
+use \App\Animes;
+use \App\Season;
 
 class MainController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('auth');
+
+    }
+
     public function report(){
         $request = request();
         if ($request->isMethod('post')) {
@@ -22,34 +32,19 @@ class MainController extends Controller
         return redirect('/v/'.$details['content_id'].'#success');
     }else
     return redirect('/');
+    }
+    public function test($id){
+        $animes = Animes::findOrFail($id);
+        $animes = $animes->season->all();
+        $animes = json_encode($animes);
 
+        return $animes;
     }
 
-    public function show(\App\Post $post)
+    public function main()
     {
-        $videos= new \App\Video;
-        $season = $post->all()->where('caption', $post->caption)->sortBy('season');
-        $episodes = $videos->all()->where('post_id', $post->id)->sortBy('episode');
 
-        if(count($post->all())>12) $all = $post->all()->random(12);
-        else $all = $post->all();
-        return view('posts.show', compact('post', 'all', 'season', 'episodes'));
+        return view('main');
     }
-    public function main(\App\Post $post)
-    {
-        $novel = new \App\Novel;
-        $episodes = new Video;
 
-        $anime = $post->where('status', '1')->orderBy("method")->limit(8)->get();
-        $ova = $post->where('status', '2')->orderBy("method")->orderBy("season")->limit(8)->get();
-
-
-        return view('main', compact('anime','ova','episodes'));
-    }
-    public function list(\App\Post $post)
-    {
-        $anime = $post->all()->sortBy('caption');
-
-        return view('list', compact('anime'));
-    }
 }

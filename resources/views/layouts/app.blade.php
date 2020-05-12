@@ -16,7 +16,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="propeller" content="0bf167543ec8154358aa18408801c19a">
+    <script>
 
+    </script>
     <link rel="icon" href="{{ URL::asset('/images/shortcut.png') }}" type="image/x-icon"/>
 
     @if(View::hasSection('title'))
@@ -30,7 +32,8 @@
         @yield('head-script')
     @else
     <!-- Default Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -48,6 +51,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.0/trix.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.0/trix.js"></script>
@@ -71,149 +76,16 @@
 
         </div>
     </div>
-    <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm" uk-sticky>
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{-- config('app.name', 'Laravel') --}}
-                <img class="logo" src="{{ URL::asset('/images/logo.png') }}" alt="zet-logo">
-                </a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                      <li class="nav-item">
-                            {{-- <a class="nav-link" href="https://shurikenteam.com"><i class="fa fa-book"></i> Манга</a> --}}
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('ads') }}"><i class="fa fa-heart"></i> ADS Zone</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('list') }}"><i class="fa fa-list"></i> Жагсаалт</a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fa fa-book"></i> Зохиол <span class="caret"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <?php $novels = new \App\Novel;
-                                $novels = $novels->orderBy('created_at')->limit(3)->get();
-                                ?>
-                                @foreach ($novels as $item)
-                                    <a class="dropdown-item font-weight-bold" href="{{ url('n/'.$item->id) }}">
-                                    <i class="fa fa-star"></i> {{$item->title}}
-                                </a>
-                                <hr>
-                                @endforeach
-
-                            </div>
-                        </li>
-
-
-
-                    </ul>
-
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-sign-in"></i> {{ __('Нэвтрэх') }}</a>
-                            </li>
-
-                          @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-plus"></i> Бүртгүүлэх</a>
-                                </li>
-                            @endif
-                        @else @if (Auth::user()->status == 1)
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('poster')}}">
-                               Төсөл нэмэх
-                              </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('vidpost')}}">
-                               Анги нэмэх
-                              </a>
-                            </li>
-
-
-                            @endif
-
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->username }} #{{Auth::user()->id}}<span class="caret"></span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('profile/'.Auth::user()->id) }}">
-                                        {{ __('Миний хэсэг') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Гарах') }}
-                                    </a>
-
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
     @endif
 
-        <div class="uk-overlay uk-overlay-primary f-height">
-            <marquee class="bg-warning text-dark rounded">Корона вирус хэзээд ч тархах болзошгүй учир гэрээсээ битгий гараарай. Зайлшгүй гарах шаардлага байвал маск хэрэглээрэй. Гараа тогтмол угааж байгаарай! Stay Home With AniZET</marquee>
+        <div class="f-height">
             @yield('content')
         </div>
 
     </div>
-<!-- Footer -->
-<footer class="page-footer font-small bg-light">
-
-  <!-- Copyright -->
-  <div class="container-fluid">
-
-    <div class="row">
-        <div class="col text-center">
-                <div class="footer-copyright py-2 font-weight-bold text-dark">
-                    <img style="height:25px" src="{{ URL::asset('/images/logo.png') }}" alt="zet-logo"> v1.7.40 (beta)
-                </div>
-            </div>
-        <div class="col text-center">
-            <div class="footer-copyright py-2 font-weight-bold text-white">
-                ...
-            </div>
-        </div>
-    </div>
-  </div>
-  <!-- Copyright -->
-</footer>
-
-<ul class="ct-socials">
-  <li>
-    <a href="https://www.facebook.com/AniZetOfficial/" target="_blank"><i class="fa fa-facebook"></i></a>
-  </li>
 
 
-  <li>
-<!-- Footer -->
 
     @if(View::hasSection('end-script'))
         @yield('end-script')

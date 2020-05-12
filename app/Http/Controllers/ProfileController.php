@@ -9,17 +9,17 @@ class ProfileController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+      $this->middleware('auth');
 
     }
 
     public function index(\App\User $user)
     {
-        return view('profile.index', compact('user'));
+        return view('spa', compact('user'));
     }
     public function CheckProfile()
     {
-        $user = auth()->user()->id;
+        //$user = auth()->user()->id;
         return redirect('/profile/'.$user);
     }
 
