@@ -47,15 +47,13 @@ export default {
   },
 
   data() {
-    axios
-      .get("http://localhost:8000/api/v1/anime/video/" + this.$route.params.id)
-      .then(
-        response =>
-          (this.playerOptions.sources = {
-            type: "video/mp4",
-            src: response.data.file_id
-          })
-      );
+    axios.get("/api/v1/anime/video/" + this.$route.params.id).then(
+      response =>
+        (this.playerOptions.sources = {
+          type: "video/mp4",
+          src: response.data.file_id
+        })
+    );
     return {
       info: null,
       duration: 0,
@@ -82,7 +80,7 @@ export default {
     }
 
     axios
-      .get("http://localhost:8000/api/v1/anime/video/10")
+      .get("/api/v1/anime/video/10")
       .then(response => (this.info = response.data));
   },
   computed: {

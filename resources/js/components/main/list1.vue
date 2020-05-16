@@ -73,7 +73,7 @@ export default {
     this.mySwiper.slideTo(3, 2000, false);
 
     axios
-      .get("http://localhost:8000/api/v1/anime/all")
+      .get("/api/v1/anime/all")
       .then(response => (this.info = response.data));
   },
   components: {
