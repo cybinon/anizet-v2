@@ -26,6 +26,8 @@ Route::prefix('/user')->group(function(){
 
 //Animes
 Route::prefix('/anime')->group(function(){
-    Route::middleware('auth:api')->get('/all', 'api\v1\anime\AnimeController@index');
+    Route::get('/all', 'api\v1\anime\AnimeController@index');
+    Route::get('/select/{id}', 'api\v1\anime\AnimeController@select');
+    Route::get('/video/{id}', 'api\v1\anime\AnimeController@video');
     //Route::middleware('auth:api')->get('/currentanime', 'api\v1\anime\AnimeController@currentUser');
 });

@@ -1,10 +1,8 @@
 <template>
   <div>
-    <my-components>
-      <list1></list1>
-      <list2></list2>
-      <list3></list3>
-    </my-components>
+    <list1></list1>
+    <list2></list2>
+    <list3></list3>
   </div>
 </template>
 <script>

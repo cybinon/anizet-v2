@@ -21,9 +21,8 @@ const routes = [
         path: "/contact"
     },
     {
-        component: Anime,
-        name: "currentanime",
         path: "/anime/:id",
+        component: Anime,
         children: [
             {
                 // UserProfile will be rendered inside User's <router-view>
@@ -34,10 +33,11 @@ const routes = [
         ]
     },
     {
-        component: Player,
+        path: "/player/:id",
         name: "player",
-        path: "/player"
+        component: Player
     },
+
     {
         component: Main,
         name: "main",

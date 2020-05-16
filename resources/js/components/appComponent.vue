@@ -34,19 +34,19 @@
             <v-list-item-title>Дуу</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item class="nav-link">
+        <v-list-item class="nav-link" target="_blank" href="https://ren.mn">
           <v-list-item-action>
             <v-icon small color="orange darken-2">fas fa-newspaper</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Мэдээ, мэдээлэл</v-list-item-title>
+            <v-list-item-title>Ren.mn</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-divider></v-divider>
         <v-list-group color="orange darken-2" prepend-icon="fas fa-user" value="false">
           <template v-slot:activator>
             <v-list-item-content>
-              <v-list-item-title>Минийх</v-list-item-title>
+              <v-list-item-title>Nikoru</v-list-item-title>
             </v-list-item-content>
           </template>
           <v-list-item class="nav-link" to="/profile">

@@ -3,9 +3,11 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Season;
+use App\Animes;
 use Faker\Generator as Faker;
 
 $factory->define(Season::class, function (Faker $faker) {
+
     return [
         'anime_id'=> $faker->numberBetween($min = 1000, $max = 1005),
         'number' => $faker->randomDigit,

@@ -21,10 +21,14 @@ class CreateVideosTable extends Migration
             $table->string('episode_caption', 191)->nullable()->default('text');
             $table->bigInteger('next_episode')->nullable()->default(12);
             $table->bigInteger('previous_episode')->nullable()->default(12);
-            $table->bigInteger('starting_openning')->nullable()->default(12);
+            $table->bigInteger('starting_opening')->nullable()->default(12);
             $table->bigInteger('starting_intro')->nullable()->default(12);
             $table->bigInteger('starting_ending')->nullable()->default(12);
             $table->bigInteger('starting_addition')->nullable()->default(12);
+            $table->bigInteger('duration_opening')->nullable()->default(12);
+            $table->bigInteger('duration_intro')->nullable()->default(12);
+            $table->bigInteger('duration_ending')->nullable()->default(12);
+            $table->bigInteger('duration_addition')->nullable()->default(12);
             $table->timestamps();
         });
         DB::update("ALTER TABLE videos AUTO_INCREMENT = 10;");
