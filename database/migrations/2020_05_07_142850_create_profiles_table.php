@@ -17,7 +17,7 @@ class CreateProfilesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
             $table->string('realname', 100)->default('text');
-            $table->longText('description')->nullable()->default('text');
+            $table->longText('description')->nullable();
             $table->string('pic_url', 100)->nullable();
             $table->bigInteger('scored')->nullable()->default(12);
             $table->timestamps();

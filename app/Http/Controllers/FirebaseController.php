@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use Validator;
 
 
-use Kreait\Firebase\Factory;
-use Kreait\Firebase\ServiceAccount;
 
 class FirebaseController extends Controller
 {
