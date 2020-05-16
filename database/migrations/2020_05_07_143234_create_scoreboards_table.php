@@ -17,7 +17,7 @@ class CreateScoreboardsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
             $table->bigInteger('season_id');
-            $table->integer('score')->default(12);
+            $table->integer('score');
             $table->timestamps();
         });
     }

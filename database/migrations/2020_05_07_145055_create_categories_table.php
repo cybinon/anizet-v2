@@ -15,8 +15,8 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->mediumText('caption_en')->default('text');
-            $table->mediumText('caption_mn')->default('text');
+            $table->mediumText('caption_en');
+            $table->mediumText('caption_mn');
             $table->timestamps();
         });
     }
