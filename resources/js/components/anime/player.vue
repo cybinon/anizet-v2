@@ -51,7 +51,7 @@ export default {
       response =>
         (this.playerOptions.sources = {
           type: "video/mp4",
-          src: response.data.file_id
+          src: response.data.files.zet_720
         })
     );
     return {

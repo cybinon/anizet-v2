@@ -36,10 +36,10 @@ class AnimeController extends Controller
     public function video($id)
     {
         $video = Video::findOrFail($id);
-        $json = file_get_contents('https://pack.anizet.net/get/'.$video->file_id);
+        $json = file_get_contents('http://pack.anizet.net/get/'.$video->file_id);
         $obj = json_decode($json);
         $video->files = $obj;
 
-        return $obj;
+        return $video;
     }
 }
