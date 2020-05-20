@@ -114,7 +114,7 @@
             </div>
 
             <div class="form-group">
-                <label for="width">Өргөн зураг [720p resolution 720x480]</label>
+                <label for="width">Өргөн зураг [720p resolution 1280x720]</label>
                 <input type="file" name="width" class="form-control" id="width" >
             </div>
 

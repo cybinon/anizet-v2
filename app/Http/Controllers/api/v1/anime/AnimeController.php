@@ -9,6 +9,7 @@ use App\User;
 use App\Animes;
 use App\Season;
 use App\Video;
+use App\Category;
 
 class AnimeController extends Controller
 {
@@ -23,11 +24,22 @@ class AnimeController extends Controller
         return $seasons;
     }
      public function select($id)
-    {
-        return Season::findOrFail($id);
+     {
+        $season = Season::findOrFail($id);
+        $anime = Animes::findorfail($season->anime_id);
+
+        $season->anime = $anime;
+        $video = Video::where('season_id', $id)->orderBy('episode_number','DESC')->get();
+        $season->videos = $video;
+        return $season;
     }
     public function video($id)
     {
-        return Video::findOrFail($id);
+        $video = Video::findOrFail($id);
+        $json = file_get_contents('https://pack.anizet.net/get/'.$video->file_id);
+        $obj = json_decode($json);
+        $video->files = $obj;
+
+        return $obj;
     }
 }

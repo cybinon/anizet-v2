@@ -36,6 +36,47 @@ class AdminController extends Controller
         return view('admin.add', compact('season'));
     }
 
+    public function vstore(Request $request){
+        $data = $request->validate([
+            'season_id'=> 'required',
+            'file_id'=> 'required',
+            'episode_number'=> 'required',
+            'episode_caption'=> '',
+
+            'starting_opening'=> 'required',
+            'duration_opening'=> 'required',
+            'starting_ending'=> 'required',
+            'duration_ending'=> 'required',
+
+            'next_episode'=> '',
+            'previous_episode'=> '',
+
+            'starting_addition'=> '',
+            'duration_addition'=> '',
+
+            'starting_intro'=> '',
+            'duration_intro'=> '',
+        ]);
+
+        $video = new Video;
+
+        $video->season_id = $data['season_id'];
+        $video->file_id = $data['file_id'];
+        $video->episode_number = $data['episode_number'];
+        $video->episode_caption = $data['episode_caption'];
+        $video->next_episode = $data['next_episode'];
+        $video->previous_episode = $data['previous_episode'];
+
+        $video->starting_opening = $data['starting_opening'];
+        $video->duration_opening = $data['duration_opening'];
+        $video->starting_ending = $data['starting_ending'];
+        $video->duration_ending = $data['duration_ending'];
+
+        $video->save();
+
+        return redirect('/#/player/'.$video->id);
+    }
+
     public function astore(Request $request)
     {
         $data = $request->validate([
