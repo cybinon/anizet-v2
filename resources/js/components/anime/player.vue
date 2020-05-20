@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="col">
-        <div class="text-center h4">Анги: {{ info.episode_number }} {{$route.params.id}}</div>
+        <div class="text-center h4">Анги: {{ info.episode_number }} {{ info.episode_caption }}</div>
       </div>
     </div>
     <video-player
@@ -80,7 +80,7 @@ export default {
     }
 
     axios
-      .get("/api/v1/anime/video/10")
+      .get("/api/v1/anime/video/" + this.$route.params.id)
       .then(response => (this.info = response.data));
   },
   computed: {

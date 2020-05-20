@@ -3,7 +3,7 @@
     {{infos.name}}
     <v-row class="mb-6" no-gutters>
       <v-col :sm="6" :md="3">
-        <v-img src="https://cdn.myanimelist.net/images/anime/1702/106229l.jpg"></v-img>
+        <v-img :src="infos.image_height"></v-img>
       </v-col>
       <v-col :sm="6" :md="3">
         <v-card class="mx-auto" tile>
