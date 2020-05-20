@@ -1,8 +1,8 @@
 <template>
   <div>
     <list1></list1>
-    <list2></list2>
-    <list3></list3>
+    <!-- <list2></list2>
+    <list3></list3>-->
   </div>
 </template>
 <script>

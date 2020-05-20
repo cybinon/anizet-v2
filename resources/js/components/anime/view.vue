@@ -51,7 +51,7 @@
           <v-list-item href="/#/player/10" v-for="item in infos.videos" :key="item">
             <v-list-item-content>
               <v-list-item-title class="orange--text">Анги: {{item.episode_number}}</v-list-item-title>
-              <v-list-item-subtitle v-text="infos.description">lorem ipsum</v-list-item-subtitle>
+              <v-list-item-subtitle v-text="item.episode_caption">lorem ipsum</v-list-item-subtitle>
               <v-divider></v-divider>
             </v-list-item-content>
           </v-list-item>

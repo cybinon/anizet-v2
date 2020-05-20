@@ -10,14 +10,18 @@
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
         <div class="swiper-slide" :key="item.id" v-for="item in info">
-          <v-card to="/anime/4/view" max-width="100%">
+          <v-card :to="'/anime/'+item.id+'/view'" max-width="100%">
             <v-img
               class="white--text align-end"
               height="200px"
               gradient="to top right, rgba(17,17,17,1), rgba(25,32,72,.0)"
               v-bind:src="item.image_width"
             >
-              <v-card-title>{{ item.anime.caption_mn }}</v-card-title>
+              <v-card-title>
+                {{
+                item.anime.caption_mn
+                }}
+              </v-card-title>
             </v-img>
           </v-card>
         </div>
