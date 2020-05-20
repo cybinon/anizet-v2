@@ -61,15 +61,15 @@
 
 </head>
 
-<body>
 
-
-    <div id="app">
-
- @if(View::hasSection('nav'))
-        @yield('nav')
+@if(View::hasSection('body'))
+        @yield('body')
     @else
-    <div class="" id="loader">
+<body>
+    @endif
+
+
+<div class="" id="loader">
         <div class="uk-position-center text-center">
             <div class="uk-margin-bottom">
                 <img src="{{ URL::asset('/images/loading.png') }}" style="max-width:200px;" alt="Anizet-loading">
@@ -79,22 +79,13 @@
         </div>
     </div>
 
-    @endif
-
-        <div class="f-height">
-            @yield('content')
-        </div>
-
+    <div id="app">
+        @yield('content')
     </div>
 
 
 
-    @if(View::hasSection('end-script'))
-        @yield('end-script')
-    @else
 
-
-    @endif
 
 
 

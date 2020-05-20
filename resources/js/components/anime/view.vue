@@ -31,7 +31,7 @@
           <v-list-item three-line>
             <v-list-item-content>
               <v-list-item-title>Товч агуулга</v-list-item-title>
-              <v-list-item-subtitle v-text="item"></v-list-item-subtitle>
+              <v-list-item-subtitle v-text="text"></v-list-item-subtitle>
               <v-list-item-subtitle class="text-warning text-end">
                 <v-btn text small color="orange">
                   Дэлгэрэнгүй
@@ -60,10 +60,10 @@
       </v-col>
       <v-col :cols="12" :md="6" class="px-3" style="overflow:auto; height: 500px">
         <v-card class="mx-auto" tile>
-          <v-list-item to="/player/10" v-for="n in 3" :key="n">
+          <v-list-item href="/#/player/10" v-for="n in 3" :key="n">
             <v-list-item-content>
               <v-list-item-title class="orange--text">Анги: 01</v-list-item-title>
-              <v-list-item-subtitle>lorem ipsum bla2 balbaallslsslslsllslslsllsl</v-list-item-subtitle>
+              <v-list-item-subtitle v-text="text">lorem ipsum</v-list-item-subtitle>
               <v-divider></v-divider>
             </v-list-item-content>
           </v-list-item>
@@ -75,8 +75,7 @@
 <script>
 export default {
   data: () => ({
-    items: ["Foo", "Bar", "Fizz", "Buzz"],
-    item:
+    text:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
   })
 };

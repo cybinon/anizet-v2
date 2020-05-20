@@ -14,12 +14,13 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'username' => 'nikoru',
+            'admin_status' => 6,
             'email' => 'nikorunikk@gmail.com',
             'email_verified_at' => now(),
             'password' => bcrypt('0250@Nik'),
             'remember_token' => Str::random(10),
 
         ]);
-        factory(\App\User::class, 50)->create();
+        //factory(\App\User::class, 50)->create();
     }
 }

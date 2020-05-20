@@ -140,15 +140,16 @@ export default {
   border-radius: 5px;
 }
 
-.vjs_video_3-dimensions {
+.video-js {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+
   height: auto;
 }
+
 .video-js .vjs-tech {
   position: relative;
-
   width: 100%;
   height: auto;
 }

@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
-@section('nav')
-
-@endsection
 
 @section('content')
     <app-container></app-container>

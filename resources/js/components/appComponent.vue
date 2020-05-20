@@ -46,7 +46,7 @@
         <v-list-group color="orange darken-2" prepend-icon="fas fa-user" value="false">
           <template v-slot:activator>
             <v-list-item-content>
-              <v-list-item-title>Nikoru</v-list-item-title>
+              <v-list-item-title>{{currentUser.username}}</v-list-item-title>
             </v-list-item-content>
           </template>
           <v-list-item class="nav-link" to="/profile">
@@ -113,7 +113,7 @@
     </v-content>
 
     <v-footer app>
-      <span>&copy; 2020 - v2.0.1 {{currentUser.username}}</span>
+      <span>&copy; 2020 - v2.0.1</span>
     </v-footer>
   </v-app>
 </template>
@@ -124,6 +124,7 @@ export default {
     source: String
   },
   data: () => ({
+    currentUser: null,
     csrf: document
       .querySelector('meta[name="csrf-token"]')
       .getAttribute("content"),
@@ -131,10 +132,13 @@ export default {
   }),
   computed: {
     currentUser: {
-      get() {
-        return this.$store.state.currentUser.user;
-      }
+      //   get() {
+      //     return this.$store.state.currentUser.user;
+      //   }
     }
+  },
+  mounted() {
+    axios.get("/profile").then(response => (this.currentUser = response.data));
   },
   methods: {
     logout() {
@@ -143,10 +147,6 @@ export default {
     }
   },
   created() {
-    window.localStorage.setItem(
-      "blob_token",
-      document.querySelector('meta[name="csrf-token"]').getAttribute("content")
-    );
     this.$vuetify.theme.dark = true;
   }
 };

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -13,14 +14,10 @@ class ProfileController extends Controller
 
     }
 
-    public function index(\App\User $user)
+    public function index()
     {
-        return view('spa', compact('user'));
+        return Auth::user();
     }
-    public function CheckProfile()
-    {
-        //$user = auth()->user()->id;
-        return redirect('/profile/'.$user);
-    }
+
 
 }

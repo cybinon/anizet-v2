@@ -12,6 +12,6 @@ class AnimeSeeder extends Seeder
      */
     public function run()
     {
-         factory(\App\Animes::class, 10)->create();
+         //factory(\App\Animes::class, 10)->create();
     }
 }
