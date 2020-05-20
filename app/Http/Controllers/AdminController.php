@@ -96,10 +96,10 @@ class AdminController extends Controller
             'width'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $imageNameHeight = time().'.'.$request->height->extension();
+        $imageNameHeight = time().'height.'.$request->height->extension();
         $request->height->move(public_path('uploads/pictures'), $imageNameHeight);
 
-        $imageNameWidth = time().'.'.$request->width->extension();
+        $imageNameWidth = time().'width.'.$request->width->extension();
         $request->width->move(public_path('uploads/pictures'), $imageNameWidth);
 
         //Cloudder::upload(url('uploads/pictures/'.$imageNameWidth));
