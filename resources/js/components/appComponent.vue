@@ -130,13 +130,7 @@ export default {
       .getAttribute("content"),
     drawer: null
   }),
-  computed: {
-    currentUser: {
-      //   get() {
-      //     return this.$store.state.currentUser.user;
-      //   }
-    }
-  },
+  computed: {},
   mounted() {
     axios.get("/profile").then(response => (this.currentUser = response.data));
   },

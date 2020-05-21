@@ -1,6 +1,5 @@
 <template>
   <div class="anime mb-2">
-    {{infos.name}}
     <v-row class="mb-6" no-gutters>
       <v-col :sm="6" :md="3">
         <v-img :src="infos.image_height"></v-img>
@@ -14,10 +13,18 @@
             </v-list-item-content>
           </v-list-item>
 
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-title>Бүлэг</v-list-item-title>
+              <v-list-item-subtitle>{{infos.name}}</v-list-item-subtitle>
+              <v-list-item-subtitle>{{infos.number}}</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+
           <v-list-item two-line>
             <v-list-item-content>
               <v-list-item-title>Гарч байгаа</v-list-item-title>
-              <v-list-item-subtitle>Нийт гарсан анги: 7</v-list-item-subtitle>
+              <v-list-item-subtitle>Нийт гарсан анги: {{infos.videos.lenght}}</v-list-item-subtitle>
               <v-list-item-subtitle>Нийт гарах анги: {{infos.episodes}}</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
@@ -47,8 +54,8 @@
         </v-card>
       </v-col>
       <v-col :cols="12" :md="6" class="px-3" style="overflow:auto; height: 500px">
-        <v-card class="mx-auto" tile>
-          <v-list-item href="/#/player/10" v-for="item in infos.videos" :key="item">
+        <v-card class="mx-auto" tile v-for="item in infos.videos" :key="item.id">
+          <v-list-item :href="'/#/player/'+item.id">
             <v-list-item-content>
               <v-list-item-title class="orange--text">Анги: {{item.episode_number}}</v-list-item-title>
               <v-list-item-subtitle v-text="item.episode_caption">lorem ipsum</v-list-item-subtitle>
