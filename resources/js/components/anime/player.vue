@@ -55,7 +55,9 @@ export default {
         })
     );
     return {
-      info: null,
+      info: {
+        caption_mn: "none"
+      },
       duration: 0,
       show: false,
       shownext: false,
@@ -99,7 +101,6 @@ export default {
 
       var open_starttime = this.info.starting_opening;
       var open_endtime = open_starttime + this.info.duration_opening;
-      console.log(open_endtime);
 
       if (duration >= open_starttime && duration < open_endtime) {
         this.show = true;
@@ -112,12 +113,7 @@ export default {
       } else this.shownext = false;
     },
 
-    playerReadied(readyplayer) {
-      console.log(
-        "the readyplayer is readied",
-        this.$refs.videoPlayer.player.currentTime()
-      );
-    },
+    playerReadied(readyplayer) {},
     onPlayerWaiting(waitingPlayer) {
       console.log(waitingPlayer);
     },

@@ -10,7 +10,7 @@
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
         <div class="swiper-slide" :key="item.id" v-for="item in info">
-          <v-card :to="'/anime/'+item.id+'/view'" max-width="100%">
+          <v-card :to="'/view/'+item.id" max-width="100%">
             <v-img
               class="white--text align-end"
               height="200px"
@@ -80,6 +80,7 @@ export default {
       .get("/api/v1/anime/all")
       .then(response => (this.info = response.data));
   },
+  methods: {},
   components: {
     Swiper,
     SwiperSlide

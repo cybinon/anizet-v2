@@ -11,11 +11,9 @@
 </template>
 
 <script>
-import carousel from "vue-owl-carousel";
 import list1 from "../main/list1";
 export default {
   components: {
-    carousel,
     list1
   },
   data: () => ({

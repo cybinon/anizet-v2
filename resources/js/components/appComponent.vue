@@ -124,7 +124,9 @@ export default {
     source: String
   },
   data: () => ({
-    currentUser: null,
+    currentUser: {
+      username: "Нэвтрээгүй"
+    },
     csrf: document
       .querySelector('meta[name="csrf-token"]')
       .getAttribute("content"),

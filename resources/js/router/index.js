@@ -20,17 +20,11 @@ const routes = [
         name: "contact",
         path: "/contact"
     },
+
     {
-        path: "/anime/:id",
-        component: Anime,
-        children: [
-            {
-                // UserProfile will be rendered inside User's <router-view>
-                // when /user/:id/profile is matched
-                path: "view",
-                component: View
-            }
-        ]
+        path: "/view/:id",
+        component: View,
+        name: "viewanime"
     },
     {
         path: "/player/:id",
