@@ -95,9 +95,7 @@ export default {
     onPlayerPlaying(playerCurrentState) {},
 
     playerStateChanged(playerCurrentState) {
-      var duration = (this.duration = Math.floor(
-        playerCurrentState.currentTime
-      ));
+      var duration = (this.duration = Math.floor(this.player.currentTime()));
 
       var open_starttime = this.info.starting_opening;
       var open_endtime = open_starttime + this.info.duration_opening;
@@ -113,7 +111,12 @@ export default {
       } else this.shownext = false;
     },
 
-    playerReadied(readyplayer) {},
+    playerReadied(readyplayer) {
+      axios
+        .get("/api/v1/anime/video/" + this.$route.params.id)
+        .then(response => this.player.src(response.data.files.zet_720));
+      console.log(this.player.src);
+    },
     onPlayerWaiting(waitingPlayer) {
       console.log(waitingPlayer);
     },

@@ -40,7 +40,7 @@
               <v-list-item-title>Гарч байгаа</v-list-item-title>
               <v-list-item-subtitle>
                 Нийт гарсан анги:
-                {{ infos.videos.lenght }}
+                {{ infos.videos.length }}
               </v-list-item-subtitle>
               <v-list-item-subtitle>
                 Нийт гарах анги:
@@ -93,9 +93,15 @@
 <script>
 export default {
   data: () => ({
+    model: null,
     infos: {
-      model: null,
-      image_height: "none"
+      anime: {
+        caption_mn: "test"
+      },
+      videos: {
+        lenght: 1
+      },
+      image_height: "/images/loading.png"
     }
   }),
 

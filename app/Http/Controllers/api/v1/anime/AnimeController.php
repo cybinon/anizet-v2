@@ -42,4 +42,13 @@ class AnimeController extends Controller
 
         return $video;
     }
+    public function search($key)
+    {
+        $anime = new Animes;
+        $caption_en = $anime->where('caption_en', 'LIKE', "%$key%")->get();
+        $caption_mn = $anime->where('caption_mn', 'LIKE', "%$key%")->get();
+        $caption_kanji = $anime->where('caption_kanji', 'LIKE', "%$key%")->get();
+
+        return array($caption_en, $caption_kanji, $caption_mn);
+    }
 }

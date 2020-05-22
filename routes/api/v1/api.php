@@ -29,5 +29,6 @@ Route::prefix('/anime')->group(function(){
     Route::get('/all', 'api\v1\anime\AnimeController@index');
     Route::get('/select/{id}', 'api\v1\anime\AnimeController@select');
     Route::get('/video/{id}', 'api\v1\anime\AnimeController@video');
+    Route::get('/search/{key}', 'api\v1\anime\AnimeController@search');
     //Route::middleware('auth:api')->get('/currentanime', 'api\v1\anime\AnimeController@currentUser');
 });
