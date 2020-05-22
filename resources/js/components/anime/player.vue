@@ -90,13 +90,16 @@ export default {
   },
   methods: {
     // listen event
-    onPlayerPlaying(playerCurrentState) {
+    onPlayerPlaying(playerCurrentState) {},
+
+    playerStateChanged(playerCurrentState) {
       var duration = (this.duration = Math.floor(
-        playerCurrentState.currentTime()
+        playerCurrentState.currentTime
       ));
 
       var open_starttime = this.info.starting_opening;
       var open_endtime = open_starttime + this.info.duration_opening;
+      console.log(open_endtime);
 
       if (duration >= open_starttime && duration < open_endtime) {
         this.show = true;
@@ -109,8 +112,6 @@ export default {
       } else this.shownext = false;
     },
 
-    playerStateChanged(playerCurrentState) {},
-
     playerReadied(readyplayer) {
       console.log(
         "the readyplayer is readied",
@@ -121,7 +122,9 @@ export default {
       console.log(waitingPlayer);
     },
     updatetime() {
-      this.player.currentTime(this.info.duration_opening);
+      this.player.currentTime(
+        this.info.starting_opening + this.info.duration_opening
+      );
     }
   }
 };
