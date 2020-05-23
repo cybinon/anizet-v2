@@ -34,6 +34,14 @@
             <v-list-item-title>Дуу</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item class="nav-link" to="/contact">
+          <v-list-item-action>
+            <v-icon small color="orange darken-2">fas fa-music</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Онлайн дэлгүүр</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
         <v-list-item class="nav-link" target="_blank" href="https://ren.mn">
           <v-list-item-action>
             <v-icon small color="orange darken-2">fas fa-newspaper</v-icon>
@@ -85,7 +93,7 @@
             <v-icon x-small color="orange darken-2">fab fa-android</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Android</v-list-item-title>
+            <v-list-item-title>Android /Хандив өгөх/</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item disabled class="nav-link">
@@ -93,7 +101,7 @@
             <v-icon x-small color="orange darken-2">fab fa-app-store-ios</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>IOS</v-list-item-title>
+            <v-list-item-title>IOS /Хандив өгөх/</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>

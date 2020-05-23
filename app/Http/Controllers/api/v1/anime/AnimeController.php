@@ -29,7 +29,7 @@ class AnimeController extends Controller
         $anime = Animes::findorfail($season->anime_id);
 
         $season->anime = $anime;
-        $video = Video::where('season_id', $id)->orderBy('episode_number','DESC')->get();
+        $video = Video::where('season_id', $id)->orderBy('episode_number')->get();
         $season->videos = $video;
         return $season;
     }

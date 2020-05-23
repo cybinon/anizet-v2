@@ -12,6 +12,7 @@
       @playing="onPlayerPlaying($event)"
       @waiting="onPlayerWaiting($event)"
       @ready="playerReadied"
+      @ended="onPlayerEnded($event)"
       :options="playerOptions"
       :playsinline="false"
     ></video-player>
@@ -29,7 +30,7 @@
         <div class="text-center h4">Ending : {{ info.duration_ending }} сек</div>
       </div>
       <div class="col">
-        <v-btn to="player/3" class="w-100" color="orange" medium>Дараагийн анги</v-btn>
+        <v-btn v-on:click="endskip()" class="w-100" color="orange" medium>Дараагийн анги</v-btn>
       </div>
     </div>
   </div>
@@ -92,7 +93,9 @@ export default {
   },
   methods: {
     // listen event
-    onPlayerPlaying(playerCurrentState) {},
+    onPlayerEnded(playerEnded) {
+      console.log("Video duusgaad daraagiin shuud usreh");
+    },
 
     playerStateChanged(playerCurrentState) {
       var duration = (this.duration = Math.floor(this.player.currentTime()));
@@ -123,6 +126,12 @@ export default {
     updatetime() {
       this.player.currentTime(
         this.info.starting_opening + this.info.duration_opening
+      );
+    },
+    endskip() {
+      this.player.pause();
+      this.player.currentTime(
+        this.info.starting_ending + this.info.duration_ending
       );
     }
   }
