@@ -10,6 +10,7 @@ use App\Video;
 use App\Category;
 use App\Rating;
 
+use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -98,9 +99,12 @@ class AdminController extends Controller
 
         $imageNameHeight = time().'height.'.$request->height->extension();
         $request->height->move(public_path('uploads/pictures'), $imageNameHeight);
-
+        $imageRender = Image::make(public_path('uploads/pictures/'.$imageNameHeight))->resize(225,315);
+        $imageRender->save();
         $imageNameWidth = time().'width.'.$request->width->extension();
         $request->width->move(public_path('uploads/pictures'), $imageNameWidth);
+        $imageRender = Image::make(public_path('uploads/pictures/'.$imageNameWidth))->resize(1280,720);
+        $imageRender->save();
 
         //Cloudder::upload(url('uploads/pictures/'.$imageNameWidth));
 
