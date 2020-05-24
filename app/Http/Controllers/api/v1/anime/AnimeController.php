@@ -33,8 +33,10 @@ class AnimeController extends Controller
         $season->videos = $video;
 
         $array = $season->anime->category;
-        $array = preg_replace('~[\\\\/:*?"<>|[]|]~', ' ', $array);
-        $array = str_split($array,5);
+
+        $array = preg_replace('~[\\\\/:*?"<>|""[]|]~', '', $array);
+
+        $array = explode(',',$array);
 
         foreach($array as $sr){
             $category = Category::findorFail($sr);
