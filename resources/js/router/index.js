@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 import Anime from "../components/anime/container";
+import Song from "../components/song/container";
 import View from "../components/anime/view.vue";
 import Player from "../components/anime/player.vue";
 import Contact from "../components/contact/container";
@@ -16,11 +17,10 @@ const routes = [
         path: "/anime"
     },
     {
-        component: Contact,
-        name: "contact",
-        path: "/contact"
+        component: Song,
+        name: "song",
+        path: "/song"
     },
-
     {
         path: "/view/:id",
         component: View,
@@ -31,7 +31,11 @@ const routes = [
         name: "player",
         component: Player
     },
-
+    {
+        component: Contact,
+        name: "contact",
+        path: "/contact"
+    },
     {
         component: Main,
         name: "main",

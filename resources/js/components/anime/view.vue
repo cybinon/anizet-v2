@@ -64,7 +64,16 @@
 
           <v-list-item>
             <v-list-item-content>
-              <p class="text-center">{{ infos.anime.category }}</p>
+              <div>
+                <v-btn
+                  class="ma-1"
+                  v-for="item in infos.anime.category"
+                  :key="item.id"
+                  x-small
+                  color="secondary"
+                  dark
+                >{{item.caption_mn}}</v-btn>
+              </div>
             </v-list-item-content>
           </v-list-item>
 

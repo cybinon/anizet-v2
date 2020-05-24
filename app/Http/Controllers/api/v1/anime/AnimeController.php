@@ -31,6 +31,18 @@ class AnimeController extends Controller
         $season->anime = $anime;
         $video = Video::where('season_id', $id)->orderBy('episode_number')->get();
         $season->videos = $video;
+
+        $array = $season->anime->category;
+        $array = preg_replace('~[\\\\/:*?"<>|[]|]~', ' ', $array);
+        $array = str_split($array,5);
+
+        foreach($array as $sr){
+            $category = Category::findorFail($sr);
+            $categories[] = $category;
+        }
+        $season->anime->category = $categories;
+
+
         return $season;
     }
     public function video($id)

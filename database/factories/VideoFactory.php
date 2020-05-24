@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Video::class, function (Faker $faker) {
     return [
         'season_id' => $faker->numberBetween($min = 10, $max = 20),
-        'file_id' => 'https://www.anizet.net/storage/video/%5bAniZET%5d%20Tower%20of%20God%20-%2005.mp4',
+        'file_id' => $faker->numberBetween($min = 1, $max = 10),
         'episode_number' => 1,
         'episode_caption' => 'Анги нэр',
         'next_episode' => 2,

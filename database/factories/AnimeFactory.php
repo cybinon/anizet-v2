@@ -24,6 +24,6 @@ $factory->define(Animes::class, function (Faker $faker) {
         'caption_mn' => $mn,
         'caption_kanji' => $kanji,
         'rating' => $faker->randomElement($array = array('PG-13','PG-17','Family')),
-        'category' => 10,
+        'category' => '"1","22","30","39"',
     ];
 });

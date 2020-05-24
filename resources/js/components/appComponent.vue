@@ -18,15 +18,23 @@
             <v-list-item-title>Анимэ</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item class="nav-link" to="/manga">
+        <v-list-item disabled class="nav-link" to="/manga">
           <v-list-item-action>
             <v-icon small color="orange darken-2">fas fa-torah</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Зохиол</v-list-item-title>
+            <v-list-item-title>Манга</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item class="nav-link" to="/contact">
+        <v-list-item disabled class="nav-link" to="/novel">
+          <v-list-item-action>
+            <v-icon small color="orange darken-2">fas fa-book</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Эх Зохиол</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item class="nav-link" to="/song">
           <v-list-item-action>
             <v-icon small color="orange darken-2">fas fa-music</v-icon>
           </v-list-item-action>
@@ -34,20 +42,12 @@
             <v-list-item-title>Дуу</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item class="nav-link" to="/contact">
+        <v-list-item disabled class="nav-link" to="/shop">
           <v-list-item-action>
-            <v-icon small color="orange darken-2">fas fa-music</v-icon>
+            <v-icon small color="orange darken-2">fas fa-shopping-cart</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Онлайн дэлгүүр</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="nav-link" target="_blank" href="https://ren.mn">
-          <v-list-item-action>
-            <v-icon small color="orange darken-2">fas fa-newspaper</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Ren.mn</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-divider></v-divider>
@@ -65,7 +65,15 @@
               <v-list-item-title>Хувийн мэдээлэл</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item class="nav-link" to="/mylist">
+          <v-list-item disabled class="nav-link" to="/novel/add">
+            <v-list-item-action>
+              <v-icon small color="orange darken-2">fas fa-plus</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Зохиол бичих</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item disabled class="nav-link" to="/mylist">
             <v-list-item-action>
               <v-icon small color="orange darken-2">fas fa-clipboard-list</v-icon>
             </v-list-item-action>
