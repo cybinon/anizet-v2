@@ -13,6 +13,11 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    'facebook' => [
+    'client_id' => '130959678268351',
+    'client_secret' => '07596801873cacaa123aa43aa4af54ab',
+    'redirect' => 'https://anizet.net/callback',
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),

@@ -23,3 +23,5 @@ Route::get('/profile', 'ProfileController@index')->name('userget');
 //Report Route
 Route::match(array('GET', 'POST'), '/report', 'MainController@report');
 
+Route::get('/redirect', 'SocialAuthFacebookController@redirect');
+Route::get('/callback', 'SocialAuthFacebookController@callback');

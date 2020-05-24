@@ -55,6 +55,7 @@
                                         Нууц үг мартсан уу?
                                     </a>
                                 @endif
+                                <a href="{{url('/redirect')}}" class="btn btn-primary">Facebook ашиглаж нэвтрэх</a>
                             </div>
 
                         </div>
