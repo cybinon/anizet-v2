@@ -8,7 +8,7 @@
                         <div class="form-group row justify-content-center">
                             <div class="col-md-5">
                                 <label for="email" class="text-white font-weight-bold">Цахим хаяг</label>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input placeholder="user@email.com" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -20,7 +20,7 @@
                         <div class="form-group row justify-content-center">
                             <div class="col-md-5">
                                 <label for="password" class="form-label text-center text-white font-weight-bold">Нууц үг</label>
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input placeholder="******" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
