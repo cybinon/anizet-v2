@@ -155,13 +155,16 @@ export default {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-
-  height: auto;
 }
 
 .video-js .vjs-tech {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  margin: auto;
 }
 </style>
