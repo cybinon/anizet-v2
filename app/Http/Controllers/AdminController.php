@@ -103,8 +103,7 @@ class AdminController extends Controller
          else $render= $render[0]*60;
         $data['duration_ending'] = $render - $data['starting_ending'];
 
-        return array($data['starting_ending'], $data['duration_ending']);
-
+// Saving into DB
         $video = new Video;
 
         $video->season_id = $data['season_id'];
