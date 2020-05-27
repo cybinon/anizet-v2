@@ -39,37 +39,37 @@
 
             <div class="form-group">
                 <label for="starting_opening">Эхлэл дуу эхлэх цаг [Opening]</label>
-                <input type="number" name="starting_opening" class="form-control" id="starting_opening" >
-                <small id="emailHelp" class="form-text text-muted">Эхлэл эхлэх секунд</small>
+                <input type="text" name="starting_opening" class="form-control" id="starting_opening" >
+                <small id="emailHelp" class="form-text text-muted">Opening эхлэх минут</small>
             </div>
 
             <div class="form-group">
                 <label for="duration_opening">Эхлэл үргэжлэх хугацаа [Opening second]</label>
-                <input type="number" name="duration_opening" class="form-control" id="duration_opening" >
-                <small id="emailHelp" class="form-text text-muted">Эхлэл үргэжлэх хугацааг секунд тооцож оруулна</small>
+                <input type="text" name="duration_opening" class="form-control" id="duration_opening" >
+                <small id="emailHelp" class="form-text text-muted">Эхлэл дуусах минут</small>
             </div>
 
             <div class="form-group">
                 <label for="starting_ending">Төгсгөлийн дуу эхлэх цаг [Ending]</label>
-                <input type="number" name="starting_ending" class="form-control" id="starting_ending" >
-                <small id="emailHelp" class="form-text text-muted"></small>
+                <input type="text" name="starting_ending" class="form-control" id="starting_ending" >
+                <small id="emailHelp" class="form-text text-muted">Минут тооцож оруулна.</small>
             </div>
 
             <div class="form-group">
                 <label for="duration_ending">Төгсгөлийн дуу үргэжлэх хугацаа [Ending second]</label>
-                <input type="number" name="duration_ending" class="form-control" id="duration_ending" >
-                <small id="emailHelp" class="form-text text-muted">Дуусах хугацааг 30сек гэж оруулж болно</small>
+                <input type="text" name="duration_ending" class="form-control" id="duration_ending" >
+                <small id="emailHelp" class="form-text text-muted">Төгсгөл дууссан хугацаа</small>
             </div>
 
             <div class="form-group">
                 <label for="starting_addition">Нэмэлт хэсэг эхлэл</label>
-                <input type="number" name="starting_addition" class="form-control" id="starting_addition" >
+                <input type="text" name="starting_addition" class="form-control" id="starting_addition" >
                 <small id="emailHelp" class="form-text text-muted">Нэмэлт хэсэг байхгүй бол алгасна</small>
             </div>
 
             <div class="form-group">
                 <label for="duration_addition">Нэмэлт хэсэг хугацаа</label>
-                <input type="number" name="duration_addition" class="form-control" id="duration_addition" >
+                <input type="text" name="duration_addition" class="form-control" id="duration_addition" >
                 <small id="emailHelp" class="form-text text-muted">Нэмэлт хэсэг байхгүй бол алгасна</small>
             </div>
 

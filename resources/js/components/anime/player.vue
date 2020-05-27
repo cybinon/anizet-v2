@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container>
     <div class="row">
       <div class="col">
         <div class="text-center h4">Анги: {{ info.episode_number }} {{ info.episode_caption }}</div>
@@ -9,7 +9,6 @@
       class="video-player-box vjs-theme-forest mx-auto"
       ref="videoPlayer"
       @statechanged="playerStateChanged($event)"
-      @playing="onPlayerPlaying($event)"
       @waiting="onPlayerWaiting($event)"
       @ready="playerReadied"
       @ended="onPlayerEnded($event)"
@@ -30,10 +29,10 @@
         <div class="text-center h4">Ending : {{ info.duration_ending }} сек</div>
       </div>
       <div class="col">
-        <v-btn v-on:click="endskip()" class="w-100" color="orange" medium>Дараагийн анги</v-btn>
+        <v-btn v-on:click="endskip()" class="w-100" color="orange" medium>Алгасах</v-btn>
       </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -94,7 +93,13 @@ export default {
   methods: {
     // listen event
     onPlayerEnded(playerEnded) {
-      console.log("Video duusgaad daraagiin shuud usreh");
+      if (
+        this.info.next_episode != null &&
+        this.info.next_episode > 10 &&
+        this.info.next_episode != ""
+      )
+        window.location.replace("/#/player/" + this.info.next_episode);
+      else window.location.replace("/#/view/" + this.info.season_id);
     },
 
     playerStateChanged(playerCurrentState) {
@@ -118,10 +123,10 @@ export default {
       axios
         .get("/api/v1/anime/video/" + this.$route.params.id)
         .then(response => this.player.src(response.data.files.zet_720));
-      console.log(this.player.src);
+      //console.log(this.player.src);
     },
     onPlayerWaiting(waitingPlayer) {
-      console.log(waitingPlayer);
+      //console.log(waitingPlayer);
     },
     updatetime() {
       this.player.currentTime(
@@ -129,10 +134,17 @@ export default {
       );
     },
     endskip() {
-      this.player.pause();
-      this.player.currentTime(
-        this.info.starting_ending + this.info.duration_ending
-      );
+      if (
+        this.info.duration_addition != 0 &&
+        this.info.duration_addition != null
+      ) {
+        this.player.currentTime(
+          this.info.starting_ending + this.info.duration_ending
+        );
+      } else
+        this.player.currentTime(
+          this.player.currentTime() + this.player.remainingTime()
+        );
     }
   }
 };
@@ -143,7 +155,7 @@ export default {
   display: block;
 }
 .skipper {
-  width: 80%;
+  width: 100%;
   color: #fff;
   background-color: rgba(255, 255, 255, 0.1);
   border-color: rgba(245, 124, 0, 0.4);
@@ -152,9 +164,9 @@ export default {
 }
 
 .video-js {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  min-height: 360px;
+  max-height: 80vh;
 }
 
 .video-js .vjs-tech {
@@ -165,6 +177,5 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  margin: auto;
 }
 </style>

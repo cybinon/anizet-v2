@@ -101,12 +101,12 @@
 
             <div class="form-group">
                 <label for="trailer">Танилцуулга Видео</label>
-                <input type="text" name="trailer" class="form-control" id="trailer" >
+                <input type="url" name="trailer" class="form-control" id="trailer" >
                 <small id="emailHelp" class="form-text text-muted">https://www.youtube.com/watch?v=nSNQ_Qh9Pss</small>
             </div>
 
             <div class="form-group">
-                <label for="height">Урт зураг [225x315]</label>
+                <label for="height">Урт зураг [400x511]</label>
                 <div class="custom-file">
                 <input type="file" name="height" class="form-control" id="height">
 

@@ -37,6 +37,28 @@ class AdminController extends Controller
         return view('admin.add', compact('season'));
     }
 
+    public function esform($season)
+    {
+        $season = Season::findorfail($season);
+
+        $category = Category::all();
+        $rating = Rating::all();
+
+        $array = $season->anime->category;
+
+        $array = preg_replace('~[\\\\/:*?"<>|""[]|]~', '', $array);
+
+        $array = explode(',',$array);
+
+        foreach($array as $sr){
+            $scategory = Category::findorFail($sr);
+            $scategories[] = $scategory;
+        }
+        $season->anime->category = $scategories;
+
+        return view('admin.edit', compact('season','category','rating'));
+    }
+
     public function vstore(Request $request){
         $data = $request->validate([
             'season_id'=> 'required',
@@ -58,6 +80,30 @@ class AdminController extends Controller
             'starting_intro'=> '',
             'duration_intro'=> '',
         ]);
+
+        //Opening Render
+        $render = explode(':', $data['starting_opening']);
+        if(isset($render[1])) $render = $render[0]*60+$render[1];
+         else $render= $render[0]*60;
+        $data['starting_opening'] = $render;
+
+        $render = explode(':', $data['duration_opening']);
+        if(isset($render[1])) $render = $render[0]*60+$render[1];
+         else $render= $render[0]*60;
+        $data['duration_opening'] = $render - $data['starting_opening'];
+
+        //Ending Render
+        $render = explode(':', $data['starting_ending']);
+        if(isset($render[1])) $render = $render[0]*60+$render[1];
+         else $render= $render[0]*60;
+        $data['starting_ending'] = $render;
+
+        $render = explode(':', $data['duration_ending']);
+        if(isset($render[1])) $render = $render[0]*60+$render[1];
+         else $render= $render[0]*60;
+        $data['duration_ending'] = $render - $data['starting_ending'];
+
+        return array($data['starting_ending'], $data['duration_ending']);
 
         $video = new Video;
 
@@ -97,10 +143,16 @@ class AdminController extends Controller
             'width'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
+        //Trailer embed
+        preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $data['trailer'], $matches);
+
+        $data['trailer'] = "https://www.youtube.com/embed/".$matches[1];
+
         $imageNameHeight = time().'height.'.$request->height->extension();
         $request->height->move(public_path('uploads/pictures'), $imageNameHeight);
-        $imageRender = Image::make(public_path('uploads/pictures/'.$imageNameHeight))->resize(225,315);
+        $imageRender = Image::make(public_path('uploads/pictures/'.$imageNameHeight))->resize(400,520);
         $imageRender->save();
+
         $imageNameWidth = time().'width.'.$request->width->extension();
         $request->width->move(public_path('uploads/pictures'), $imageNameWidth);
         $imageRender = Image::make(public_path('uploads/pictures/'.$imageNameWidth))->resize(1280,720);
@@ -130,6 +182,78 @@ class AdminController extends Controller
         $season->trailer = $data['trailer'];
         $season->image_height = '/uploads/pictures/'.$imageNameHeight;
         $season->image_width = '/uploads/pictures/'.$imageNameWidth;
+        $season->trailer = $data['trailer'];
+
+        $season->save();
+
+        return redirect('/admin/add/'.$season->id);
+
+    }
+
+     public function aupdate(Request $request)
+    {
+        $data = $request->validate([
+            'anime_id'=> 'required',
+            'season_id'=> 'required',
+
+            'caption_mn'=> 'required',
+            'caption_en'=> 'required',
+            'caption_kanji'=> 'required',
+            'rating'=> 'required',
+            'category'=> 'required',
+
+            'number'=> 'required',
+            'name'=> 'required',
+            'description'=> 'required',
+            'status'=> 'required',
+            'episodes'=> 'required',
+            'trailer'=> 'required',
+            'height'=> 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'width'=> 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        //Trailer embed
+        preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $data['trailer'], $matches);
+
+        $data['trailer'] = "https://www.youtube.com/embed/".$matches[1];
+
+        if(isset($data['height'])){
+            $imageNameHeight = time().'height.'.$request->height->extension();
+            $request->height->move(public_path('uploads/pictures'), $imageNameHeight);
+            $imageRender = Image::make(public_path('uploads/pictures/'.$imageNameHeight))->resize(400,511);
+            $imageRender->save();
+        }
+        if(isset($data['width'])){
+            $imageNameWidth = time().'width.'.$request->width->extension();
+            $request->width->move(public_path('uploads/pictures'), $imageNameWidth);
+            $imageRender = Image::make(public_path('uploads/pictures/'.$imageNameWidth))->resize(1280,720);
+            $imageRender->save();
+        }
+
+        //Cloudder::upload(url('uploads/pictures/'.$imageNameWidth));
+
+
+        $data['category'] = json_encode($data['category']);
+
+        $anime = Animes::find($data['anime_id']);
+        $anime->user_id = Auth::user()->id;
+        $anime->caption_en = $data['caption_en'];
+        $anime->caption_mn = $data['caption_mn'];
+        $anime->caption_kanji = $data['caption_kanji'];
+        $anime->rating = $data['rating'];
+        $anime->category = $data['category'];
+        $anime->save();
+
+        $season = Season::find($data['season_id']);
+        $season->anime_id = $anime->id;
+        $season->number = $data['number'];
+        $season->name = $data['name'];
+        $season->description = $data['description'];
+        $season->status = $data['status'];
+        $season->episodes = $data['episodes'];
+        $season->trailer = $data['trailer'];
+        if(isset($data['height'])) $season->image_height = '/uploads/pictures/'.$imageNameHeight;
+        if(isset($data['width'])) $season->image_width = '/uploads/pictures/'.$imageNameWidth;
         $season->trailer = $data['trailer'];
 
         $season->save();
