@@ -12,6 +12,7 @@ import View from "../components/anime/view.vue";
 import Player from "../components/anime/player.vue";
 
 import Contact from "../components/contact/container";
+import Team from "../components/main/team";
 import Main from "../components/main/container";
 
 const routes = [
@@ -44,6 +45,11 @@ const routes = [
         component: Contact,
         name: "contact",
         path: "/contact"
+    },
+    {
+        component: Team,
+        name: "team",
+        path: "/team"
     },
     {
         component: Main,
