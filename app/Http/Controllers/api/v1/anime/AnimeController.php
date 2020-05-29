@@ -9,6 +9,7 @@ use App\User;
 use App\Animes;
 use App\Season;
 use App\Video;
+use App\Banner;
 use App\Category;
 
 class AnimeController extends Controller
@@ -46,6 +47,12 @@ class AnimeController extends Controller
 
 
         return $season;
+    }
+    public function banner()
+     {
+        $banner = Banner::find(1);
+
+        return $banner->anime;
     }
     public function video($id)
     {

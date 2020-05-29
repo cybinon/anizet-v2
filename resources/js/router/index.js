@@ -5,8 +5,12 @@ Vue.use(VueRouter);
 
 import Anime from "../components/anime/container";
 import Song from "../components/song/container";
+
+import NovelEditor from "../components/novel/editor";
+
 import View from "../components/anime/view.vue";
 import Player from "../components/anime/player.vue";
+
 import Contact from "../components/contact/container";
 import Main from "../components/main/container";
 
@@ -25,6 +29,11 @@ const routes = [
         path: "/view/:id",
         component: View,
         name: "viewanime"
+    },
+    {
+        path: "/novel/edit",
+        component: NovelEditor,
+        name: "novel"
     },
     {
         path: "/player/:id",

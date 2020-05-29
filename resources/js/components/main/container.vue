@@ -4,9 +4,20 @@
       <div v-if="true">
         <v-img
           src="https://i2.wp.com/recommendmeanime.com/wp-content/uploads/2020/04/tower-of-god-anime.jpg?fit=1600%2C900&ssl=1"
-          gradient="to top right, rgba(17,17,17,1), rgba(25,32,72,.0)"
+          gradient="to right, rgba(17,17,17,1), rgba(245,124,0,0.1)"
         >
-          <v-card-title>Санал болгож байна</v-card-title>
+          <v-row justify="start">
+            <v-col cols="6">
+              <a class="nav-link" href="/#/view/10">
+                <h1 class="text-white">Санал болгож байна</h1>
+                <img
+                  class="banner_logo"
+                  src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Tower_of_God_-_Logo_Anime.png"
+                  alt
+                />
+              </a>
+            </v-col>
+          </v-row>
         </v-img>
       </div>
 
@@ -23,3 +34,8 @@ export default {
   }
 };
 </script>
+<style>
+.banner_logo {
+  width: 100%;
+}
+</style>

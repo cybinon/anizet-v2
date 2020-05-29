@@ -30,5 +30,6 @@ Route::prefix('/anime')->group(function(){
     Route::get('/select/{id}', 'api\v1\anime\AnimeController@select');
     Route::get('/video/{id}', 'api\v1\anime\AnimeController@video');
     Route::get('/search/{key}', 'api\v1\anime\AnimeController@search');
+    Route::get('/banner', 'api\v1\anime\AnimeController@banner');
     //Route::middleware('auth:api')->get('/currentanime', 'api\v1\anime\AnimeController@currentUser');
 });
