@@ -6,18 +6,22 @@
       colored-border
       color="orange"
       elevation="2"
-    >Гарч дууссан</v-alert>
+    >Хуучин төсөл сэргээлт</v-alert>
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
         <div class="swiper-slide" :key="item.id" v-for="item in info">
-          <v-card to="player" max-width="100%">
+          <v-card :to="'/view/'+item.id" max-width="100%" max-height="200px">
             <v-img
               class="white--text align-end"
               height="200px"
               gradient="to top right, rgba(17,17,17,1), rgba(25,32,72,.0)"
               v-bind:src="item.image_width"
             >
-              <v-card-title>{{ item.anime.caption_mn }}</v-card-title>
+              <v-card-title>
+                {{
+                item.anime.caption_mn
+                }}
+              </v-card-title>
             </v-img>
           </v-card>
         </div>
@@ -70,12 +74,13 @@ export default {
   },
   mounted() {
     console.log("Current Swiper instance object", this.mySwiper);
-    this.mySwiper.slideTo(3, 2000, false);
+    this.mySwiper.slideTo(0, 2000, false);
 
     axios
-      .get("/api/v1/anime/all")
+      .get("/api/v1/anime/status/new")
       .then(response => (this.info = response.data));
   },
+  methods: {},
   components: {
     Swiper,
     SwiperSlide

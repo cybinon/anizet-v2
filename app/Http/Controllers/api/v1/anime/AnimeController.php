@@ -16,7 +16,17 @@ class AnimeController extends Controller
 {
      public function index()
     {
-        $seasons = Season::orderBy('updated_at', 'DESC')->limit(8)->get();
+        $animes = Animes::orderBy('updated_at', 'DESC')->get();
+
+        foreach($animes as $anime){
+            $anime->season = $anime->seasons->first();
+        }
+
+        return $animes;
+    }
+    public function statusnew()
+    {
+        $seasons = Season::where('status', 1)->orderBy('updated_at', 'DESC')->limit(10)->get();
 
         foreach($seasons as $season){
             $season->anime = Season::findOrFail($season->id)->anime;
@@ -24,6 +34,27 @@ class AnimeController extends Controller
 
         return $seasons;
     }
+    public function statusfinisht()
+    {
+        $seasons = Season::where('status', 2)->orderBy('updated_at', 'DESC')->limit(10)->get();
+
+        foreach($seasons as $season){
+            $season->anime = Season::findOrFail($season->id)->anime;
+        }
+
+        return $seasons;
+    }
+    public function statusplan()
+    {
+        $seasons = Season::where('status', 3)->orderBy('updated_at', 'DESC')->limit(10)->get();
+
+        foreach($seasons as $season){
+            $season->anime = Season::findOrFail($season->id)->anime;
+        }
+
+        return $seasons;
+    }
+
      public function select($id)
      {
         $season = Season::findOrFail($id);
@@ -63,13 +94,16 @@ class AnimeController extends Controller
 
         return $video;
     }
-    public function search($key)
+    public function search()
     {
         $anime = new Animes;
-        $caption_en = $anime->where('caption_en', 'LIKE', "%$key%")->get();
-        $caption_mn = $anime->where('caption_mn', 'LIKE', "%$key%")->get();
-        $caption_kanji = $anime->where('caption_kanji', 'LIKE', "%$key%")->get();
+        $animes = $anime->all();
+        foreach($animes as $anime){
+            $anime->caption = $anime->caption_en.', '.$anime->caption_mn.', '.$anime->caption_kanji;
+            $anime->season = $anime->seasons->first();
+        }
+        $count = $anime->count();
 
-        return array($caption_en, $caption_kanji, $caption_mn);
+        return array('count' => $count, 'entries'=> $animes);
     }
 }

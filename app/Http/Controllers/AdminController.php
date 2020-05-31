@@ -103,6 +103,17 @@ class AdminController extends Controller
          else $render= $render[0]*60;
         $data['duration_ending'] = $render - $data['starting_ending'];
 
+        //Ending Render
+        $render = explode(':', $data['starting_addition']);
+        if(isset($render[1])) $render = $render[0]*60+$render[1];
+         else $render= $render[0]*60;
+        $data['starting_addition'] = $render;
+
+        $render = explode(':', $data['duration_addition']);
+        if(isset($render[1])) $render = $render[0]*60+$render[1];
+         else $render= $render[0]*60;
+        $data['duration_addition'] = $render - $data['starting_addition'];
+
 // Saving into DB
         $video = new Video;
 
@@ -179,8 +190,8 @@ class AdminController extends Controller
         $season->status = $data['status'];
         $season->episodes = $data['episodes'];
         $season->trailer = $data['trailer'];
-        $season->image_height = '/uploads/pictures/'.$imageNameHeight;
-        $season->image_width = '/uploads/pictures/'.$imageNameWidth;
+        $season->image_height = url('/uploads/pictures/'.$imageNameHeight);
+        $season->image_width = url('/uploads/pictures/'.$imageNameWidth);
         $season->trailer = $data['trailer'];
 
         $season->save();

@@ -161,15 +161,32 @@
       <v-container contain>
         <v-expand-transition>
           <v-list v-if="model" class="dark">
-            <v-list-item v-for="(field, i) in fields" :key="i">
+            <v-list-item>
               <v-list-item-content>
-                <v-list-item-title v-text="field.value"></v-list-item-title>
-                <v-list-item-subtitle v-text="field.key"></v-list-item-subtitle>
+                <v-list-item-title v-text="'Англи нэр'"></v-list-item-title>
+                <v-list-item-subtitle v-text="model.caption"></v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title v-text="'Анимэ товч агуулга'"></v-list-item-title>
+                <v-list-item-subtitle v-text="model.season.description"></v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title v-text="'Анимэ товч агуулга'"></v-list-item-title>
+                <v-list-item-subtitle v-text="model.season.description"></v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item :to="'/view/'+model.season.id" :disabled="!model" @click="model = null">
+              <v-list-item-content>
+                <v-list-item-title v-text="'Үзэх'"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn :disabled="!model" color="grey darken-3" @click="model = null">
+              <v-btn :disabled="!model" @click="model = null" color="grey darken-3">
                 Гарах
                 <v-icon right>mdi-close-circle</v-icon>
               </v-btn>
@@ -182,7 +199,7 @@
     </v-content>
     {{ (this.$vuetify.theme.dark = this.switch1) }}
     <v-footer app>
-      <span>Хувилбар - v2.1.0</span>
+      <span>Хувилбар - v2.0.50 (Туршилт)</span>
     </v-footer>
   </v-app>
 </template>
@@ -224,19 +241,20 @@ export default {
     fields() {
       if (!this.model) return [];
 
-      return Object.keys(this.model).map(key => {
-        return {
-          key,
-          value: this.model[key] || "n/a"
-        };
-      });
+      return this.model;
+      //   return Object.keys(this.model).map(key => {
+      //     return {
+      //       key,
+      //       value: this.model[key] || "n/a"
+      //     };
+      //   });
     },
     items() {
       return this.entries.map(entry => {
         const Description =
-          entry.Description.length > this.descriptionLimit
-            ? entry.Description.slice(0, this.descriptionLimit) + "..."
-            : entry.Description;
+          entry.caption.length > this.descriptionLimit
+            ? entry.caption.slice(0, this.descriptionLimit) + "..."
+            : entry.caption;
 
         return Object.assign({}, entry, { Description });
       });
@@ -253,7 +271,7 @@ export default {
       this.isLoading = true;
 
       // Lazily load input items
-      fetch("https://api.publicapis.org/entries")
+      fetch("/api/v1/anime/search")
         .then(res => res.json())
         .then(res => {
           const { count, entries } = res;

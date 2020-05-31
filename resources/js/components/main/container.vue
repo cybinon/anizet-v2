@@ -23,7 +23,7 @@
 
       <video v-else muted class="w-100" src="/introvid.mp4"></video>
     </div>
-    <lists>Anime</lists>
+    <lists></lists>
   </div>
 </template>
 <script>

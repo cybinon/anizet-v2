@@ -10,7 +10,7 @@
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
         <div class="swiper-slide" :key="item.id" v-for="item in info">
-          <v-card :to="'/view/'+item.id" max-width="100%">
+          <v-card :to="'/view/'+item.id" max-width="100%" max-height="200px">
             <v-img
               class="white--text align-end"
               height="200px"
@@ -74,10 +74,10 @@ export default {
   },
   mounted() {
     console.log("Current Swiper instance object", this.mySwiper);
-    this.mySwiper.slideTo(3, 2000, false);
+    this.mySwiper.slideTo(0, 2000, false);
 
     axios
-      .get("/api/v1/anime/all")
+      .get("/api/v1/anime/status/new")
       .then(response => (this.info = response.data));
   },
   methods: {},

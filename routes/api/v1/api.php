@@ -27,9 +27,12 @@ Route::prefix('/user')->group(function(){
 //Animes
 Route::prefix('/anime')->group(function(){
     Route::get('/all', 'api\v1\anime\AnimeController@index');
+    Route::get('/status/new', 'api\v1\anime\AnimeController@statusnew');
+    Route::get('/status/plan', 'api\v1\anime\AnimeController@statusplan');
+    Route::get('/status/finisht', 'api\v1\anime\AnimeController@statusfinisht');
     Route::get('/select/{id}', 'api\v1\anime\AnimeController@select');
     Route::get('/video/{id}', 'api\v1\anime\AnimeController@video');
-    Route::get('/search/{key}', 'api\v1\anime\AnimeController@search');
+    Route::get('/search', 'api\v1\anime\AnimeController@search');
     Route::get('/banner', 'api\v1\anime\AnimeController@banner');
     //Route::middleware('auth:api')->get('/currentanime', 'api\v1\anime\AnimeController@currentUser');
 });

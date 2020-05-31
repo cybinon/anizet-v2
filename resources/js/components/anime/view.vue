@@ -82,7 +82,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col :cols="12" :md="6" class="px-3" style="overflow:auto; height: 500px">
+      <v-col :cols="12" :md="6" style="overflow:auto; height: 500px">
         <v-card class="mx-auto" tile v-for="item in infos.videos" :key="item.id">
           <v-list-item :href="'/#/player/' + item.id">
             <v-list-item-content>
@@ -113,6 +113,14 @@ export default {
       image_height: "/images/loading.png"
     }
   }),
+
+  watch: {
+    "$route.params.id": function(id) {
+      axios
+        .get("/api/v1/anime/select/" + this.$route.params.id)
+        .then(response => (this.infos = response.data));
+    }
+  },
 
   mounted() {
     axios

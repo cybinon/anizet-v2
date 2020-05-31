@@ -1,45 +1,92 @@
 <template>
   <div>
-    <v-text-field label="Зохиолын гарчиг" :rules="rules" hide-details="auto"></v-text-field>
-    <v-text-field label="Зохиолын бүлэг, анги эсвэл нэмэлт нэршил /Хооосон орхиж болно/"></v-text-field>
-    <vue-editor class="editor-pack" v-model="content" :editor-toolbar="customToolbar"></vue-editor>
+    <v-alert
+      class="h1 pl-6 mt-5 bg-transparent"
+      border="left"
+      colored-border
+      color="orange"
+      elevation="2"
+    >Хуучин төсөл сэргээлт</v-alert>
+    <div v-swiper:mySwiper="swiperOption">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" :key="item.id" v-for="item in info">
+          <v-card :to="'/view/'+item.id" max-width="100%">
+            <v-img
+              class="white--text align-end"
+              height="200px"
+              gradient="to top right, rgba(17,17,17,1), rgba(25,32,72,.0)"
+              v-bind:src="item.image_width"
+            >
+              <v-card-title>
+                {{
+                item.anime.caption_mn
+                }} | {{$item.number}}
+              </v-card-title>
+            </v-img>
+          </v-card>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
 </template>
-
 <script>
-import { VueEditor } from "vue2-editor";
-
-// Advanced Use - Hook into Quill's API for Custom Functionality
+import VueAwesomeSwiper from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
+import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
 
 export default {
-  components: {
-    VueEditor
-  },
+  data() {
+    return {
+      info: null,
+      swiperOption: {
+        slidesPerView: 5,
+        spaceBetween: 30,
 
-  data: () => ({
-    content: "",
-    rules: [
-      value => !!value || "Required.",
-      value => (value && value.length >= 3) || "Min 3 characters"
-    ],
-    customToolbar: [
-      ["bold", "italic", "underline"],
-      [{ list: "ordered" }, { list: "bullet" }],
-      ["image", "code-block"]
-    ]
-  })
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 40
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 30
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 10
+          },
+          100: {
+            slidesPerView: 1,
+            spaceBetween: 5
+          }
+        }
+      }
+    };
+  },
+  mounted() {
+    console.log("Current Swiper instance object", this.mySwiper);
+    this.mySwiper.slideTo(0, 2000, false);
+
+    axios
+      .get("/api/v1/anime/status/plan")
+      .then(response => (this.info = response.data));
+  },
+  methods: {},
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  directives: {
+    swiper: directive
+  }
 };
 </script>
-
-<style>
-@import "~vue2-editor/dist/vue2-editor.css";
-
-/* Import the Quill styles you want */
-@import "~quill/dist/quill.core.css";
-@import "~quill/dist/quill.bubble.css";
-@import "~quill/dist/quill.snow.css";
-
-.editor-pack {
-  height: 50%;
-}
-</style>
