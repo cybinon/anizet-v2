@@ -90,3 +90,8 @@ export default {
   }
 };
 </script>
+<style>
+.swiper-wrapper {
+  max-height: 200px;
+}
+</style>
