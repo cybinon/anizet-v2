@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-text-field dusabled label="Зохиолын гарчиг" :rules="rules" hide-details="auto"></v-text-field>
-    <v-text-field dusabled label="Зохиолын бүлэг, анги эсвэл нэмэлт нэршил /Хооосон орхиж болно/"></v-text-field>
+    <v-text-field disabled label="Зохиолын гарчиг" :rules="rules" hide-details="auto"></v-text-field>
+    <v-text-field disabled label="Зохиолын бүлэг, анги эсвэл нэмэлт нэршил /Хооосон орхиж болно/"></v-text-field>
     <vue-editor disabled class="editor-pack" v-model="content" :editor-toolbar="customToolbar"></vue-editor>
     <v-alert dark type="info">Тун удахгүй</v-alert>
   </div>

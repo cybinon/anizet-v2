@@ -92,6 +92,7 @@ class AdminController extends Controller
          else $render= $render[0]*60;
         $data['duration_opening'] = $render - $data['starting_opening'];
 
+
         //Ending Render
         $render = explode(':', $data['starting_ending']);
         if(isset($render[1])) $render = $render[0]*60+$render[1];
@@ -104,17 +105,20 @@ class AdminController extends Controller
         $data['duration_ending'] = $render - $data['starting_ending'];
 
         //Ending Render
-        $render = explode(':', $data['starting_addition']);
-        if(isset($render[1])) $render = $render[0]*60+$render[1];
-         else $render= $render[0]*60;
-        $data['starting_addition'] = $render;
+        if(isset($data['starting_addition']) && $data['starting_addition'] != null){
+            $render = explode(':', $data['starting_addition']);
+            if(isset($render[1])) $render = $render[0]*60+$render[1];
+            else $render= $render[0]*60;
+            $data['starting_addition'] = $render;
+        }
+        if(isset($data['duration_addition']) && $data['duration_addition'] != null){
+            $render = explode(':', $data['duration_addition']);
+            if(isset($render[1])) $render = $render[0]*60+$render[1];
+            else $render= $render[0]*60;
+            $data['duration_addition'] = $render - $data['starting_addition'];
+        }
 
-        $render = explode(':', $data['duration_addition']);
-        if(isset($render[1])) $render = $render[0]*60+$render[1];
-         else $render= $render[0]*60;
-        $data['duration_addition'] = $render - $data['starting_addition'];
-
-// Saving into DB
+        // Saving into DB
         $video = new Video;
 
         $video->season_id = $data['season_id'];
@@ -124,6 +128,13 @@ class AdminController extends Controller
         $video->next_episode = $data['next_episode'];
         $video->previous_episode = $data['previous_episode'];
 
+        if(isset($data['starting_duration']) && $data['starting_duration'] != null){
+            $video->starting_duration = $data['starting_duration'];
+        }
+
+        if(isset($data['duration_addition']) && $data['duration_addition'] != null){
+            $video->duration_addition = $data['duration_addition'];
+        }
         $video->starting_opening = $data['starting_opening'];
         $video->duration_opening = $data['duration_opening'];
         $video->starting_ending = $data['starting_ending'];
@@ -268,7 +279,7 @@ class AdminController extends Controller
 
         $season->save();
 
-        return redirect('/admin/add/'.$season->id);
+        return redirect('/admin');
 
     }
 

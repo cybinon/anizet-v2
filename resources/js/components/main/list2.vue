@@ -77,7 +77,7 @@ export default {
     this.mySwiper.slideTo(0, 2000, false);
 
     axios
-      .get("/api/v1/anime/status/new")
+      .get("/api/v1/anime/status/plan")
       .then(response => (this.info = response.data));
   },
   methods: {},
