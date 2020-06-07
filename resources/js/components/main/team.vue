@@ -17,9 +17,9 @@
 
           <v-card-text>Та бүгдийн хайртай Анизет багийг үүсгэн байгуулсан анхдагч буюу алтан гишүүн билээ.</v-card-text>
 
-          <v-card-actions style="display:none">
-            <v-btn text color="deep-purple accent-4">Read</v-btn>
-            <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
+          <v-card-actions>
+            <v-btn text color="orange accent-4">Төсөл</v-btn>
+
             <v-spacer></v-spacer>
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
@@ -49,9 +49,9 @@
 
           <v-card-text>2015 онд "Анизет" үүссэн цагаас эхэлж онц сонирхолтой, хуучны анимэ бүтээлээс Монгол хэл дээр чанартайгаар хөрвүүлэн та бүгдэд хүргэж байгаа алтан гишүүдийн нэг билээ.</v-card-text>
 
-          <v-card-actions style="display:none">
-            <v-btn text color="deep-purple accent-4">Read</v-btn>
-            <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
+          <v-card-actions>
+            <v-btn text color="orange accent-4">Төсөл</v-btn>
+
             <v-spacer></v-spacer>
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
@@ -76,9 +76,9 @@
 
           <v-card-text>2015 оноос эхлэн веб хөгжүүлэгчээр орж шинэ, шинэ зүйлсийг туршин, бүтэлгүйтэн одоог хүртэл шантралгүй анимэ үзэх хялбар шийдлийг үргэлж хайсаар байгаа.</v-card-text>
 
-          <v-card-actions style="display:none">
-            <v-btn text color="deep-purple accent-4">Read</v-btn>
-            <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
+          <v-card-actions>
+            <v-btn text color="orange accent-4">Төсөл</v-btn>
+
             <v-spacer></v-spacer>
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
@@ -107,9 +107,9 @@
 
           <v-card-text></v-card-text>
 
-          <v-card-actions style="display:none">
-            <v-btn text color="deep-purple accent-4">Read</v-btn>
-            <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
+          <v-card-actions>
+            <v-btn text color="orange accent-4">Төсөл</v-btn>
+
             <v-spacer></v-spacer>
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
@@ -135,9 +135,9 @@
 
           <v-card-text></v-card-text>
 
-          <v-card-actions style="display:none">
-            <v-btn text color="deep-purple accent-4">Read</v-btn>
-            <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
+          <v-card-actions>
+            <v-btn text color="orange accent-4">Төсөл</v-btn>
+
             <v-spacer></v-spacer>
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
@@ -162,9 +162,9 @@
 
           <v-card-text></v-card-text>
 
-          <v-card-actions style="display:none">
-            <v-btn text color="deep-purple accent-4">Read</v-btn>
-            <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
+          <v-card-actions>
+            <v-btn text color="orange accent-4">Төсөл</v-btn>
+
             <v-spacer></v-spacer>
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
@@ -189,9 +189,36 @@
 
           <v-card-text></v-card-text>
 
-          <v-card-actions style="display:none">
-            <v-btn text color="deep-purple accent-4">Read</v-btn>
-            <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
+          <v-card-actions>
+            <v-btn text color="orange accent-4">Төсөл</v-btn>
+
+            <v-spacer></v-spacer>
+            <v-btn icon>
+              <v-icon>mdi-heart</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon>mdi-share-variant</v-icon>
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+      <v-col>
+        <v-card max-width="344" class="mx-auto">
+          <v-list-item>
+            <v-list-item-avatar color="grey"></v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-title class="headline">Нэзү</v-list-item-title>
+              <v-list-item-subtitle>Энкодер</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-img src="/images/team/nezu.jpg" height="194"></v-img>
+
+          <v-card-text></v-card-text>
+
+          <v-card-actions>
+            <v-btn text color="orange accent-4">Төсөл</v-btn>
+
             <v-spacer></v-spacer>
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
@@ -216,9 +243,9 @@
 
           <v-card-text></v-card-text>
 
-          <v-card-actions style="display:none">
-            <v-btn text color="deep-purple accent-4">Read</v-btn>
-            <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
+          <v-card-actions>
+            <v-btn text color="orange accent-4">Төсөл</v-btn>
+
             <v-spacer></v-spacer>
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
@@ -243,9 +270,9 @@
 
           <v-card-text></v-card-text>
 
-          <v-card-actions style="display:none">
-            <v-btn text color="deep-purple accent-4">Read</v-btn>
-            <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
+          <v-card-actions>
+            <v-btn text color="orange accent-4">Төсөл</v-btn>
+
             <v-spacer></v-spacer>
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
