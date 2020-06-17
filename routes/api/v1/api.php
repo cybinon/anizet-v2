@@ -24,6 +24,9 @@ Route::prefix('/user')->group(function(){
     Route::middleware('auth:api')->get('/currentUser', 'api\v1\user\UserController@currentUser');
 });
 
+Route::prefix('/novel')->group(function(){
+    Route::get('/all', 'api\v1\novel\NovelController@index');
+});
 //Animes
 Route::prefix('/anime')->group(function(){
     Route::get('/all', 'api\v1\anime\AnimeController@index');

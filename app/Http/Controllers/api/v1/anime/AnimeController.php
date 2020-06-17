@@ -14,7 +14,7 @@ use App\Category;
 
 class AnimeController extends Controller
 {
-     public function index()
+    public function index()
     {
         $animes = Animes::orderBy('updated_at', 'DESC')->get();
 
