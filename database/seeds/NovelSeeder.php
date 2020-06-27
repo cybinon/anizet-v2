@@ -11,6 +11,6 @@ class NovelSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Novel::class, 30)->create();
+        factory(\App\Novel::class, 5)->create();
     }
 }

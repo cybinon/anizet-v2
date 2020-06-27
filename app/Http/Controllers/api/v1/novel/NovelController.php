@@ -14,4 +14,8 @@ class NovelController extends Controller
 
         return $animes;
     }
+    public function show(\App\Novel $id)
+    {
+        return $id;
+    }
 }

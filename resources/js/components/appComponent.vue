@@ -26,7 +26,7 @@
             <v-list-item-title>Манга</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item disabled class="nav-link" to="/novel">
+        <v-list-item class="nav-link" to="/novel">
           <v-list-item-action>
             <v-icon small color="orange darken-2">fas fa-book</v-icon>
           </v-list-item-action>

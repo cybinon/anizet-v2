@@ -6,7 +6,7 @@
       colored-border
       color="orange"
       elevation="2"
-    >Хуучин төсөл сэргээлт</v-alert>
+    >Төлөвлөгдсөн</v-alert>
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
         <div class="swiper-slide" :key="item.id" v-for="item in info">

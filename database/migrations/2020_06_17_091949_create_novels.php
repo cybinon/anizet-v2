@@ -19,6 +19,7 @@ class CreateNovels extends Migration
 
             $table->string('title', 100);
             $table->string('description', 191)->nullable();
+            $table->string('novel_image', 191)->nullable();
 
             $table->boolean('payrequire')->nullable()->default(false);
             $table->boolean('confirmed')->nullable()->default(false);

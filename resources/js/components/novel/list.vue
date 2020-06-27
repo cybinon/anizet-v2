@@ -1,0 +1,99 @@
+<template>
+  <div>
+    <v-alert
+      class="h1 pl-6 mt-5 bg-transparent"
+      border="left"
+      colored-border
+      color="orange"
+      elevation="2"
+    >Зохиол</v-alert>
+    <div v-swiper:mySwiper="swiperOption">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" :key="item.id" v-for="item in info">
+          <v-card :to="'/novel/show/'+item.id" max-width="100%" max-height="200px">
+            <v-img
+              class="white--text align-end"
+              height="200px"
+              gradient="to top right, rgba(17,17,17,1), rgba(25,32,72,.0)"
+              v-bind:src="item.novel_image"
+            >
+              <v-card-title>
+                {{
+                item.title
+                }} : {{
+                item.description
+                }}
+              </v-card-title>
+            </v-img>
+          </v-card>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</template>
+<script>
+import VueAwesomeSwiper from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
+import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
+
+export default {
+  data() {
+    return {
+      info: null,
+      swiperOption: {
+        slidesPerView: 5,
+        spaceBetween: 30,
+
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 40
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 30
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 10
+          },
+          100: {
+            slidesPerView: 1,
+            spaceBetween: 5
+          }
+        }
+      }
+    };
+  },
+  mounted() {
+    console.log("Current Swiper instance object", this.mySwiper);
+    this.mySwiper.slideTo(0, 2000, false);
+
+    axios
+      .get("/api/v1/novel/all")
+      .then(response => (this.info = response.data));
+  },
+  methods: {},
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  directives: {
+    swiper: directive
+  }
+};
+</script>
+<style>
+.swiper-wrapper {
+  max-height: 200px;
+}
+</style>

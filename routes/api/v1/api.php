@@ -26,6 +26,7 @@ Route::prefix('/user')->group(function(){
 
 Route::prefix('/novel')->group(function(){
     Route::get('/all', 'api\v1\novel\NovelController@index');
+    Route::get('/show/{id}', 'api\v1\novel\NovelController@show');
 });
 //Animes
 Route::prefix('/anime')->group(function(){

@@ -7,6 +7,8 @@ import Anime from "../components/anime/container";
 import Song from "../components/song/container";
 
 import NovelEditor from "../components/novel/editor";
+import NovelList from "../components/novel/list";
+import NovelShow from "../components/novel/show";
 
 import View from "../components/anime/view.vue";
 import Player from "../components/anime/player.vue";
@@ -22,6 +24,16 @@ const routes = [
         path: "/anime"
     },
     {
+        component: NovelList,
+        name: "novel",
+        path: "/novel"
+    },
+    {
+        component: NovelShow,
+        name: "novelshow",
+        path: "/novel/show/:id"
+    },
+    {
         component: Song,
         name: "song",
         path: "/song"
@@ -34,7 +46,7 @@ const routes = [
     {
         path: "/novel/edit",
         component: NovelEditor,
-        name: "novel"
+        name: "noveledit"
     },
     {
         path: "/player/:id",
